@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
-import { CalendarIcon, Phone, Mail, Instagram } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -14,14 +14,17 @@ import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import contactBg from "@assets/above_contact_1780239389448.png";
+import coupleImg from "@assets/meet_erica_3_1780239389447.png";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email is required"),
+  name: z.string().min(2, "Your name is required"),
+  partnerName: z.string().min(2, "Partner's name is required"),
+  email: z.string().email("A valid email is required"),
   phone: z.string().min(5, "Contact number is required"),
   date: z.date().optional(),
   venue: z.string().min(2, "Venue / location is required"),
-  service: z.string().min(1, "Please select a service"),
+  service: z.string().min(1, "Please select a package"),
+  howHeard: z.string().optional(),
   details: z.string().min(10, "Please share a little more about your plans"),
 });
 
@@ -30,11 +33,17 @@ type FormValues = z.infer<typeof formSchema>;
 const fieldClass =
   "bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] text-foreground placeholder:text-foreground/30 focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary transition-all shadow-none";
 
+const labelClass =
+  "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]";
+
 export function Contact() {
   const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", phone: "", venue: "", service: "", details: "" },
+    defaultValues: {
+      name: "", partnerName: "", email: "", phone: "",
+      venue: "", service: "", howHeard: "", details: "",
+    },
   });
 
   function onSubmit(_values: FormValues) {
@@ -46,164 +55,216 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="flex flex-col lg:flex-row min-h-screen">
+    <section id="contact" className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 xl:px-16 py-20 md:py-28 grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
 
-      {/* ── LEFT: full-bleed image with overlay ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 1 }}
-        className="relative lg:w-[42%] xl:w-[44%] h-[65vw] lg:h-auto min-h-[420px] overflow-hidden shrink-0"
-      >
-        <img
-          src={contactBg}
-          alt="Erica with a happy couple"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/25 to-transparent" />
-
+        {/* ── LEFT: heading + two stacked images ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute bottom-0 left-0 right-0 p-8 md:p-12"
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="flex flex-col gap-6 lg:sticky lg:top-[100px]"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-primary-foreground/50 font-sans mb-3 block">
-            Weddings with Erica
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.05] mb-4">
-            Get<br />In Touch
-          </h2>
-          <p className="text-primary-foreground/60 font-light text-[0.95rem] leading-relaxed max-w-[280px] mb-7">
-            Tell me a little about your plans — I'd love to hear more about your wedding.
-          </p>
-          <div className="flex flex-col gap-2.5 text-[0.875rem] text-primary-foreground/55 font-light">
-            <a href="tel:0872186100" className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors" data-testid="contact-phone">
-              <Phone className="w-3.5 h-3.5 shrink-0" /> 0872186100
-            </a>
-            <a href="mailto:wedwitherica@gmail.com" className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors" data-testid="contact-email">
-              <Mail className="w-3.5 h-3.5 shrink-0" /> wedwitherica@gmail.com
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors" data-testid="contact-instagram">
-              <Instagram className="w-3.5 h-3.5 shrink-0" /> @weddingswitherica
-            </a>
+          {/* Big heading */}
+          <div>
+            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">
+              Let's Connect
+            </span>
+            <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl text-foreground leading-[1.02]">
+              Let's Start<br />
+              <em className="not-italic text-primary">Planning</em>
+            </h1>
+            <p className="mt-5 text-foreground/60 font-light text-[1rem] leading-[1.85] max-w-sm">
+              Fill in the form and I'll come back to you within 48 hours. I can't wait to hear all about your wedding plans.
+            </p>
+          </div>
+
+          {/* Two stacked images */}
+          <div className="grid grid-cols-2 gap-3 mt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="overflow-hidden aspect-[3/4]"
+            >
+              <img
+                src={coupleImg}
+                alt="Happy couple at their wedding"
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.28 }}
+              className="overflow-hidden aspect-[3/4] mt-8"
+            >
+              <img
+                src={contactBg}
+                alt="Erica with a happy couple"
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            </motion.div>
           </div>
         </motion.div>
-      </motion.div>
 
-      {/* ── RIGHT: form panel ── */}
-      <motion.div
-        initial={{ opacity: 0, x: 24 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-        className="flex-1 flex flex-col justify-center bg-white"
-      >
-        <div className="w-full px-10 md:px-14 xl:px-20 py-16 md:py-20">
-
-          <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-2">Let's Start Planning</h3>
-          <p className="text-foreground/55 text-[0.95rem] font-light mb-10 leading-relaxed">
-            Fill in the form below and I'll be in touch within 48 hours.
+        {/* ── RIGHT: form ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+        >
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-1">
+            I'd love to hear from you!
+          </h2>
+          <p className="text-foreground/50 text-[0.95rem] font-light mb-9 leading-relaxed">
+            Every enquiry is answered personally — no automated replies here.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
 
-              <FormField control={form.control} name="name" render={({ field }) => (
+              {/* Name + Partner name */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <FormField control={form.control} name="name" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClass}>Your Name *</FormLabel>
+                    <FormControl>
+                      <Input className={fieldClass} placeholder="e.g. Jane Smith" {...field} data-testid="input-name" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+                <FormField control={form.control} name="partnerName" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClass}>Partner's Name *</FormLabel>
+                    <FormControl>
+                      <Input className={fieldClass} placeholder="e.g. John Smith" {...field} data-testid="input-partner-name" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+              </div>
+
+              {/* Email */}
+              <FormField control={form.control} name="email" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Full Name</FormLabel>
+                  <FormLabel className={labelClass}>Email *</FormLabel>
                   <FormControl>
-                    <Input className={fieldClass} placeholder="Your full name" {...field} data-testid="input-name" />
+                    <Input type="email" className={fieldClass} placeholder="Enter your email" {...field} data-testid="input-email" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )} />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <FormField control={form.control} name="email" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" className={fieldClass} placeholder="your@email.com" {...field} data-testid="input-email" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-                <FormField control={form.control} name="phone" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Phone</FormLabel>
-                    <FormControl>
-                      <Input type="tel" className={fieldClass} placeholder="+353 ..." {...field} data-testid="input-phone" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-              </div>
+              {/* Wedding Date */}
+              <FormField control={form.control} name="date" render={({ field }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel className={cn(labelClass, "mb-1")}>Wedding Date if known</FormLabel>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button variant="outline" className={cn(
+                          "w-full rounded-sm px-4 py-3 bg-[hsl(40,33%,97%)] border border-border/30 justify-start font-normal text-[1rem] hover:bg-[hsl(40,33%,95%)] h-auto focus-visible:ring-1 focus-visible:ring-primary shadow-none transition-all",
+                          !field.value && "text-foreground/30"
+                        )} data-testid="input-date">
+                          {field.value ? format(field.value, "d MMM yyyy") : "Choose date"}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-30" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0 bg-background border-border shadow-lg" align="start">
+                      <Calendar mode="single" selected={field.value} onSelect={field.onChange} initialFocus disabled={(d) => d < new Date()} />
+                    </PopoverContent>
+                  </Popover>
+                  <FormMessage />
+                </FormItem>
+              )} />
 
+              {/* Phone */}
+              <FormField control={form.control} name="phone" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className={labelClass}>Contact Number *</FormLabel>
+                  <FormControl>
+                    <Input type="tel" className={fieldClass} placeholder="Enter your phone number" {...field} data-testid="input-phone" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+
+              {/* Venue + Package side by side */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <FormField control={form.control} name="date" render={({ field }) => (
-                  <FormItem className="flex flex-col">
-                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px] mb-1">Wedding Date</FormLabel>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <FormControl>
-                          <Button variant="outline" className={cn(
-                            "w-full rounded-sm px-4 py-3 bg-[hsl(40,33%,97%)] border border-border/30 justify-start font-normal text-[1rem] hover:bg-[hsl(40,33%,95%)] h-auto focus-visible:ring-1 focus-visible:ring-primary shadow-none transition-all",
-                            !field.value && "text-foreground/30"
-                          )} data-testid="input-date">
-                            {field.value ? format(field.value, "d MMM yyyy") : "Select date"}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-30" />
-                          </Button>
-                        </FormControl>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0 bg-background border-border shadow-lg" align="start">
-                        <Calendar mode="single" selected={field.value} onSelect={field.onChange} initialFocus disabled={(d) => d < new Date()} />
-                      </PopoverContent>
-                    </Popover>
-                    <FormMessage />
-                  </FormItem>
-                )} />
                 <FormField control={form.control} name="venue" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Venue / Location</FormLabel>
+                    <FormLabel className={labelClass}>Venue Location *</FormLabel>
                     <FormControl>
-                      <Input className={fieldClass} placeholder="Venue name" {...field} data-testid="input-venue" />
+                      <Input className={fieldClass} placeholder="Venue name & area" {...field} data-testid="input-venue" />
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+                <FormField control={form.control} name="service" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClass}>Package *</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] h-auto focus:ring-1 focus:ring-primary shadow-none transition-all" data-testid="input-service">
+                          <SelectValue placeholder="Select the package you wo..." />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent className="bg-white border-border shadow-lg">
+                        <SelectItem value="power-hour">Planning Power Hour</SelectItem>
+                        <SelectItem value="signature-day">Signature Day Coordination</SelectItem>
+                        <SelectItem value="partial-planning">Partial Planning Support</SelectItem>
+                        <SelectItem value="full-planning">Full Planning + Coordination</SelectItem>
+                        <SelectItem value="unsure">Not sure yet</SelectItem>
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )} />
               </div>
 
-              <FormField control={form.control} name="service" render={({ field }) => (
+              {/* How did you hear about Erica */}
+              <FormField control={form.control} name="howHeard" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">How can I support you?</FormLabel>
+                  <FormLabel className={labelClass}>How did you hear about Erica?</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] h-auto focus:ring-1 focus:ring-primary shadow-none transition-all" data-testid="input-service">
-                        <SelectValue placeholder="Select a package..." />
+                      <SelectTrigger className="bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] h-auto focus:ring-1 focus:ring-primary shadow-none transition-all" data-testid="input-how-heard">
+                        <SelectValue placeholder="Choose your option" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent className="bg-white border-border shadow-lg">
-                      <SelectItem value="power-hour">Planning Power Hour</SelectItem>
-                      <SelectItem value="signature-day">Signature Day Coordination</SelectItem>
-                      <SelectItem value="partial-planning">Partial Planning Support</SelectItem>
-                      <SelectItem value="full-planning">Full Planning + Coordination</SelectItem>
+                      <SelectItem value="instagram">Instagram</SelectItem>
+                      <SelectItem value="google">Google Search</SelectItem>
+                      <SelectItem value="facebook">Facebook</SelectItem>
+                      <SelectItem value="referral">Friend / Family Referral</SelectItem>
+                      <SelectItem value="venue">Recommended by Venue</SelectItem>
+                      <SelectItem value="supplier">Recommended by Supplier</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
                 </FormItem>
               )} />
 
+              {/* Tell me more */}
               <FormField control={form.control} name="details" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Tell me about your plans…</FormLabel>
+                  <FormLabel className={labelClass}>Tell me a little more… *</FormLabel>
                   <FormControl>
                     <Textarea
-                      className={cn(fieldClass, "min-h-[120px] resize-none")}
-                      placeholder="Share as much or as little as you'd like…" {...field} data-testid="input-details"
+                      className={cn(fieldClass, "min-h-[130px] resize-none")}
+                      placeholder="A bit about you both, what you need and how I can help!"
+                      {...field}
+                      data-testid="input-details"
                     />
                   </FormControl>
                   <FormMessage />
@@ -211,18 +272,24 @@ export function Contact() {
               )} />
 
               <div className="pt-2">
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]" data-testid="button-submit">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]"
+                  data-testid="button-submit"
+                >
                   Send Enquiry
                 </Button>
-                <p className="text-center text-[11px] text-foreground/40 font-light mt-4">
+                <p className="text-center text-[11px] text-foreground/35 font-light mt-4">
                   I typically respond within 48 hours — I look forward to hearing from you.
                 </p>
               </div>
 
             </form>
           </Form>
-        </div>
-      </motion.div>
+        </motion.div>
+
+      </div>
     </section>
   );
 }
