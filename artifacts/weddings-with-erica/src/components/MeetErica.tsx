@@ -44,15 +44,26 @@ export function MeetErica() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-20 lg:py-24 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
-        <span className="text-[13px] uppercase tracking-[0.3em] text-primary font-sans font-medium mb-4 block">
-          Meet Erica
-        </span>
+        <motion.span
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+        >
+          Ireland's Boutique Wedding Planner
+        </motion.span>
 
-        <h2 className="font-serif text-[2rem] md:text-[2.4rem] lg:text-[2.6rem] text-foreground leading-[1.12] mb-3">
-          Planning your wedding<br />
-          <em className="not-italic text-primary">should feel exciting,</em><br />
-          not overwhelming.
-        </h2>
+        <motion.h1
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
+          className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
+        >
+          Meet<br />
+          <em className="not-italic text-primary">Erica</em>
+        </motion.h1>
 
         <p className="text-foreground/65 font-light text-[0.95rem] mb-5 max-w-md italic leading-relaxed">
           Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
