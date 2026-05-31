@@ -9,11 +9,14 @@ import TestimonialsPage from "@/pages/TestimonialsPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
 import { SocialProofToast } from "@/components/SocialProofToast";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
+    <>
+    <ScrollToTop />
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/meet-erica" component={MeetEricaPage} />
@@ -22,6 +25,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
+    </>
   );
 }
 
