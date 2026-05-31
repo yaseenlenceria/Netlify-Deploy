@@ -44,7 +44,7 @@ export function MeetErica() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
-        <span className="text-[11px] uppercase tracking-[0.3em] text-primary/55 font-sans mb-5 block">
+        <span className="text-[13px] uppercase tracking-[0.3em] text-primary font-sans font-medium mb-5 block">
           Meet Erica
         </span>
 
