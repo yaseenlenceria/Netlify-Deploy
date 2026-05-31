@@ -41,40 +41,39 @@ export function Testimonials() {
   const t = testimonials[current];
 
   const variants = {
-    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 40 : -40 }),
+    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 50 : -50 }),
     center: { opacity: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -40 : 40 }),
+    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -50 : 50 }),
   };
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-background overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 bg-background overflow-hidden">
       <div className="mx-auto px-6 md:px-10 max-w-7xl">
 
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 md:mb-16"
+          className="mb-14 md:mb-20"
         >
-          <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.28em] text-primary/60 font-sans block mb-3">
             Kind Words
           </span>
-          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-10">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground">
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-10 mb-4">
+            <h2 className="text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-serif text-foreground">
               What Couples Say
             </h2>
-            {/* 5-star badge */}
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1.5">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
+                  <Star key={i} className="w-[18px] h-[18px] fill-primary/55 text-primary/55" />
                 ))}
               </div>
-              <span className="text-[12px] text-foreground/45 font-sans font-light">5.0 · 100+ reviews</span>
+              <span className="text-[13px] text-foreground/45 font-sans font-light tracking-wide">5.0 · 100+ reviews</span>
             </div>
           </div>
-          <p className="text-foreground/50 font-light text-[1rem] mt-3 max-w-xl leading-relaxed">
+          <p className="text-foreground/50 font-light text-[1.05rem] max-w-xl leading-[1.85]">
             Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
           </p>
         </motion.div>
@@ -87,30 +86,30 @@ export function Testimonials() {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.45, ease: "easeInOut" }}
-            className="grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-10 md:gap-16 items-center"
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="grid md:grid-cols-[320px_1fr] lg:grid-cols-[400px_1fr] gap-12 md:gap-20 items-start"
           >
             {/* Photo */}
-            <div className="aspect-[3/4] w-full max-w-[280px] mx-auto md:mx-0 overflow-hidden shadow-md">
+            <div className="w-full max-w-[300px] md:max-w-none mx-auto md:mx-0 overflow-hidden shadow-lg">
               <img
                 src={t.image}
                 alt={t.author}
-                className="w-full h-full object-cover object-top"
+                className="w-full aspect-[3/4] object-cover object-top"
                 loading="lazy"
               />
             </div>
 
             {/* Quote */}
-            <div className="flex flex-col justify-center">
-              <span className="font-serif text-7xl text-primary/10 leading-none select-none mb-3">"</span>
-              <p className="text-lg md:text-xl font-serif text-foreground/80 leading-[1.75] whitespace-pre-line mb-8">
+            <div className="flex flex-col justify-center pt-2 md:pt-8">
+              <span className="font-serif text-[5rem] text-primary/12 leading-none select-none -mb-4">"</span>
+              <p className="text-[1.2rem] md:text-[1.35rem] font-serif text-foreground/78 leading-[1.78] whitespace-pre-line mb-10">
                 {t.quote}
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-px bg-primary/40" />
+              <div className="flex items-center gap-5">
+                <div className="w-10 h-px bg-primary/35" />
                 <div>
-                  <p className="text-[12px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
-                  <p className="text-[11px] text-foreground/40 font-light mt-0.5 font-sans">{t.occasion}</p>
+                  <p className="text-[12px] uppercase tracking-[0.22em] text-primary font-sans font-medium">{t.author}</p>
+                  <p className="text-[12px] text-foreground/40 font-light mt-1 font-sans tracking-wide">{t.occasion}</p>
                 </div>
               </div>
             </div>
@@ -118,44 +117,44 @@ export function Testimonials() {
         </AnimatePresence>
 
         {/* Controls */}
-        <div className="flex items-center justify-between mt-12 md:mt-14">
-          <div className="flex gap-2">
+        <div className="flex items-center justify-between mt-14 md:mt-16">
+          <div className="flex gap-2.5 items-center">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => go(i)}
-                className={`h-px transition-all duration-300 ${
-                  current === i ? "bg-primary w-8" : "bg-border w-4"
+                className={`h-[2px] rounded-full transition-all duration-300 ${
+                  current === i ? "bg-primary w-10" : "bg-border/50 w-5"
                 }`}
                 data-testid={`test-dot-${i}`}
                 aria-label={`Testimonial ${i + 1}`}
               />
             ))}
           </div>
-          <div className="flex gap-2.5">
+          <div className="flex gap-3">
             <button
               onClick={() => go(Math.max(0, current - 1))}
               disabled={current === 0}
-              className={`h-11 w-11 flex items-center justify-center border transition-all duration-200 ${
+              className={`h-12 w-12 flex items-center justify-center border transition-all duration-200 ${
                 current > 0
                   ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   : "border-border/30 text-border/40 cursor-not-allowed"
               }`}
               data-testid="test-prev"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => go(Math.min(testimonials.length - 1, current + 1))}
               disabled={current === testimonials.length - 1}
-              className={`h-11 w-11 flex items-center justify-center border transition-all duration-200 ${
+              className={`h-12 w-12 flex items-center justify-center border transition-all duration-200 ${
                 current < testimonials.length - 1
                   ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   : "border-border/30 text-border/40 cursor-not-allowed"
               }`}
               data-testid="test-next"
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
