@@ -77,8 +77,24 @@ export function Services() {
           className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-5"
         >
           <div>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-primary/75 font-sans mb-3 block">How I Can Help</span>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground mb-3">Services</h2>
+            <motion.span
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+            >
+              How I Can Help
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
+              className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-5 leading-[1.08]"
+            >
+              My <em className="not-italic text-primary">Services</em>
+            </motion.h1>
             <p className="text-foreground/70 font-light text-[1rem] max-w-md leading-relaxed">
               From complete wedding planning to on-the-day coordination — every package is tailored around you, your vision, and what you need most.
             </p>

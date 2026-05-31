@@ -57,24 +57,34 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <span className="text-[11px] uppercase tracking-[0.25em] text-primary/75 font-sans block mb-3">
+          <motion.span
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+          >
             Kind Words
-          </span>
-          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-10">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground">
-              What Couples Say
-            </h2>
-            {/* 5-star badge */}
-            <div className="flex items-center gap-2 mb-1">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
-                ))}
-              </div>
-              <span className="text-[12px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
+            className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-4 leading-[1.08]"
+          >
+            What <em className="not-italic text-primary">Couples Say</em>
+          </motion.h1>
+          {/* 5-star badge */}
+          <div className="flex items-center gap-2 mb-3">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
+              ))}
             </div>
+            <span className="text-[12px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
           </div>
-          <p className="text-foreground/70 font-light text-[1rem] mt-3 max-w-xl leading-relaxed">
+          <p className="text-foreground/70 font-light text-[1rem] max-w-xl leading-relaxed">
             Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
           </p>
         </motion.div>
