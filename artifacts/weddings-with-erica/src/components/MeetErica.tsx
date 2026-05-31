@@ -6,13 +6,41 @@ export function MeetErica() {
   return (
     <section id="meet" className="relative min-h-[calc(100dvh-76px)] flex flex-col lg:flex-row overflow-hidden bg-background">
 
-      {/* ── Left: text panel ── */}
+      {/* ── Left: two equal images ── */}
       <motion.div
         initial={{ opacity: 0, x: -28 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%]"
+        className="relative lg:w-[48%] xl:w-[52%] h-[80vw] lg:h-auto flex gap-2 md:gap-3 order-last lg:order-first"
+      >
+        <div className="flex-1 overflow-hidden">
+          <img
+            src={ericaPortrait}
+            alt="Erica Egan — Wedding Planner"
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+        <div className="flex-1 overflow-hidden">
+          <img
+            src={coupleImg}
+            alt="Happy couple at their wedding"
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+        {/* Soft right-fade into the cream text panel */}
+        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none hidden lg:block" />
+      </motion.div>
+
+      {/* ── Right: text panel ── */}
+      <motion.div
+        initial={{ opacity: 0, x: 28 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
         <span className="text-[11px] uppercase tracking-[0.3em] text-primary/55 font-sans mb-6 block">
           Meet Erica
@@ -52,37 +80,6 @@ export function MeetErica() {
         </div>
       </motion.div>
 
-      {/* ── Right: two equal images ── */}
-      <motion.div
-        initial={{ opacity: 0, x: 28 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="relative lg:w-[48%] xl:w-[52%] h-[80vw] lg:h-auto flex gap-2 md:gap-3"
-      >
-        {/* Left image */}
-        <div className="flex-1 overflow-hidden">
-          <img
-            src={ericaPortrait}
-            alt="Erica Egan — Wedding Planner"
-            className="w-full h-full object-cover object-top"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Right image */}
-        <div className="flex-1 overflow-hidden">
-          <img
-            src={coupleImg}
-            alt="Happy couple at their wedding"
-            className="w-full h-full object-cover object-top"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Soft left-fade into cream panel (desktop) */}
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none hidden lg:block" />
-      </motion.div>
     </section>
   );
 }
