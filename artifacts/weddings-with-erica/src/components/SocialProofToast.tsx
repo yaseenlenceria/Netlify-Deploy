@@ -29,31 +29,40 @@ const notifications = [
   },
 ];
 
-const SHOW_MS = 5000;
-const HIDE_MS = 9000;
+const FIRST_DELAY_MS = 10000;  // first appears after 10 seconds
+const SHOW_MS = 6000;           // visible for 6 seconds
+const PAUSE_MS = 14000;         // hidden for 14 seconds between each
 
 export function SocialProofToast() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // First appearance after 4 seconds
-    const initial = setTimeout(() => setVisible(true), 4000);
-    return () => clearTimeout(initial);
-  }, []);
+    let hideTimer: ReturnType<typeof setTimeout>;
+    let nextTimer: ReturnType<typeof setTimeout>;
 
-  useEffect(() => {
-    if (!visible) return;
-    const hideTimer = setTimeout(() => {
-      setVisible(false);
-      const nextTimer = setTimeout(() => {
-        setIndex((i) => (i + 1) % notifications.length);
-        setVisible(true);
-      }, HIDE_MS);
-      return () => clearTimeout(nextTimer);
-    }, SHOW_MS);
-    return () => clearTimeout(hideTimer);
-  }, [visible, index]);
+    const showNext = (idx: number) => {
+      setIndex(idx);
+      setVisible(true);
+
+      hideTimer = setTimeout(() => {
+        setVisible(false);
+        nextTimer = setTimeout(() => {
+          showNext((idx + 1) % notifications.length);
+        }, PAUSE_MS);
+      }, SHOW_MS);
+    };
+
+    const firstTimer = setTimeout(() => {
+      showNext(0);
+    }, FIRST_DELAY_MS);
+
+    return () => {
+      clearTimeout(firstTimer);
+      clearTimeout(hideTimer);
+      clearTimeout(nextTimer);
+    };
+  }, []);
 
   const n = notifications[index];
 
@@ -63,10 +72,10 @@ export function SocialProofToast() {
         {visible && (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 16, scale: 0.96 }}
+            initial={{ opacity: 0, y: 18, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.97 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            exit={{ opacity: 0, y: 10, scale: 0.97 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="bg-[hsl(40,33%,97%)] border border-[hsl(40,20%,88%)] shadow-lg px-4 py-3.5 flex items-center gap-3.5 max-w-[260px] pointer-events-auto"
           >
             {/* Avatar */}
@@ -78,7 +87,7 @@ export function SocialProofToast() {
 
             {/* Text */}
             <div className="min-w-0">
-              <p className="text-[12px] font-sans text-foreground/80 leading-tight truncate">
+              <p className="text-[12px] font-sans text-foreground/80 leading-tight">
                 <span className="font-medium">{n.name}</span>
                 {" "}
                 <span className="text-foreground/50">{n.action}</span>
