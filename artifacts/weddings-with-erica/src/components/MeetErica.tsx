@@ -44,21 +44,21 @@ export function MeetErica() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
-        <span className="text-[13px] uppercase tracking-[0.3em] text-primary font-sans font-medium mb-5 block">
+        <span className="text-[13px] uppercase tracking-[0.3em] text-primary font-sans font-medium mb-4 block">
           Meet Erica
         </span>
 
-        <h2 className="font-serif text-[2.4rem] md:text-5xl lg:text-[3rem] xl:text-[3.4rem] text-foreground leading-[1.08] mb-6">
+        <h2 className="font-serif text-[2rem] md:text-[2.4rem] lg:text-[2.6rem] text-foreground leading-[1.12] mb-3">
           Planning your wedding<br />
-          <em className="not-italic text-primary">should feel exciting</em><br />
-          — not overwhelming.
+          <em className="not-italic text-primary">should feel exciting,</em><br />
+          not overwhelming.
         </h2>
 
-        <p className="text-foreground/70 font-light text-[1rem] mb-6 max-w-md italic">
+        <p className="text-foreground/65 font-light text-[0.95rem] mb-5 max-w-md italic leading-relaxed">
           Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
         </p>
 
-        <div className="space-y-4 text-foreground/75 font-light leading-[1.9] text-[1.1rem] max-w-lg">
+        <div className="space-y-3 text-foreground/75 font-light leading-[1.85] text-[1rem] max-w-lg">
           <p>
             I'm Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I'll guide you through it all in a way that feels simple, supportive, and manageable.
           </p>
