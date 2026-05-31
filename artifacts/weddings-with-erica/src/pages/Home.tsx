@@ -5,6 +5,7 @@ import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import galleryImg from "@assets/IMG_8119_1780238892941.jpeg";
 
 export default function Home() {
   return (
@@ -15,11 +16,14 @@ export default function Home() {
         <MeetErica />
         <Services />
         <Testimonials />
-        <section className="w-full">
-          <img 
-            src="/images/gallery-scenic.png" 
-            alt="Beautiful wide scenic wedding shot" 
-            className="w-full h-auto max-h-[70vh] object-cover" 
+        {/* Wide scenic image break between testimonials and contact */}
+        <section className="w-full overflow-hidden" style={{ maxHeight: "65vh" }}>
+          <img
+            src={galleryImg}
+            alt="Beautiful couple on their wedding day"
+            className="w-full h-full object-cover object-center"
+            style={{ maxHeight: "65vh" }}
+            loading="lazy"
           />
         </section>
         <Contact />
