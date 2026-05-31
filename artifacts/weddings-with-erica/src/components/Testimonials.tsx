@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import emmajohnImg from "@assets/Emma_&_John_1780246115013.jpg";
@@ -62,23 +62,48 @@ const testimonials = [
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const autoTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const go = (next: number) => {
     setDirection(next > current ? 1 : -1);
     setCurrent(next);
+    // Reset auto-advance on manual interaction
+    if (autoTimer.current) clearInterval(autoTimer.current);
+    autoTimer.current = setInterval(() => {
+      setCurrent((prev) => {
+        setDirection(1);
+        return (prev + 1) % testimonials.length;
+      });
+    }, 5000);
   };
+
+  const prev = () => go(current === 0 ? testimonials.length - 1 : current - 1);
+  const next = () => go((current + 1) % testimonials.length);
 
   // Auto-advance every 5 seconds
   useEffect(() => {
-    const timer = setInterval(() => {
+    autoTimer.current = setInterval(() => {
       setCurrent((prev) => {
-        const next = (prev + 1) % testimonials.length;
         setDirection(1);
-        return next;
+        return (prev + 1) % testimonials.length;
       });
     }, 5000);
-    return () => clearInterval(timer);
+    return () => { if (autoTimer.current) clearInterval(autoTimer.current); };
   }, []);
+
+  // Touch/swipe support
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? next() : prev();
+    }
+    touchStartX.current = null;
+  };
 
   const t = testimonials[current];
 
@@ -130,80 +155,97 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={current}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.45, ease: "easeInOut" }}
-            className="grid md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr] gap-10 md:gap-16 items-start"
-          >
-            {/* Photo — square crop, per-photo position so faces stay visible */}
-            <div className="w-full max-w-[320px] mx-auto md:mx-0 overflow-hidden shadow-md aspect-square">
-              <img
-                src={t.image}
-                alt={t.author}
-                className={`w-full h-full object-cover ${t.imgPosition}`}
-                loading="lazy"
-              />
-            </div>
+        {/* Carousel — swipeable */}
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+              className="grid md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr] gap-8 md:gap-16 items-start"
+            >
+              {/* Left: Photo + controls (mobile-first so controls are always near the top) */}
+              <div className="flex flex-col gap-4">
+                {/* Photo */}
+                <div className="w-full max-w-[320px] mx-auto md:mx-0 overflow-hidden shadow-md aspect-square">
+                  <img
+                    src={t.image}
+                    alt={t.author}
+                    className={`w-full h-full object-cover ${t.imgPosition}`}
+                    loading="lazy"
+                  />
+                </div>
 
-            {/* Quote */}
-            <div className="flex flex-col justify-center">
-              <span className="font-serif text-7xl text-primary/10 leading-none select-none mb-3">"</span>
-              <p className="text-lg md:text-xl font-serif text-foreground/80 leading-[1.75] whitespace-pre-line mb-8">
-                {t.quote}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-px bg-primary/40" />
-                <div>
-                  <p className="text-[14px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
-                  <p className="text-[13px] text-foreground/50 font-light mt-0.5 font-sans">{t.occasion}</p>
+                {/* Author + navigation — right below the photo on mobile */}
+                <div className="flex items-center justify-between max-w-[320px] mx-auto md:mx-0 w-full">
+                  {/* Author */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-px bg-primary/40" />
+                    <div>
+                      <p className="text-[13px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
+                      <p className="text-[12px] text-foreground/50 font-light font-sans">{t.occasion}</p>
+                    </div>
+                  </div>
+
+                  {/* Prev/Next arrows — always visible next to author */}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={prev}
+                      className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 active:scale-95"
+                      data-testid="test-prev"
+                      aria-label="Previous testimonial"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={next}
+                      className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 active:scale-95"
+                      data-testid="test-next"
+                      aria-label="Next testimonial"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Dot indicators */}
+                <div className="flex gap-2 items-center max-w-[320px] mx-auto md:mx-0">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => go(i)}
+                      className={`h-[2px] rounded-full transition-all duration-500 ${
+                        current === i ? "bg-primary w-8" : "bg-border w-4"
+                      }`}
+                      data-testid={`test-dot-${i}`}
+                      aria-label={`Testimonial ${i + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
 
-        {/* Controls */}
-        <div className="flex items-center justify-between mt-12 md:mt-14">
-          {/* Dot indicators — clickable, active one animates width */}
-          <div className="flex gap-2 items-center">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => go(i)}
-                className={`h-[2px] rounded-full transition-all duration-500 ${
-                  current === i ? "bg-primary w-8" : "bg-border w-4"
-                }`}
-                data-testid={`test-dot-${i}`}
-                aria-label={`Testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          <div className="flex gap-2.5">
-            <button
-              onClick={() => go(current === 0 ? testimonials.length - 1 : current - 1)}
-              className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-              data-testid="test-prev"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => go((current + 1) % testimonials.length)}
-              className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-              data-testid="test-next"
-              aria-label="Next"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
+              {/* Right: Quote */}
+              <div className="flex flex-col justify-center">
+                <span className="font-serif text-7xl text-primary/10 leading-none select-none mb-3">"</span>
+                <p className="text-lg md:text-xl font-serif text-foreground/80 leading-[1.75] whitespace-pre-line">
+                  {t.quote}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
+
+        {/* Swipe hint — mobile only */}
+        <p className="mt-6 text-center text-[12px] text-foreground/35 font-light font-sans md:hidden">
+          Swipe left or right to read more
+        </p>
       </div>
     </section>
   );
