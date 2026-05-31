@@ -100,7 +100,7 @@ export function Contact() {
         className="flex-1 flex flex-col justify-center bg-white"
       >
         {/* Inner wrapper — constrained width with generous horizontal padding */}
-        <div className="w-full max-w-[560px] mx-auto px-8 md:px-12 xl:px-16 py-16 md:py-20">
+        <div className="w-full px-10 md:px-14 xl:px-20 py-16 md:py-20">
 
           <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-2">Let's Start Planning</h3>
           <p className="text-foreground/45 text-[0.95rem] font-light mb-10 leading-relaxed">
