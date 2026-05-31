@@ -54,11 +54,11 @@ export function MeetErica() {
           — not overwhelming.
         </h2>
 
-        <p className="text-foreground/50 font-light text-[0.95rem] mb-6 max-w-md italic">
+        <p className="text-foreground/70 font-light text-[1rem] mb-6 max-w-md italic">
           Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
         </p>
 
-        <div className="space-y-4 text-foreground/60 font-light leading-[1.9] text-[1.05rem] max-w-lg">
+        <div className="space-y-4 text-foreground/75 font-light leading-[1.9] text-[1.1rem] max-w-lg">
           <p>
             I'm Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I'll guide you through it all in a way that feels simple, supportive, and manageable.
           </p>
