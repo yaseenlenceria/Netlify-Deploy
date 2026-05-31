@@ -61,8 +61,7 @@ export function MeetErica() {
           transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
           className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
         >
-          Meet<br />
-          <em className="not-italic text-primary">Erica</em>
+          Meet <em className="not-italic text-primary">Erica</em>
         </motion.h1>
 
         <p className="text-foreground/65 font-light text-[0.95rem] mb-5 max-w-md italic leading-relaxed">
