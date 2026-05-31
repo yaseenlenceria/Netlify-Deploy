@@ -25,7 +25,7 @@ export function Hero() {
           fetchPriority="high"
         />
         {/* Dark sage-green gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(90,25%,12%)]/30 via-[hsl(90,25%,10%)]/55 to-[hsl(90,25%,8%)]/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(90,25%,8%)]/50 via-[hsl(90,25%,6%)]/70 to-[hsl(90,25%,5%)]/92" />
       </div>
 
       {/* Left: text panel */}
