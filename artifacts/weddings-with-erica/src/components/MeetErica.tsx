@@ -42,7 +42,7 @@ export function MeetErica() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
+        className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-20 lg:py-24 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
         <span className="text-[13px] uppercase tracking-[0.3em] text-primary font-sans font-medium mb-4 block">
           Meet Erica
