@@ -21,11 +21,11 @@ export function Hero() {
         <img
           src={heroBg}
           alt="Beautiful wedding couple walking together through a castle gate"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[center_55%]"
           fetchPriority="high"
         />
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-black/75" />
+        {/* Dark sage-green gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(90,25%,12%)]/30 via-[hsl(90,25%,10%)]/55 to-[hsl(90,25%,8%)]/85" />
       </div>
 
       {/* Left: text panel */}
