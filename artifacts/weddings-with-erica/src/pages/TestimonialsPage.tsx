@@ -1,13 +1,13 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
+import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Navigation />
-      <main>
-        <Hero />
+      <main className="pt-[76px]">
+        <Testimonials />
       </main>
       <Footer />
     </div>

@@ -4,79 +4,111 @@ import coupleImg from "@assets/meet_erica_3_1780239389447.png";
 
 export function MeetErica() {
   return (
-    <section id="meet" className="py-20 md:py-28 bg-background overflow-hidden">
-      <div className="mx-auto px-6 md:px-10 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
+    <section id="meet" className="relative min-h-[calc(100dvh-76px)] flex flex-col lg:flex-row overflow-hidden bg-background">
 
-          {/* Images */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.85 }}
-            className="relative flex gap-3 md:gap-4 items-end order-last md:order-first"
-          >
-            <div className="w-[57%] aspect-[3/4] overflow-hidden shadow-md">
-              <img
-                src={ericaPortrait}
-                alt="Erica Egan — Wedding Planner"
-                className="w-full h-full object-cover object-top"
-                loading="lazy"
-              />
-            </div>
-            <div className="w-[40%] aspect-[2/3] overflow-hidden shadow-md mb-10">
-              <img
-                src={coupleImg}
-                alt="Happy couple on their wedding day"
-                className="w-full h-full object-cover object-top"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute -bottom-5 -left-5 w-24 h-24 border border-primary/15 -z-10 hidden md:block" />
-          </motion.div>
+      {/* ── Left: text panel ── */}
+      <motion.div
+        initial={{ opacity: 0, x: -28 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%]"
+      >
+        <motion.span
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-[11px] uppercase tracking-[0.3em] text-primary/55 font-sans mb-6 block"
+        >
+          Meet Erica
+        </motion.span>
 
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.85, delay: 0.12 }}
-          >
-            <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 mb-5 font-sans block">Meet Erica</span>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.7rem] font-serif text-foreground mb-7 leading-[1.2]">
-              Planning your wedding should feel exciting — not overwhelming.
-            </h2>
-            <div className="space-y-4 text-foreground/65 font-light leading-[1.85] text-[1.0rem]">
-              <p>
-                I'm Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I'll guide you through it all in a way that feels simple, supportive, and manageable.
-              </p>
-              <p>
-                I know how important it is to feel fully present on your wedding day — not worrying about timelines, suppliers, or what's happening behind the scenes. That's where I come in.
-              </p>
-              <p>
-                From the lead-up to the final dance, I'm there making sure everything flows seamlessly, everything is handled, and nothing falls back on you — so you can relax and truly enjoy every moment.
-              </p>
-            </div>
-            <p className="mt-7 text-primary font-serif text-xl leading-relaxed italic">
-              Think of me as the calm, organised presence in your corner… making sure your wedding feels as good as it looks.
-            </p>
+        <motion.h1
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+          className="font-serif text-[2.6rem] md:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] text-foreground leading-[1.08] mb-8"
+        >
+          Planning your wedding<br />
+          <em className="not-italic text-primary">should feel exciting</em><br />
+          — not overwhelming.
+        </motion.h1>
 
-            {/* Stats */}
-            <div className="mt-9 pt-8 border-t border-border/40 grid grid-cols-3 gap-4 text-center">
-              {[
-                { stat: "100+", label: "Weddings" },
-                { stat: "5★", label: "Rating" },
-                { stat: "10+", label: "Years" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="font-serif text-2xl md:text-3xl text-primary mb-1">{item.stat}</p>
-                  <p className="text-[10px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
-                </div>
-              ))}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="space-y-4 text-foreground/60 font-light leading-[1.9] text-[1.05rem] max-w-lg"
+        >
+          <p>
+            I'm Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I'll guide you through it all in a way that feels simple, supportive, and manageable.
+          </p>
+          <p>
+            I know how important it is to feel fully present on your wedding day — not worrying about timelines, suppliers, or what's happening behind the scenes. That's where I come in.
+          </p>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-7 text-primary font-serif text-xl xl:text-2xl leading-relaxed italic max-w-md"
+        >
+          Think of me as the calm, organised presence in your corner — making sure your wedding feels as good as it looks.
+        </motion.p>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.85 }}
+          className="mt-10 pt-8 border-t border-border/35 grid grid-cols-3 gap-6 max-w-sm"
+        >
+          {[
+            { stat: "100+", label: "Weddings" },
+            { stat: "5★", label: "Rating" },
+            { stat: "10+", label: "Years" },
+          ].map((item) => (
+            <div key={item.label}>
+              <p className="font-serif text-3xl text-primary mb-1">{item.stat}</p>
+              <p className="text-[11px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
             </div>
-          </motion.div>
-        </div>
-      </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* ── Right: editorial image composition ── */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.04 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+        className="relative lg:w-[48%] xl:w-[52%] h-[60vw] lg:h-auto"
+      >
+        {/* Main portrait — fills the entire right panel */}
+        <img
+          src={ericaPortrait}
+          alt="Erica Egan — Wedding Planner"
+          className="w-full h-full object-cover object-top"
+          fetchPriority="high"
+        />
+
+        {/* Couple image — floated bottom-left as an accent */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.6, ease: "easeOut" }}
+          className="absolute bottom-8 left-0 lg:-left-12 xl:-left-16 w-[42%] max-w-[220px] shadow-2xl overflow-hidden border-4 border-background"
+        >
+          <img
+            src={coupleImg}
+            alt="Happy couple at their wedding"
+            className="w-full aspect-[3/4] object-cover object-top"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* Soft left-fade into the cream text panel (desktop only) */}
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none hidden lg:block" />
+      </motion.div>
     </section>
   );
 }

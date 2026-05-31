@@ -1,13 +1,13 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
+import { MeetErica } from "@/components/MeetErica";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function MeetEricaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Navigation />
-      <main>
-        <Hero />
+      <main className="pt-[76px]">
+        <MeetErica />
       </main>
       <Footer />
     </div>
