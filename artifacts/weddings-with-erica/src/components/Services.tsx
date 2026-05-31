@@ -73,14 +73,14 @@ export function Services() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-5"
         >
           <div>
             <motion.span
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
             >
@@ -89,7 +89,7 @@ export function Services() {
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
               className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-5 leading-[1.08]"
             >
@@ -193,7 +193,7 @@ export function Services() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center text-foreground/60 font-light text-[0.9rem] mt-10 font-sans"
         >
           Not sure which package is right for you?{" "}

@@ -52,7 +52,7 @@ export function Contact() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 1 }}
         className="relative lg:w-[42%] xl:w-[44%] h-[65vw] lg:h-auto min-h-[420px] overflow-hidden shrink-0"
       >
@@ -67,7 +67,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="absolute bottom-0 left-0 right-0 p-8 md:p-12"
         >
@@ -98,7 +98,7 @@ export function Contact() {
       <motion.div
         initial={{ opacity: 0, x: 24 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.8, delay: 0.15 }}
         className="flex-1 flex flex-col justify-center bg-white"
       >

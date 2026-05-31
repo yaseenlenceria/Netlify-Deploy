@@ -13,7 +13,7 @@ export function MeetErica() {
       <motion.div
         initial={{ opacity: 0, x: -28 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative lg:w-[48%] xl:w-[52%] h-[80vw] lg:h-auto flex gap-2 md:gap-3 order-last lg:order-first"
       >
@@ -40,14 +40,14 @@ export function MeetErica() {
       <motion.div
         initial={{ opacity: 0, x: 28 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-20 lg:py-24 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
         <motion.span
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
         >
@@ -57,7 +57,7 @@ export function MeetErica() {
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
           className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
         >

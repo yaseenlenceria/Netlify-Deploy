@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { MeetErica } from "@/components/MeetErica";
+import { EricaApproach } from "@/components/EricaApproach";
 import { Footer } from "@/components/Footer";
 
 export default function MeetEricaPage() {
@@ -8,6 +9,7 @@ export default function MeetEricaPage() {
       <Navigation />
       <main className="pt-[76px]">
         <MeetErica />
+        <EricaApproach />
       </main>
       <Footer />
     </div>

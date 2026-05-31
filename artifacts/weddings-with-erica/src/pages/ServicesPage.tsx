@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Services } from "@/components/Services";
+import { ServicesProcess } from "@/components/ServicesProcess";
 import { Footer } from "@/components/Footer";
 
 export default function ServicesPage() {
@@ -8,6 +9,7 @@ export default function ServicesPage() {
       <Navigation />
       <main className="pt-[76px]">
         <Services />
+        <ServicesProcess />
       </main>
       <Footer />
     </div>

@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Testimonials } from "@/components/Testimonials";
+import { TestimonialsCTA } from "@/components/TestimonialsCTA";
 import { Footer } from "@/components/Footer";
 
 export default function TestimonialsPage() {
@@ -8,6 +9,7 @@ export default function TestimonialsPage() {
       <Navigation />
       <main className="pt-[76px]">
         <Testimonials />
+        <TestimonialsCTA />
       </main>
       <Footer />
     </div>
