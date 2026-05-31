@@ -77,9 +77,9 @@ export function Services() {
           className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-5"
         >
           <div>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans mb-3 block">How I Can Help</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-primary/75 font-sans mb-3 block">How I Can Help</span>
             <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground mb-3">Services</h2>
-            <p className="text-foreground/55 font-light text-[1rem] max-w-md leading-relaxed">
+            <p className="text-foreground/70 font-light text-[1rem] max-w-md leading-relaxed">
               From complete wedding planning to on-the-day coordination — every package is tailored around you, your vision, and what you need most.
             </p>
           </div>
@@ -142,7 +142,7 @@ export function Services() {
                     </span>
                   )}
                   <h3 className="text-xl md:text-2xl font-serif text-foreground mb-4 leading-snug">{service.title}</h3>
-                  <div className="text-foreground/60 font-light text-[0.95rem] leading-[1.85] whitespace-pre-line flex-grow">
+                  <div className="text-foreground/75 font-light text-[0.95rem] leading-[1.85] whitespace-pre-line flex-grow">
                     {service.description}
                   </div>
                   <button
@@ -178,7 +178,7 @@ export function Services() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-foreground/40 font-light text-[0.9rem] mt-10 font-sans"
+          className="text-center text-foreground/60 font-light text-[0.9rem] mt-10 font-sans"
         >
           Not sure which package is right for you?{" "}
           <button onClick={() => navigate("/contact")} className="text-primary underline underline-offset-4 hover:text-primary/70 transition-colors">

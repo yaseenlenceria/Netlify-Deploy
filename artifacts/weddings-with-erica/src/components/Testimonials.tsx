@@ -57,7 +57,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans block mb-3">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-primary/75 font-sans block mb-3">
             Kind Words
           </span>
           <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-10">
@@ -71,10 +71,10 @@ export function Testimonials() {
                   <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
                 ))}
               </div>
-              <span className="text-[12px] text-foreground/45 font-sans font-light">5.0 · 100+ reviews</span>
+              <span className="text-[12px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
             </div>
           </div>
-          <p className="text-foreground/50 font-light text-[1rem] mt-3 max-w-xl leading-relaxed">
+          <p className="text-foreground/70 font-light text-[1rem] mt-3 max-w-xl leading-relaxed">
             Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
           </p>
         </motion.div>
