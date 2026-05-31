@@ -62,7 +62,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+            className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
           >
             Kind Words
           </motion.span>
@@ -82,7 +82,7 @@ export function Testimonials() {
                 <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
               ))}
             </div>
-            <span className="text-[12px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
+            <span className="text-[14px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
           </div>
           <p className="text-foreground/70 font-light text-[1rem] max-w-xl leading-relaxed">
             Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
@@ -119,8 +119,8 @@ export function Testimonials() {
               <div className="flex items-center gap-4">
                 <div className="w-8 h-px bg-primary/40" />
                 <div>
-                  <p className="text-[12px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
-                  <p className="text-[11px] text-foreground/40 font-light mt-0.5 font-sans">{t.occasion}</p>
+                  <p className="text-[14px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
+                  <p className="text-[13px] text-foreground/40 font-light mt-0.5 font-sans">{t.occasion}</p>
                 </div>
               </div>
             </div>

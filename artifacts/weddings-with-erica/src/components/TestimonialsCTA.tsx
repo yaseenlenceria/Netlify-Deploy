@@ -41,7 +41,7 @@ export function TestimonialsCTA() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Their Words</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Their Words</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
               Moments that <em className="not-italic text-primary">stay with you</em>
             </h2>
@@ -73,8 +73,8 @@ export function TestimonialsCTA() {
                   <div className="flex items-center gap-3">
                     <div className="w-5 h-px bg-primary/40" />
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.2em] text-primary font-sans">{h.author}</p>
-                      <p className="text-[11px] text-foreground/45 font-light font-sans mt-0.5">{h.occasion}</p>
+                      <p className="text-[13px] uppercase tracking-[0.2em] text-primary font-sans">{h.author}</p>
+                      <p className="text-[13px] text-foreground/45 font-light font-sans mt-0.5">{h.occasion}</p>
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export function TestimonialsCTA() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto px-6 max-w-2xl text-center"
         >
-          <span className="text-[11px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Your Turn</span>
+          <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Your Turn</span>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.1] mb-6">
             Ready to write your<br />
             <em className="not-italic text-primary/80">own story?</em>
@@ -105,7 +105,7 @@ export function TestimonialsCTA() {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-primary text-primary-foreground px-12 py-4 text-[12px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+            className="bg-primary text-primary-foreground px-12 py-4 text-[14px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
           >
             Start Planning
           </button>

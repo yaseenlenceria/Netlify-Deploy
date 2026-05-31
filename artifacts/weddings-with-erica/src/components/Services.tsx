@@ -82,7 +82,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+              className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
             >
               How I Can Help
             </motion.span>
@@ -153,17 +153,17 @@ export function Services() {
                 </div>
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
                   {service.tag && (
-                    <span className="text-[10px] uppercase tracking-widest text-primary/80 font-sans mb-3 inline-block">
+                    <span className="text-[13px] uppercase tracking-widest text-primary/80 font-sans mb-3 inline-block">
                       — {service.tag}
                     </span>
                   )}
                   <h3 className="text-xl md:text-2xl font-serif text-foreground mb-4 leading-snug">{service.title}</h3>
-                  <div className="text-foreground/75 font-light text-[0.95rem] leading-[1.85] whitespace-pre-line flex-grow">
+                  <div className="text-foreground/75 font-light text-[1.05rem] leading-[1.85] whitespace-pre-line flex-grow">
                     {service.description}
                   </div>
                   <button
                     onClick={() => navigate("/contact")}
-                    className="mt-7 text-[11px] uppercase tracking-widest text-primary border-b border-primary/30 hover:border-primary pb-0.5 self-start transition-colors duration-200 font-sans"
+                    className="mt-7 text-[13px] uppercase tracking-widest text-primary border-b border-primary/30 hover:border-primary pb-0.5 self-start transition-colors duration-200 font-sans"
                     data-testid={`service-enquire-${i}`}
                   >
                     Enquire
@@ -194,7 +194,7 @@ export function Services() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="text-center text-foreground/60 font-light text-[0.9rem] mt-10 font-sans"
+          className="text-center text-foreground/60 font-light text-[1rem] mt-10 font-sans"
         >
           Not sure which package is right for you?{" "}
           <button onClick={() => navigate("/contact")} className="text-primary underline underline-offset-4 hover:text-primary/70 transition-colors">

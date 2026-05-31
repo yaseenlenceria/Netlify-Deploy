@@ -34,7 +34,7 @@ const fieldClass =
   "bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] text-foreground placeholder:text-foreground/30 focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary transition-all shadow-none";
 
 const labelClass =
-  "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]";
+  "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[13px]";
 
 export function Contact() {
   const { toast } = useToast();
@@ -68,7 +68,7 @@ export function Contact() {
         >
           {/* Big heading */}
           <div>
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">
               Let's Connect
             </span>
             <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl text-foreground leading-[1.02]">
@@ -123,7 +123,7 @@ export function Contact() {
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-1">
             I'd love to hear from you!
           </h2>
-          <p className="text-foreground/50 text-[0.95rem] font-light mb-9 leading-relaxed">
+          <p className="text-foreground/50 text-[1.05rem] font-light mb-9 leading-relaxed">
             Every enquiry is answered personally — no automated replies here.
           </p>
 
@@ -280,7 +280,7 @@ export function Contact() {
                 >
                   Send Enquiry
                 </Button>
-                <p className="text-center text-[11px] text-foreground/35 font-light mt-4">
+                <p className="text-center text-[13px] text-foreground/35 font-light mt-4">
                   I typically respond within 48 hours — I look forward to hearing from you.
                 </p>
               </div>

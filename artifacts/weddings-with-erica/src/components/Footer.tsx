@@ -54,7 +54,7 @@ export function Footer() {
 
         {/* Navigation */}
         <div className="flex flex-col gap-4">
-          <p className="text-[12px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Navigation</p>
+          <p className="text-[14px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Navigation</p>
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -68,7 +68,7 @@ export function Footer() {
 
         {/* Services + Contact */}
         <div className="flex flex-col gap-4">
-          <p className="text-[12px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Services</p>
+          <p className="text-[14px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Services</p>
           {services.map((s) => (
             <button
               key={s}

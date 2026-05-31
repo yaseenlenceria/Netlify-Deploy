@@ -53,7 +53,7 @@ export function EricaApproach() {
               viewport={{ once: false, margin: "-80px" }}
               transition={{ duration: 0.9, ease: "easeOut" }}
             >
-              <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">My Philosophy</span>
+              <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">My Philosophy</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1] mb-8">
                 Weddings should feel<br />
                 <em className="not-italic text-primary">joyful, not stressful.</em>
@@ -106,7 +106,7 @@ export function EricaApproach() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">What I Bring</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">What I Bring</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
               Why couples choose <em className="not-italic text-primary">Erica</em>
             </h2>
@@ -124,7 +124,7 @@ export function EricaApproach() {
               >
                 <v.icon className="w-6 h-6 text-primary/70" />
                 <h3 className="font-serif text-xl text-foreground">{v.title}</h3>
-                <p className="text-foreground/65 font-light text-[0.95rem] leading-[1.8]">{v.body}</p>
+                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{v.body}</p>
               </motion.div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export function EricaApproach() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">The Journey</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">The Journey</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
               What working with me<br />
               <em className="not-italic text-primary">looks like</em>
@@ -161,7 +161,7 @@ export function EricaApproach() {
                 <span className="font-serif text-5xl text-primary/20 mb-4 leading-none">{step.number}</span>
                 <div className="w-8 h-px bg-primary/40 mb-5" />
                 <h3 className="font-serif text-xl text-foreground mb-3">{step.title}</h3>
-                <p className="text-foreground/65 font-light text-[0.95rem] leading-[1.8]">{step.description}</p>
+                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -183,7 +183,7 @@ export function EricaApproach() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto px-6 max-w-2xl text-center"
         >
-          <span className="text-[11px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Ready to Begin?</span>
+          <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Ready to Begin?</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[1.08] mb-6">
             Let's plan your<br />
             <em className="not-italic text-primary/80">perfect day</em>
@@ -193,7 +193,7 @@ export function EricaApproach() {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-primary text-primary-foreground px-12 py-4 text-[12px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+            className="bg-primary text-primary-foreground px-12 py-4 text-[14px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
           >
             Get in Touch
           </button>

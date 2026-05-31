@@ -26,7 +26,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-[11px] uppercase tracking-[0.28em] text-primary/60 mb-5 font-sans"
+          className="text-[13px] uppercase tracking-[0.28em] text-primary/60 mb-5 font-sans"
         >
           Ireland's Boutique Wedding Planner
         </motion.span>
@@ -58,7 +58,7 @@ export function Hero() {
           className="flex flex-col gap-2.5 mb-9"
         >
           {promises.map((p) => (
-            <li key={p} className="flex items-center gap-2.5 text-[0.9rem] text-foreground/70 font-light">
+            <li key={p} className="flex items-center gap-2.5 text-[1rem] text-foreground/70 font-light">
               <CheckCircle2 className="w-3.5 h-3.5 text-primary/60 shrink-0" />
               {p}
             </li>
@@ -95,7 +95,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-12 pt-7 border-t border-border/40 flex items-center gap-6 text-[11px] uppercase tracking-widest text-foreground/55 font-sans"
+          className="mt-12 pt-7 border-t border-border/40 flex items-center gap-6 text-[13px] uppercase tracking-widest text-foreground/55 font-sans"
         >
           <span>Ireland</span>
           <span className="w-px h-3 bg-border/60" />

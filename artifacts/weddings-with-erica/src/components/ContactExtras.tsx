@@ -55,7 +55,7 @@ export function ContactExtras() {
               viewport={{ once: false }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
             >
-              <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Why Erica</span>
+              <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Why Erica</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1] mb-8">
                 You're not just a<br />
                 booking to me.
@@ -79,7 +79,7 @@ export function ContactExtras() {
                     </div>
                     <div>
                       <h3 className="font-serif text-lg text-foreground mb-1">{p.title}</h3>
-                      <p className="text-foreground/65 font-light text-[0.95rem] leading-[1.8]">{p.body}</p>
+                      <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{p.body}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -87,7 +87,7 @@ export function ContactExtras() {
 
               <button
                 onClick={() => navigate("/meet-erica")}
-                className="mt-10 text-primary border border-primary/30 px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:border-primary/60 transition-colors font-sans"
+                className="mt-10 text-primary border border-primary/30 px-8 py-3.5 text-[14px] uppercase tracking-[0.2em] hover:border-primary/60 transition-colors font-sans"
               >
                 More About Erica
               </button>

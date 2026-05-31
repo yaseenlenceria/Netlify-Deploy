@@ -49,7 +49,7 @@ export function MeetErica() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
+          className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
         >
           Ireland's Boutique Wedding Planner
         </motion.span>
@@ -64,7 +64,7 @@ export function MeetErica() {
           Meet <em className="not-italic text-primary">Erica</em>
         </motion.h1>
 
-        <p className="text-foreground/65 font-light text-[0.95rem] mb-5 max-w-md italic leading-relaxed">
+        <p className="text-foreground/65 font-light text-[1.05rem] mb-5 max-w-md italic leading-relaxed">
           Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
         </p>
 
@@ -90,7 +90,7 @@ export function MeetErica() {
           ].map((item) => (
             <div key={item.label}>
               <p className="font-serif text-3xl text-primary mb-1">{item.stat}</p>
-              <p className="text-[11px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
+              <p className="text-[13px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
             </div>
           ))}
         </div>

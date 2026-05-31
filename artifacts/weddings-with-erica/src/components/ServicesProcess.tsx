@@ -63,7 +63,7 @@ export function ServicesProcess() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">The Process</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">The Process</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
               How it <em className="not-italic text-primary">works</em>
             </h2>
@@ -85,7 +85,7 @@ export function ServicesProcess() {
                 <span className="font-serif text-5xl text-primary/20 mb-4 leading-none">{step.number}</span>
                 <div className="w-8 h-px bg-primary/40 mb-5" />
                 <h3 className="font-serif text-xl text-foreground mb-3">{step.title}</h3>
-                <p className="text-foreground/65 font-light text-[0.95rem] leading-[1.8]">{step.description}</p>
+                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -102,7 +102,7 @@ export function ServicesProcess() {
             transition={{ duration: 0.7 }}
             className="mb-12"
           >
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Questions</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Questions</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
               Frequently <em className="not-italic text-primary">asked</em>
             </h2>
@@ -119,7 +119,7 @@ export function ServicesProcess() {
                 className="bg-white p-8 border border-border/20"
               >
                 <h3 className="font-serif text-lg text-foreground mb-3">{faq.q}</h3>
-                <p className="text-foreground/65 font-light text-[0.95rem] leading-[1.8]">{faq.a}</p>
+                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{faq.a}</p>
               </motion.div>
             ))}
           </div>
@@ -137,7 +137,7 @@ export function ServicesProcess() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto px-6 max-w-2xl text-center"
         >
-          <span className="text-[11px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Not Sure Where to Start?</span>
+          <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Not Sure Where to Start?</span>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.1] mb-6">
             Let's figure it out <em className="not-italic text-primary/80">together</em>
           </h2>
@@ -146,7 +146,7 @@ export function ServicesProcess() {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-primary text-primary-foreground px-12 py-4 text-[12px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+            className="bg-primary text-primary-foreground px-12 py-4 text-[14px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
           >
             Enquire Now
           </button>
