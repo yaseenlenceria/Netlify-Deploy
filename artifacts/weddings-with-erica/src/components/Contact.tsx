@@ -27,6 +27,9 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+const fieldClass =
+  "bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] text-foreground placeholder:text-foreground/30 focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary transition-all shadow-none";
+
 export function Contact() {
   const { toast } = useToast();
   const form = useForm<FormValues>({
@@ -91,7 +94,7 @@ export function Contact() {
         </motion.div>
       </motion.div>
 
-      {/* ── RIGHT: form on pure white ── */}
+      {/* ── RIGHT: form panel ── */}
       <motion.div
         initial={{ opacity: 0, x: 24 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -99,67 +102,57 @@ export function Contact() {
         transition={{ duration: 0.8, delay: 0.15 }}
         className="flex-1 flex flex-col justify-center bg-white"
       >
-        {/* Inner wrapper — constrained width with generous horizontal padding */}
         <div className="w-full px-10 md:px-14 xl:px-20 py-16 md:py-20">
 
           <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-2">Let's Start Planning</h3>
-          <p className="text-foreground/45 text-[0.95rem] font-light mb-10 leading-relaxed">
+          <p className="text-foreground/55 text-[0.95rem] font-light mb-10 leading-relaxed">
             Fill in the form below and I'll be in touch within 48 hours.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 
               <FormField control={form.control} name="name" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Full Name</FormLabel>
+                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Full Name</FormLabel>
                   <FormControl>
-                    <Input
-                      className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
-                      placeholder="Your full name" {...field} data-testid="input-name"
-                    />
+                    <Input className={fieldClass} placeholder="Your full name" {...field} data-testid="input-name" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )} />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FormField control={form.control} name="email" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Email</FormLabel>
+                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Email</FormLabel>
                     <FormControl>
-                      <Input type="email"
-                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
-                        placeholder="your@email.com" {...field} data-testid="input-email"
-                      />
+                      <Input type="email" className={fieldClass} placeholder="your@email.com" {...field} data-testid="input-email" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
                 <FormField control={form.control} name="phone" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Phone</FormLabel>
+                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Phone</FormLabel>
                     <FormControl>
-                      <Input type="tel"
-                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
-                        placeholder="+353 ..." {...field} data-testid="input-phone"
-                      />
+                      <Input type="tel" className={fieldClass} placeholder="+353 ..." {...field} data-testid="input-phone" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FormField control={form.control} name="date" render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px] mb-1">Wedding Date</FormLabel>
+                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px] mb-1">Wedding Date</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
                           <Button variant="outline" className={cn(
-                            "w-full border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 bg-transparent justify-start font-normal text-[1rem] hover:bg-transparent h-auto focus-visible:ring-0 focus-visible:border-primary shadow-none transition-colors",
-                            !field.value && "text-foreground/25"
+                            "w-full rounded-sm px-4 py-3 bg-[hsl(40,33%,97%)] border border-border/30 justify-start font-normal text-[1rem] hover:bg-[hsl(40,33%,95%)] h-auto focus-visible:ring-1 focus-visible:ring-primary shadow-none transition-all",
+                            !field.value && "text-foreground/30"
                           )} data-testid="input-date">
                             {field.value ? format(field.value, "d MMM yyyy") : "Select date"}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-30" />
@@ -175,12 +168,9 @@ export function Contact() {
                 )} />
                 <FormField control={form.control} name="venue" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Venue / Location</FormLabel>
+                    <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Venue / Location</FormLabel>
                     <FormControl>
-                      <Input
-                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
-                        placeholder="Venue name" {...field} data-testid="input-venue"
-                      />
+                      <Input className={fieldClass} placeholder="Venue name" {...field} data-testid="input-venue" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -189,10 +179,10 @@ export function Contact() {
 
               <FormField control={form.control} name="service" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">How can I support you?</FormLabel>
+                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">How can I support you?</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus:ring-0 focus:border-primary bg-transparent text-[1rem] h-auto shadow-none transition-colors" data-testid="input-service">
+                      <SelectTrigger className="bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] h-auto focus:ring-1 focus:ring-primary shadow-none transition-all" data-testid="input-service">
                         <SelectValue placeholder="Select a package..." />
                       </SelectTrigger>
                     </FormControl>
@@ -209,10 +199,10 @@ export function Contact() {
 
               <FormField control={form.control} name="details" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Tell me about your plans…</FormLabel>
+                  <FormLabel className="text-foreground/60 font-sans font-medium uppercase tracking-widest text-[11px]">Tell me about your plans…</FormLabel>
                   <FormControl>
                     <Textarea
-                      className="min-h-[110px] border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent resize-none text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                      className={cn(fieldClass, "min-h-[120px] resize-none")}
                       placeholder="Share as much or as little as you'd like…" {...field} data-testid="input-details"
                     />
                   </FormControl>
@@ -224,7 +214,7 @@ export function Contact() {
                 <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]" data-testid="button-submit">
                   Send Enquiry
                 </Button>
-                <p className="text-center text-[11px] text-foreground/30 font-light mt-4">
+                <p className="text-center text-[11px] text-foreground/40 font-light mt-4">
                   I typically respond within 48 hours — I look forward to hearing from you.
                 </p>
               </div>

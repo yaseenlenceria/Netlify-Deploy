@@ -45,7 +45,7 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => go(link.href)}
-                className="text-[13px] tracking-[0.08em] text-foreground/55 hover:text-primary transition-colors duration-200 font-sans"
+                className="text-[15px] tracking-[0.05em] text-foreground/65 hover:text-primary transition-colors duration-200 font-sans"
                 data-testid={`nav-link-${link.href.replace("/", "")}`}
               >
                 {link.label}
