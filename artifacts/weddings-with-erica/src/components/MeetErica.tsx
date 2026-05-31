@@ -52,40 +52,36 @@ export function MeetErica() {
         </div>
       </motion.div>
 
-      {/* ── Right: editorial image composition ── */}
+      {/* ── Right: two equal images ── */}
       <motion.div
-        initial={{ opacity: 0, scale: 1.04 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, x: 28 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1.1, ease: "easeOut" }}
-        className="relative lg:w-[48%] xl:w-[52%] h-[70vw] lg:h-auto"
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative lg:w-[48%] xl:w-[52%] h-[80vw] lg:h-auto flex gap-2 md:gap-3"
       >
-        {/* Main portrait */}
-        <img
-          src={ericaPortrait}
-          alt="Erica Egan — Wedding Planner"
-          className="w-full h-full object-cover object-top"
-          loading="lazy"
-        />
+        {/* Left image */}
+        <div className="flex-1 overflow-hidden">
+          <img
+            src={ericaPortrait}
+            alt="Erica Egan — Wedding Planner"
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
 
-        {/* Couple image — floating accent */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-          className="absolute bottom-8 left-0 lg:-left-12 xl:-left-16 w-[38%] max-w-[200px] shadow-2xl overflow-hidden border-4 border-background"
-        >
+        {/* Right image */}
+        <div className="flex-1 overflow-hidden">
           <img
             src={coupleImg}
             alt="Happy couple at their wedding"
-            className="w-full aspect-[3/4] object-cover object-top"
+            className="w-full h-full object-cover object-top"
             loading="lazy"
           />
-        </motion.div>
+        </div>
 
         {/* Soft left-fade into cream panel (desktop) */}
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none hidden lg:block" />
+        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none hidden lg:block" />
       </motion.div>
     </section>
   );
