@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import review1Img from "@assets/review_1780239389448.jpg";
 import review2Img from "@assets/review2_1780239389449.jpg";
 import review3Img from "@assets/review3_1780239389449.jpg";
@@ -47,18 +47,37 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-background overflow-hidden">
+    <section id="testimonials" className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="mx-auto px-6 md:px-10 max-w-7xl">
 
-        {/* Label */}
-        <motion.span
+        {/* Section header */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans block mb-10 md:mb-14"
+          className="mb-12 md:mb-16"
         >
-          Kind Words
-        </motion.span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans block mb-3">
+            Kind Words
+          </span>
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-10">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground">
+              What Couples Say
+            </h2>
+            {/* 5-star badge */}
+            <div className="flex items-center gap-2 mb-1">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
+                ))}
+              </div>
+              <span className="text-[12px] text-foreground/45 font-sans font-light">5.0 · 100+ reviews</span>
+            </div>
+          </div>
+          <p className="text-foreground/50 font-light text-[1rem] mt-3 max-w-xl leading-relaxed">
+            Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
+          </p>
+        </motion.div>
 
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div

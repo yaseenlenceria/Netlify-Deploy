@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLocation } from "wouter";
 import signatureImg from "@assets/Signature_Day_Coordination_1780239389447.jpg";
 import partialImg from "@assets/PARTIAL_PLANNING_SUPPORT_1780239389446.png";
 import fullImg from "@assets/FULL_PLANNING_1780239389446.png";
@@ -43,6 +44,7 @@ export function Services() {
   const [current, setCurrent] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [, navigate] = useLocation();
 
   const computeCardWidth = useCallback(() => {
     if (!containerRef.current) return;
@@ -64,7 +66,7 @@ export function Services() {
   const offset = -(current * (cardWidth + GAP));
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-[hsl(40,18%,94%)] overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-[hsl(40,18%,94%)] overflow-hidden">
       <div className="mx-auto px-6 md:px-10 max-w-7xl">
 
         {/* Header */}
@@ -76,9 +78,9 @@ export function Services() {
         >
           <div>
             <span className="text-[11px] uppercase tracking-[0.25em] text-primary/60 font-sans mb-3 block">How I Can Help</span>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground">Services</h2>
-            <p className="text-foreground/55 font-light text-[0.95rem] mt-2.5 max-w-sm leading-relaxed">
-              Tailored support to suit every couple — whatever level of help you need.
+            <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-serif text-foreground mb-3">Services</h2>
+            <p className="text-foreground/55 font-light text-[1rem] max-w-md leading-relaxed">
+              From complete wedding planning to on-the-day coordination — every package is tailored around you, your vision, and what you need most.
             </p>
           </div>
           <div className="flex gap-2.5 shrink-0">
@@ -140,11 +142,11 @@ export function Services() {
                     </span>
                   )}
                   <h3 className="text-xl md:text-2xl font-serif text-foreground mb-4 leading-snug">{service.title}</h3>
-                  <div className="text-foreground/60 font-light text-[0.9rem] leading-[1.8] whitespace-pre-line flex-grow">
+                  <div className="text-foreground/60 font-light text-[0.95rem] leading-[1.85] whitespace-pre-line flex-grow">
                     {service.description}
                   </div>
                   <button
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => navigate("/contact")}
                     className="mt-7 text-[11px] uppercase tracking-widest text-primary border-b border-primary/30 hover:border-primary pb-0.5 self-start transition-colors duration-200 font-sans"
                     data-testid={`service-enquire-${i}`}
                   >
@@ -170,6 +172,20 @@ export function Services() {
             />
           ))}
         </div>
+
+        {/* Bottom tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-foreground/40 font-light text-[0.9rem] mt-10 font-sans"
+        >
+          Not sure which package is right for you?{" "}
+          <button onClick={() => navigate("/contact")} className="text-primary underline underline-offset-4 hover:text-primary/70 transition-colors">
+            Let's chat
+          </button>{" "}
+          — I'll help you figure it out.
+        </motion.p>
       </div>
     </section>
   );

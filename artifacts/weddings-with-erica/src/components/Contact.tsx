@@ -51,20 +51,16 @@ export function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="relative lg:w-[42%] xl:w-[45%] h-[60vw] lg:h-auto min-h-[400px] overflow-hidden shrink-0"
+        className="relative lg:w-[42%] xl:w-[44%] h-[65vw] lg:h-auto min-h-[420px] overflow-hidden shrink-0"
       >
-        {/* Full-bleed photo */}
         <img
           src={contactBg}
           alt="Erica with a happy couple"
           className="w-full h-full object-cover object-center"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/25 to-transparent" />
 
-        {/* Dark gradient overlay from bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-
-        {/* Text overlaid at the bottom */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,18 +68,16 @@ export function Contact() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="absolute bottom-0 left-0 right-0 p-8 md:p-12"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-3 block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary-foreground/50 font-sans mb-3 block">
             Weddings with Erica
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.05] mb-5">
+          <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.05] mb-4">
             Get<br />In Touch
           </h2>
-          <p className="text-primary-foreground/65 font-light text-[0.95rem] leading-relaxed max-w-[280px] mb-7">
+          <p className="text-primary-foreground/60 font-light text-[0.95rem] leading-relaxed max-w-[280px] mb-7">
             Tell me a little about your plans — I'd love to hear more about your wedding.
           </p>
-
-          {/* Contact details */}
-          <div className="flex flex-col gap-2.5 text-[0.875rem] text-primary-foreground/60 font-light">
+          <div className="flex flex-col gap-2.5 text-[0.875rem] text-primary-foreground/55 font-light">
             <a href="tel:0872186100" className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors" data-testid="contact-phone">
               <Phone className="w-3.5 h-3.5 shrink-0" /> 0872186100
             </a>
@@ -97,64 +91,78 @@ export function Contact() {
         </motion.div>
       </motion.div>
 
-      {/* ── RIGHT: form ── */}
+      {/* ── RIGHT: form on pure white ── */}
       <motion.div
         initial={{ opacity: 0, x: 24 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.15 }}
-        className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-14 xl:px-20 py-16 md:py-20 bg-[hsl(40,33%,98%)]"
+        className="flex-1 flex flex-col justify-center bg-white"
       >
-        <div className="max-w-lg w-full mx-auto lg:mx-0">
+        {/* Inner wrapper — constrained width with generous horizontal padding */}
+        <div className="w-full max-w-[560px] mx-auto px-8 md:px-12 xl:px-16 py-16 md:py-20">
+
           <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-2">Let's Start Planning</h3>
           <p className="text-foreground/45 text-[0.95rem] font-light mb-10 leading-relaxed">
             Fill in the form below and I'll be in touch within 48 hours.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 
               <FormField control={form.control} name="name" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">Full Name</FormLabel>
+                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Full Name</FormLabel>
                   <FormControl>
-                    <Input className="border-0 border-b border-border/40 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[0.95rem] placeholder:text-foreground/20" placeholder="Your full name" {...field} data-testid="input-name" />
+                    <Input
+                      className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                      placeholder="Your full name" {...field} data-testid="input-name"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )} />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <FormField control={form.control} name="email" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">Email</FormLabel>
+                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Email</FormLabel>
                     <FormControl>
-                      <Input type="email" className="border-0 border-b border-border/40 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[0.95rem] placeholder:text-foreground/20" placeholder="your@email.com" {...field} data-testid="input-email" />
+                      <Input type="email"
+                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                        placeholder="your@email.com" {...field} data-testid="input-email"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
                 <FormField control={form.control} name="phone" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">Phone</FormLabel>
+                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Phone</FormLabel>
                     <FormControl>
-                      <Input type="tel" className="border-0 border-b border-border/40 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[0.95rem] placeholder:text-foreground/20" placeholder="+353 ..." {...field} data-testid="input-phone" />
+                      <Input type="tel"
+                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                        placeholder="+353 ..." {...field} data-testid="input-phone"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <FormField control={form.control} name="date" render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px] mb-1">Wedding Date</FormLabel>
+                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px] mb-1">Wedding Date</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
-                          <Button variant="outline" className={cn("w-full border-0 border-b border-border/40 rounded-none px-0 py-2 bg-transparent justify-start font-normal text-[0.95rem] hover:bg-transparent h-auto focus-visible:ring-0 focus-visible:border-primary shadow-none", !field.value && "text-foreground/25")} data-testid="input-date">
+                          <Button variant="outline" className={cn(
+                            "w-full border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 bg-transparent justify-start font-normal text-[1rem] hover:bg-transparent h-auto focus-visible:ring-0 focus-visible:border-primary shadow-none transition-colors",
+                            !field.value && "text-foreground/25"
+                          )} data-testid="input-date">
                             {field.value ? format(field.value, "d MMM yyyy") : "Select date"}
-                            <CalendarIcon className="ml-auto h-3.5 w-3.5 opacity-30" />
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-30" />
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
@@ -167,9 +175,12 @@ export function Contact() {
                 )} />
                 <FormField control={form.control} name="venue" render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">Venue / Location</FormLabel>
+                    <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Venue / Location</FormLabel>
                     <FormControl>
-                      <Input className="border-0 border-b border-border/40 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[0.95rem] placeholder:text-foreground/20" placeholder="Venue name" {...field} data-testid="input-venue" />
+                      <Input
+                        className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                        placeholder="Venue name" {...field} data-testid="input-venue"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -178,14 +189,14 @@ export function Contact() {
 
               <FormField control={form.control} name="service" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">How can I support you?</FormLabel>
+                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">How can I support you?</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="border-0 border-b border-border/40 rounded-none px-0 py-2 focus:ring-0 focus:border-primary bg-transparent text-[0.95rem] h-auto shadow-none" data-testid="input-service">
+                      <SelectTrigger className="border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus:ring-0 focus:border-primary bg-transparent text-[1rem] h-auto shadow-none transition-colors" data-testid="input-service">
                         <SelectValue placeholder="Select a package..." />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-background border-border shadow-lg">
+                    <SelectContent className="bg-white border-border shadow-lg">
                       <SelectItem value="power-hour">Planning Power Hour</SelectItem>
                       <SelectItem value="signature-day">Signature Day Coordination</SelectItem>
                       <SelectItem value="partial-planning">Partial Planning Support</SelectItem>
@@ -198,21 +209,26 @@ export function Contact() {
 
               <FormField control={form.control} name="details" render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-foreground/40 font-sans font-normal uppercase tracking-widest text-[10px]">Tell me about your plans…</FormLabel>
+                  <FormLabel className="text-foreground/55 font-sans font-medium uppercase tracking-widest text-[11px]">Tell me about your plans…</FormLabel>
                   <FormControl>
-                    <Textarea className="min-h-[100px] border-0 border-b border-border/40 rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-primary bg-transparent resize-none text-[0.95rem] placeholder:text-foreground/20" placeholder="Share as much or as little as you'd like…" {...field} data-testid="input-details" />
+                    <Textarea
+                      className="min-h-[110px] border-0 border-b-2 border-border/40 rounded-none px-0 py-2.5 focus-visible:ring-0 focus-visible:border-primary bg-transparent resize-none text-[1rem] text-foreground placeholder:text-foreground/25 transition-colors"
+                      placeholder="Share as much or as little as you'd like…" {...field} data-testid="input-details"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )} />
 
-              <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[11px] font-sans transition-all active:scale-[0.99]" data-testid="button-submit">
-                Send Enquiry
-              </Button>
+              <div className="pt-2">
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]" data-testid="button-submit">
+                  Send Enquiry
+                </Button>
+                <p className="text-center text-[11px] text-foreground/30 font-light mt-4">
+                  I typically respond within 48 hours — I look forward to hearing from you.
+                </p>
+              </div>
 
-              <p className="text-center text-[11px] text-foreground/30 font-light">
-                I typically respond within 48 hours — I look forward to hearing from you.
-              </p>
             </form>
           </Form>
         </div>

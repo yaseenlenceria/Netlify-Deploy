@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import ericaPortrait from "@assets/meet_erica_1780239389447.png";
 import coupleImg from "@assets/meet_erica_3_1780239389447.png";
 
 export function MeetErica() {
+  const [, navigate] = useLocation();
+
   return (
     <section id="meet" className="relative min-h-[calc(100dvh-76px)] flex flex-col lg:flex-row overflow-hidden bg-background">
 
@@ -30,7 +33,6 @@ export function MeetErica() {
             loading="lazy"
           />
         </div>
-        {/* Soft right-fade into the cream text panel */}
         <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none hidden lg:block" />
       </motion.div>
 
@@ -42,15 +44,19 @@ export function MeetErica() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-0 bg-background lg:w-[52%] xl:w-[48%] order-first lg:order-last"
       >
-        <span className="text-[11px] uppercase tracking-[0.3em] text-primary/55 font-sans mb-6 block">
+        <span className="text-[11px] uppercase tracking-[0.3em] text-primary/55 font-sans mb-5 block">
           Meet Erica
         </span>
 
-        <h2 className="font-serif text-[2.4rem] md:text-5xl lg:text-[3rem] xl:text-[3.4rem] text-foreground leading-[1.08] mb-8">
+        <h2 className="font-serif text-[2.4rem] md:text-5xl lg:text-[3rem] xl:text-[3.4rem] text-foreground leading-[1.08] mb-6">
           Planning your wedding<br />
           <em className="not-italic text-primary">should feel exciting</em><br />
           — not overwhelming.
         </h2>
+
+        <p className="text-foreground/50 font-light text-[0.95rem] mb-6 max-w-md italic">
+          Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
+        </p>
 
         <div className="space-y-4 text-foreground/60 font-light leading-[1.9] text-[1.05rem] max-w-lg">
           <p>
@@ -61,12 +67,12 @@ export function MeetErica() {
           </p>
         </div>
 
-        <p className="mt-7 text-primary font-serif text-xl xl:text-2xl leading-relaxed italic max-w-md">
+        <p className="mt-6 text-primary font-serif text-xl xl:text-2xl leading-relaxed italic max-w-md">
           Think of me as the calm, organised presence in your corner — making sure your wedding feels as good as it looks.
         </p>
 
         {/* Stats */}
-        <div className="mt-10 pt-8 border-t border-border/35 grid grid-cols-3 gap-6 max-w-sm">
+        <div className="mt-8 pt-7 border-t border-border/35 grid grid-cols-3 gap-6 max-w-sm">
           {[
             { stat: "100+", label: "Weddings" },
             { stat: "5★", label: "Rating" },
@@ -77,6 +83,22 @@ export function MeetErica() {
               <p className="text-[11px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-primary text-primary-foreground px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:bg-primary/90 transition-colors font-sans w-fit"
+          >
+            Get in Touch
+          </button>
+          <button
+            onClick={() => navigate("/services")}
+            className="text-primary border border-primary/30 px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:border-primary/60 transition-colors font-sans w-fit"
+          >
+            View Services
+          </button>
         </div>
       </motion.div>
 

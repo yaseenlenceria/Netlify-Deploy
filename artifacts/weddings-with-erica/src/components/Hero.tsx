@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/hero_image_1780239389448.png";
+
+const promises = [
+  "Calm, stress-free planning",
+  "Full supplier management",
+  "Seamless on-the-day coordination",
+];
 
 export function Hero() {
   const [, navigate] = useLocation();
@@ -28,7 +35,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.35, ease: "easeOut" }}
-          className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-7 leading-[1.08]"
+          className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
         >
           Enjoy Your Wedding,<br />
           <em className="not-italic text-primary">I'll Handle the Rest</em>
@@ -38,15 +45,30 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.5, ease: "easeOut" }}
-          className="text-[1.05rem] text-foreground/60 mb-10 max-w-[400px] font-light leading-[1.85]"
+          className="text-[1.05rem] text-foreground/60 mb-7 max-w-[400px] font-light leading-[1.85]"
         >
           Planning your wedding should feel exciting — not stressful. I'm here to keep everything calm, organised, and running seamlessly so you can relax and genuinely enjoy every moment.
         </motion.p>
 
+        {/* Key promises */}
+        <motion.ul
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-col gap-2.5 mb-9"
+        >
+          {promises.map((p) => (
+            <li key={p} className="flex items-center gap-2.5 text-[0.9rem] text-foreground/55 font-light">
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+              {p}
+            </li>
+          ))}
+        </motion.ul>
+
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.85, delay: 0.7, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-3"
         >
           <Button
@@ -73,11 +95,13 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-14 pt-8 border-t border-border/40 flex items-center gap-6 text-[11px] uppercase tracking-widest text-foreground/35 font-sans"
+          className="mt-12 pt-7 border-t border-border/40 flex items-center gap-6 text-[11px] uppercase tracking-widest text-foreground/35 font-sans"
         >
           <span>Ireland</span>
           <span className="w-px h-3 bg-border/60" />
-          <span>Award Winning</span>
+          <span>100+ Weddings</span>
+          <span className="w-px h-3 bg-border/60" />
+          <span>5★ Reviews</span>
           <span className="w-px h-3 bg-border/60" />
           <span>Est. 2014</span>
         </motion.div>
