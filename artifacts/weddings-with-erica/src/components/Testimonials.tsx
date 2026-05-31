@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import emmajohnImg from "@assets/Emma_&_John_1780246115013.jpg";
@@ -62,6 +62,18 @@ export function Testimonials() {
     setCurrent(next);
   };
 
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => {
+        const next = (prev + 1) % testimonials.length;
+        setDirection(1);
+        return next;
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const t = testimonials[current];
 
   const variants = {
@@ -121,14 +133,14 @@ export function Testimonials() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.45, ease: "easeInOut" }}
-            className="grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-10 md:gap-16 items-center"
+            className="grid md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr] gap-10 md:gap-16 items-start"
           >
-            {/* Photo */}
-            <div className="aspect-[3/4] w-full max-w-[280px] mx-auto md:mx-0 overflow-hidden shadow-md">
+            {/* Photo — square crop, object-center so faces stay visible */}
+            <div className="w-full max-w-[320px] mx-auto md:mx-0 overflow-hidden shadow-md aspect-square">
               <img
                 src={t.image}
                 alt={t.author}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
             </div>
@@ -152,12 +164,13 @@ export function Testimonials() {
 
         {/* Controls */}
         <div className="flex items-center justify-between mt-12 md:mt-14">
-          <div className="flex gap-2">
+          {/* Dot indicators — clickable, active one animates width */}
+          <div className="flex gap-2 items-center">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => go(i)}
-                className={`h-px transition-all duration-300 ${
+                className={`h-[2px] rounded-full transition-all duration-500 ${
                   current === i ? "bg-primary w-8" : "bg-border w-4"
                 }`}
                 data-testid={`test-dot-${i}`}
@@ -165,28 +178,21 @@ export function Testimonials() {
               />
             ))}
           </div>
+
           <div className="flex gap-2.5">
             <button
-              onClick={() => go(Math.max(0, current - 1))}
-              disabled={current === 0}
-              className={`h-11 w-11 flex items-center justify-center border transition-all duration-200 ${
-                current > 0
-                  ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  : "border-border/30 text-border/40 cursor-not-allowed"
-              }`}
+              onClick={() => go(current === 0 ? testimonials.length - 1 : current - 1)}
+              className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               data-testid="test-prev"
+              aria-label="Previous"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
-              onClick={() => go(Math.min(testimonials.length - 1, current + 1))}
-              disabled={current === testimonials.length - 1}
-              className={`h-11 w-11 flex items-center justify-center border transition-all duration-200 ${
-                current < testimonials.length - 1
-                  ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  : "border-border/30 text-border/40 cursor-not-allowed"
-              }`}
+              onClick={() => go((current + 1) % testimonials.length)}
+              className="h-11 w-11 flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               data-testid="test-next"
+              aria-label="Next"
             >
               <ChevronRight className="h-4 w-4" />
             </button>

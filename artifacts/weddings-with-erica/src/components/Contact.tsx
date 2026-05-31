@@ -13,8 +13,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import contactBg from "@assets/above_contact_1780239389448.png";
-import coupleImg from "@assets/meet_erica_3_1780239389447.png";
+import contactBg from "@assets/contact-tablescape_1780246484111.jpg";
+import coupleImg from "@assets/cropped_Wedding_couple_love_green_hugs_via_getty_1780246527255.jpg";
 
 const formSchema = z.object({
   name: z.string().min(2, "Your name is required"),
