@@ -1,31 +1,55 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import review1Img from "@assets/review_1780239389448.jpg";
-import review2Img from "@assets/review2_1780239389449.jpg";
-import review3Img from "@assets/review3_1780239389449.jpg";
+import emmajohnImg from "@assets/Emma_&_John_1780246115013.jpg";
+import jennyconorImg from "@assets/Jenny_&_Conor_1780246212053.jpg";
+import karinaAdrianImg from "@assets/Karina_&_Adrian_1780246238977.jpg";
+import katiestevenImg from "@assets/Katie_&_Steven_1780246282924.jpg";
+import andreluisImg from "@assets/Andre_&_Luis_1780246311362.jpg";
+import amandamarcusImg from "@assets/Amanda_&_Marcus_1780246332890.png";
 
 const testimonials = [
   {
     quote:
-      "Planning a wedding overseas from the United States for our October 2025 wedding in Athlone, Ireland felt incredibly overwhelming at first, but Erica made the entire experience seamless, organised, and genuinely enjoyable from start to finish.\n\nErica was absolutely phenomenal every single step of the way. She kept us on track, answered every question with patience and kindness, and made us feel completely supported despite the distance and time differences. Her professionalism, warmth, and attention to detail were unmatched.\n\nBy the end of this journey, we truly felt like we had gained a lifelong friend — not just an incredible wedding coordinator. Our wedding day was everything we dreamed of and more.",
-    author: "Overseas Couple",
+      "We were so happy to have Erica as our wedding coordinator! From our very first meeting, we instantly clicked, and she helped me make decisions I'd been stuck on within minutes.\n\nErica brought such a friendly and calm presence to our day while seamlessly running the show behind the scenes. She constantly reminded me to take it all in and enjoy every moment whenever the nerves started to creep in.\n\nShe helped us tailor the day perfectly to both us and our guests, and we honestly couldn't have been happier with how everything turned out. Our guests are still raving about the food, venue, and music! We would highly recommend Erica to anyone planning their wedding — she is such a kind, genuine person who truly goes above and beyond for her couples.",
+    author: "Emma & John",
+    occasion: "Ireland",
+    image: emmajohnImg,
+  },
+  {
+    quote:
+      "We couldn't recommend Erica more highly. From the first time I called her right through to our wedding celebration, she was an absolute joy to work with — professional, kind, calm, and completely organised from start to finish.\n\nPlanning a wedding can be very overwhelming, but from the moment I called Erica she put me at ease. She made the whole experience smooth and enjoyable. It was great to have someone with so much experience within the industry, recommending vendors that were perfectly suited to the day we were envisioning.\n\nWe are so grateful for Erica and we couldn't recommend her enough.",
+    author: "Jenny & Conor",
+    occasion: "Ireland",
+    image: jennyconorImg,
+  },
+  {
+    quote:
+      "We had the privilege of having Erica as our wedding planner for our wedding last May. From the get-go she was so helpful, friendly and put us at ease straight away. No question was too much, and she made sure we got the best deal with our wedding package.\n\nShe also gave us so many tips to make the day as streamlined as possible! We had a brilliant day and I definitely felt more organised from all her tips and advice. She's a wealth of knowledge — I would recommend her to anyone looking for help planning their wedding. She's amazing!",
+    author: "Karina & Adrian",
+    occasion: "Ireland",
+    image: karinaAdrianImg,
+  },
+  {
+    quote:
+      "Planning a wedding is never an easy feat, but having Erica by my side the whole way through made it one of my most treasured and easiest things I have ever done. There was no stone left unturned and she thought of everything so I didn't have to.\n\nNot only did the day go amazingly because of her, but seeing her lovely face and the warm hug we received when we saw her on the big day for the first time — it was like having your best friend by your side.\n\nErica is worth her weight in gold. And I can honestly say there is no one better in this industry than this woman. For any future couples — do yourselves a favour and make sure Erica is by your side on your big day.",
+    author: "Katie & Steven",
+    occasion: "Ireland",
+    image: katiestevenImg,
+  },
+  {
+    quote:
+      "We got married on the 23rd of March — we didn't have a specific theme in mind, just something small, intimate, and not very traditional. Erica dealt with planning our wedding with such ease.\n\nThe moment we stepped into the room we were amazed and emotional at how perfect the day was. The food, the music, the atmosphere — all simply perfect. It was and will always be the most perfect day that we will always remember, thanks to Erica.\n\nI would highly recommend Erica without hesitation.",
+    author: "Andre & Luis",
+    occasion: "Ireland",
+    image: andreluisImg,
+  },
+  {
+    quote:
+      "Planning a wedding overseas from the United States for our October 2025 wedding in Athlone, Ireland felt incredibly overwhelming at first — but Erica made the entire experience seamless, organised, and genuinely enjoyable from start to finish.\n\nShe kept us on track throughout the planning process, answered every question with patience and kindness, and made us feel completely supported despite the distance and time differences. Her professionalism, warmth, and attention to detail were unmatched.\n\nWhat makes Erica even more extraordinary is that she did all of this while also caring for her growing family. We were constantly amazed by her dedication and positivity. If you are considering Erica for your wedding, book her immediately. She is simply the best.",
+    author: "Amanda & Marcus",
     occasion: "Athlone, Ireland — 2025",
-    image: review1Img,
-  },
-  {
-    quote:
-      "We were so happy to have Erica as our wedding coordinator! From our very first meeting, we instantly clicked — she helped me make decisions I'd been stuck on within minutes.\n\nErica brought such a friendly, bubbly, and calm presence to our day while seamlessly running the show behind the scenes. She constantly reminded me to take it all in and enjoy every moment whenever the nerves crept in.\n\nShe helped us tailor the day perfectly to both us and our guests, and we honestly couldn't have been happier with how everything turned out. Our guests are still raving about the food, venue, and music!",
-    author: "Emma & John",
-    occasion: "Ireland — 2025",
-    image: review2Img,
-  },
-  {
-    quote:
-      "I cannot recommend Erica highly enough. From our very first conversation, I knew she was exactly what we needed. She took every worry off our shoulders, handled every detail with such care, and made our wedding day feel effortless.\n\nHer calm, professional manner meant that even when small things didn't go to plan, everything was handled quietly and seamlessly — we didn't know a thing until after the day was over. We just got to enjoy every single moment.\n\nIf you're thinking about booking Erica, just do it. Best decision we made for our wedding.",
-    author: "Emma & John",
-    occasion: "Ireland — 2024",
-    image: review3Img,
+    image: amandamarcusImg,
   },
 ];
 
@@ -75,7 +99,6 @@ export function Testimonials() {
           >
             What <em className="not-italic text-primary">Couples Say</em>
           </motion.h1>
-          {/* 5-star badge */}
           <div className="flex items-center gap-2 mb-3">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
@@ -84,7 +107,7 @@ export function Testimonials() {
             </div>
             <span className="text-[14px] text-foreground/65 font-sans font-light">5.0 · 100+ reviews</span>
           </div>
-          <p className="text-foreground/70 font-light text-[1rem] max-w-xl leading-relaxed">
+          <p className="text-foreground/70 font-light text-[1.05rem] max-w-xl leading-relaxed">
             Real words from real couples who trusted me with their most important day — and who genuinely enjoyed every moment of it.
           </p>
         </motion.div>
@@ -120,7 +143,7 @@ export function Testimonials() {
                 <div className="w-8 h-px bg-primary/40" />
                 <div>
                   <p className="text-[14px] uppercase tracking-[0.2em] text-primary font-sans">{t.author}</p>
-                  <p className="text-[13px] text-foreground/40 font-light mt-0.5 font-sans">{t.occasion}</p>
+                  <p className="text-[13px] text-foreground/50 font-light mt-0.5 font-sans">{t.occasion}</p>
                 </div>
               </div>
             </div>
