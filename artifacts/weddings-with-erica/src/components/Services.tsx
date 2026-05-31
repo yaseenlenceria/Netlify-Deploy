@@ -11,8 +11,6 @@ const services = [
     title: "Signature Day Coordination",
     tag: "Most Popular",
     tagline: "Support for your wedding day, handled properly.",
-    description:
-      "Perfect for couples who have planned everything themselves but want to fully relax and enjoy the day. Around 6 weeks before the wedding I'll step in, take the reins, and make sure everything runs seamlessly from morning through to your first dance.",
     includes: [
       "Detailed pre-wedding planning call",
       "Full supplier coordination & communication",
@@ -26,8 +24,6 @@ const services = [
     title: "Partial Planning Support",
     tag: "",
     tagline: "Guidance and calm throughout your planning journey.",
-    description:
-      "Ongoing support for couples who would love expert guidance while still leading the planning themselves. I'll bring structure, recommendations, and reassurance at every stage — and be there on the day to ensure everything flows beautifully.",
     includes: [
       "Ongoing planning guidance & advice",
       "Supplier recommendations & introductions",
@@ -41,8 +37,6 @@ const services = [
     title: "Full Planning + Coordination",
     tag: "",
     tagline: "Complete support from first idea to last dance.",
-    description:
-      "Full end-to-end support from the earliest stages of planning right through to your wedding day. From venue sourcing and supplier management to styling guidance, budgeting, logistics, and full coordination — every detail handled with care.",
     includes: [
       "End-to-end wedding planning",
       "Venue sourcing and styling guidance",
@@ -56,8 +50,6 @@ const services = [
     title: "Planning Power Hour",
     tag: "",
     tagline: "Clarity and confidence in a single focused session.",
-    description:
-      "A focused 1:1 consultation designed to bring clarity, expert advice, and confidence to your plans. Perfect for couples who feel stuck, overwhelmed, or simply want professional reassurance before moving forward. Approx. 1.5 hours.",
     includes: [
       "1:1 expert consultation (approx. 1.5 hrs)",
       "Personalised planning advice",
@@ -75,79 +67,81 @@ export function Services() {
   const s = services[active];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-[hsl(40,18%,94%)] overflow-hidden">
+    <section id="services" className="py-10 md:py-14 bg-[hsl(40,18%,94%)] overflow-hidden">
       <div className="mx-auto px-6 md:px-10 max-w-7xl">
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="mb-12 md:mb-16"
+          className="mb-7 md:mb-9 flex flex-col md:flex-row md:items-end md:justify-between gap-2"
         >
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
-          >
-            How I Can Help
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.85, delay: 0.3, ease: "easeOut" }}
-            className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-4 leading-[1.08]"
-          >
-            My <em className="not-italic text-primary">Services</em>
-          </motion.h1>
-          <p className="text-foreground/70 font-light text-[1rem] max-w-md leading-relaxed">
-            From complete wedding planning to on-the-day coordination — every package is tailored around you, your vision, and what you need most.
+          <div>
+            <motion.span
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-1.5 font-sans block"
+            >
+              How I Can Help
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.75, delay: 0.22, ease: "easeOut" }}
+              className="text-4xl md:text-5xl font-serif text-foreground leading-[1.08]"
+            >
+              My <em className="not-italic text-primary">Services</em>
+            </motion.h1>
+          </div>
+          <p className="text-foreground/60 font-light text-[0.95rem] max-w-sm leading-relaxed">
+            Every package is tailored around you, your vision, and what you need most.
           </p>
         </motion.div>
 
-        {/* Main layout: featured card left + tab list right */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
+        {/* Main layout */}
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-7 items-stretch">
 
-          {/* ── LEFT: featured service card ── */}
-          <div className="w-full lg:w-[36%] xl:w-[34%] shrink-0">
+          {/* ── LEFT: image card with overlaid text ── */}
+          <div className="w-full lg:w-[42%] xl:w-[40%] shrink-0 aspect-[4/3] lg:aspect-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="overflow-hidden bg-white shadow-md"
+                className="relative overflow-hidden w-full h-full shadow-md"
               >
-                {/* Image */}
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
-                </div>
+                {/* Full image */}
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
 
-                {/* Content */}
-                <div className="p-5 md:p-6">
+                {/* Gradient overlay — bottom half */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
+
+                {/* Overlaid text */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
                   {s.tag && (
-                    <span className="text-[13px] uppercase tracking-widest text-primary/80 font-sans mb-2 inline-block">
-                      — {s.tag}
+                    <span className="text-[11px] uppercase tracking-widest text-white/70 font-sans mb-1 block">
+                      {s.tag}
                     </span>
                   )}
-                  <h3 className="text-2xl font-serif text-foreground mb-1 leading-snug">{s.title}</h3>
-                  <p className="text-primary font-serif italic text-[1rem] mb-4">{s.tagline}</p>
-                  <p className="text-foreground/70 font-light text-[1rem] leading-[1.85] mb-5">{s.description}</p>
+                  <h3 className="text-2xl md:text-[1.6rem] font-serif text-white mb-1 leading-snug">{s.title}</h3>
+                  <p className="text-white/75 font-light italic font-serif text-[1rem] mb-4">{s.tagline}</p>
 
-                  <p className="text-[13px] uppercase tracking-widest text-foreground/50 font-sans mb-3">Includes:</p>
-                  <ul className="space-y-1.5 mb-7">
+                  <p className="text-[11px] uppercase tracking-widest text-white/55 font-sans mb-2">Includes:</p>
+                  <ul className="space-y-1 mb-5">
                     {s.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-foreground/75 font-light text-[1rem]">
-                        <span className="mt-[0.45em] w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                      <li key={item} className="flex items-start gap-2 text-white/80 font-light text-[0.88rem]">
+                        <span className="mt-[0.45em] w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -155,7 +149,7 @@ export function Services() {
 
                   <button
                     onClick={() => navigate("/contact")}
-                    className="w-full bg-primary text-primary-foreground py-3.5 text-[12px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+                    className="w-full bg-white/15 backdrop-blur-sm border border-white/35 text-white py-2.5 text-[11px] uppercase tracking-[0.22em] hover:bg-white/25 transition-colors font-sans"
                     data-testid={`service-enquire-${active}`}
                   >
                     Enquire About This Package
@@ -166,58 +160,57 @@ export function Services() {
           </div>
 
           {/* ── RIGHT: tab list ── */}
-          <div className="flex-1 flex flex-col gap-3 w-full">
-            {services.map((service, i) => (
-              <motion.button
-                key={i}
-                onClick={() => setActive(i)}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`flex items-center gap-4 w-full text-left px-5 py-4 border transition-all duration-300 ${
-                  active === i
-                    ? "bg-primary border-primary text-primary-foreground shadow-md"
-                    : "bg-white border-border/25 text-foreground hover:border-primary/40 hover:shadow-sm"
-                }`}
-                data-testid={`service-tab-${i}`}
-              >
-                {/* Circular thumbnail */}
-                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-white/30">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  {service.tag && (
-                    <p className={`text-[11px] uppercase tracking-widest font-sans mb-0.5 ${active === i ? "text-primary-foreground/70" : "text-primary/70"}`}>
-                      {service.tag}
-                    </p>
-                  )}
-                  <p className={`font-sans font-medium text-[1rem] uppercase tracking-[0.06em] leading-snug ${active === i ? "text-primary-foreground" : "text-foreground"}`}>
-                    {service.title}
-                  </p>
-                  <p className={`text-[0.875rem] font-light mt-0.5 leading-snug truncate ${active === i ? "text-primary-foreground/70" : "text-foreground/50"}`}>
-                    {service.tagline}
-                  </p>
-                </div>
-
-                {/* Arrow */}
-                <svg
-                  className={`w-4 h-4 shrink-0 transition-transform duration-200 ${active === i ? "text-primary-foreground translate-x-1" : "text-foreground/30"}`}
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}
+          <div className="flex-1 flex flex-col justify-between gap-2 w-full">
+            <div className="flex flex-col gap-2.5">
+              {services.map((service, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  initial={{ opacity: 0, x: 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45, delay: i * 0.07 }}
+                  className={`flex items-center gap-4 w-full text-left px-4 py-3.5 border transition-all duration-300 ${
+                    active === i
+                      ? "bg-primary border-primary text-primary-foreground shadow-md"
+                      : "bg-white border-border/25 text-foreground hover:border-primary/40 hover:shadow-sm"
+                  }`}
+                  data-testid={`service-tab-${i}`}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.button>
-            ))}
+                  <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 border-2 border-white/30">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
 
-            {/* Not sure prompt */}
-            <p className="text-foreground/55 font-light text-[1rem] mt-4 font-sans text-center lg:text-left">
+                  <div className="flex-1 min-w-0">
+                    {service.tag && (
+                      <p className={`text-[11px] uppercase tracking-widest font-sans mb-0.5 ${active === i ? "text-primary-foreground/70" : "text-primary/70"}`}>
+                        {service.tag}
+                      </p>
+                    )}
+                    <p className={`font-sans font-medium text-[0.95rem] uppercase tracking-[0.05em] leading-snug ${active === i ? "text-primary-foreground" : "text-foreground"}`}>
+                      {service.title}
+                    </p>
+                    <p className={`text-[0.82rem] font-light mt-0.5 leading-snug truncate ${active === i ? "text-primary-foreground/70" : "text-foreground/50"}`}>
+                      {service.tagline}
+                    </p>
+                  </div>
+
+                  <svg
+                    className={`w-4 h-4 shrink-0 transition-transform duration-200 ${active === i ? "text-primary-foreground translate-x-0.5" : "text-foreground/30"}`}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+              ))}
+            </div>
+
+            <p className="text-foreground/55 font-light text-[0.88rem] mt-1 font-sans">
               Not sure which is right for you?{" "}
               <button
                 onClick={() => navigate("/contact")}
