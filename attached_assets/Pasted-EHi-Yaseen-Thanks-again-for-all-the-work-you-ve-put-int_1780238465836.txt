@@ -1,0 +1,401 @@
+EHi Yaseen,
+Thanks again for all the work you’ve put into the site so far — I really appreciate it. I’ve taken some time to go through everything properly and wanted to share a full round of feedback so we can bring it closer to the overall look and feel I’m aiming for.
+
+At the moment, I feel like it’s not quite reflecting me yet — it’s coming across a bit more template-like and heavier in style than I’d like. I’m hoping to move it towards something more refined, relaxed, and premium in feel.
+
+Typography (Fonts & Headings)
+The current font style, especially across the main headings (“Enjoy your wedding, I’ll handle the rest”, “Meet Erica”, “How Can I Help”, “Testimonials”), feels a bit too playful and not as elevated as I’d like.
+
+I’d prefer a more refined, modern font style — something clean, elegant, and minimal. The small red underline elements beneath the headings also don’t feel aligned with the overall look, so I’d like those removed.
+
+Colour & Overall Tone
+The overall site feels quite dark and high-contrast at the moment. I’d love to soften this so it feels lighter, warmer, and more neutral throughout.
+
+I do really like the green that’s being used, so I’d be happy to keep that as a base — but paired with softer, complementary tones so the overall palette feels more calm and cohesive rather than bold or heavy.
+
+Hero Image (Top Section)
+The current hero image looks quite pixelated and too zoomed in. I’d prefer to use the image I originally sent (or a more zoomed-out version of it) so it feels brighter, clearer, and more natural.
+
+Images Throughout
+There are quite a few photos of just me at the moment. I’d like to rebalance this so it feels more client-focused. I’ll send through updated images, but for now:
+
+Keep the main photo of me under Meet Erica
+
+Replace the second “Meet Erica” image with one of me with a couple
+
+“How Can I Help” Section (Services)
+I’m not keen on the four large block layout. I’d prefer this to be a horizontal scroll layout (one continuous line), with arrows to move between each service.
+
+The order should be:
+Signature Day → Partial Planning → Full Planning → Planning Power Hour
+
+Also, I’d love this section to feel more visual and wedding-focused — similar to the version I created (I’ll include a video reference). Using more wedding imagery within this section would really help it feel more aligned with the overall brand.
+
+Testimonials Section
+I don’t love the auto-scrolling testimonials. I’d prefer these to be manual (click-through with arrows), so users can move through them at their own pace.
+
+If possible, I’d also like to include a small image with some of the testimonials (for example, me with the couple), to make them feel more personal and real.
+
+Overall Look & Feel
+More generally, I’d like the site to feel:
+
+Lighter and more airy
+
+Softer in colour and contrast
+
+More refined and less “template-like”
+
+Calm, relaxed, and slightly premium in tone
+
+At the moment it feels a bit dark and bold, whereas I’m aiming for something more understated and effortless.
+
+I’ll send on updated images shortly, along with a short video reference to help guide the layout style I have in mind.
+
+Thanks again, and let me know if you’d like me to clarify anything further.
+
+Warmest, 
+Erica Egan 
+Weddings with Erica 
+0872186100
+Instagram
+ 2 Attachments
+  •  Scanned by Gmail
+
+Erica Egan <wedwitherica@gmail.com>
+Attachments
+Sat, May 2, 7:11 PM
+to me
+
+Just a quick follow-up on my last email — a couple of small additions I’d love to include.
+
+Downloadable Products (Future Use)
+I’m planning to create digital products that couples can purchase and download (e.g. wedding day timelines, Canva templates, etc.).
+
+Could you let me know if this is something the site will be able to support — either now or in the future? Ideally, I’d like the option to sell and deliver downloadable files directly through the website.
+
+Contact Form
+I can see the wedding date field is already included, so that’s perfect.
+
+The only addition I’d like here is a dropdown option for the service/package they’re interested in (Signature Day, Partial Planning, Full Planning, Planning Power Hour).
+
+I’d also love to make this section feel a bit more personal — I have a lovely photo of me sitting with a bride that I’ll send on. It would be great to include this alongside the contact section (either beside the form or just above it, depending on what works best layout-wise).
+
+Thanks again — I think these small additions, along with the previous changes, will really help bring everything together.
+
+Warmest, 
+
+Erica Egan 
+Weddings with Erica 
+0872186100
+Instagram
+ One attachment
+  •  Scanned by Gmail
+
+Erica Egan <wedwitherica@gmail.com>
+Sun, May 3, 2:20 PM
+to me
+
+Hi Yaseen,
+Thanks so much for the updated version — I can see the changes coming through and it’s definitely moving in the right direction. I just wanted to flag a few more refinements to help get it closer to the overall look and feel I’m aiming for. I'm sure you are still working on it so apologies if you just haven't changed some of the below yet 
+
+Colour
+The overall tone is better, but I’m still seeing quite a bit of black/dark elements (especially in the header and top section). I’d prefer to avoid black entirely if possible and instead use green as the primary darker tone.
+
+I’d love the palette to feel softer and more cohesive, with green as the base rather than black. - the green I'm looking for is more of a muted sage/olive tone . Warm and not too dark.
+
+Hero Section
+This is still feeling quite dark overall, and the image still feels too zoomed in. I think the image works much better when it’s brighter and less cropped. 
+
+Meet Erica Section
+The text here now feels a bit too plain and lacks impact. I’d like this section to feel more styled and considered 
+
+Also, I preferred having two images in this section as discussed
+
+The main photo of me
+
+A second photo of me with the couple sent through - like you had originally 
+
+“How Can I Help” Section
+These feel a bit too small at the moment, especially considering the amount of text I’d like to include.
+
+Would it be possible to:
+
+Show 3 at a time instead of 4 - Theth one at the edge with a directional arrow to scroll gor more (like the video i sent) i would really like this flow   
+
+Increase their size slightly
+
+Use arrow navigation to move through the services
+
+I think this will make the content feel less cramped and more premium.
+
+Testimonials
+This section still feels quite “review-style” (similar to Trustpilot), which isn’t the direction I’m going for.
+
+I’d prefer this to be:
+
+One testimonial at a time
+
+With an image (where possible)
+
+Arrow navigation to move between them
+
+Something more minimal and editorial rather than grid-based.
+
+Contact Section
+Just to include from previous feedback — I’d like to add a dropdown option for selecting the package/service of interest within the enquiry form.
+
+I’d also love to include a photo here (the one of me sitting with a bride) to make this section feel more personal and visually appealing — either beside the form or just above it, depending on what works best.
+
+Overall Direction
+I think the key thing is moving away from anything that feels heavy, dark, or template-like — and instead keeping everything lighter, softer, and more refined, with a stronger use of green rather than black.
+
+Thanks again — I know this is a process, but I think we’re getting closer with each round.
+
+Warmest, 
+
+Erica Egan 
+Weddings with Erica 
+0872186100
+Instagram
+
+Erica Egan <wedwitherica@gmail.com>
+Sat, May 23, 1:07 AM (8 days ago)
+to me
+
+Hi Yaseen
+
+Thanks again for all the updates so far — I definitely feel like we’re getting much closer to the overall direction now 😊
+
+I’ve gone through everything again properly and just wanted to send over the latest refinements and updated wording.
+
+
+
+Main Section - Slight tweak
+
+Enjoy Your Wedding,
+I’ll Handle the Rest
+
+Planning your wedding should feel exciting — not stressful.
+
+I’m here to keep everything calm, organised, and running seamlessly so you can relax, feel fully present, and genuinely enjoy every moment.
+
+Meet Erica Section
+
+For the image on the far right beside the text, could we try the photo of me sitting with the bride on the couch holding her hand? I think that image will work really nicely in this section.
+
+I do think the image of me with the couple is lovely as well, but I think that one may work better at the bottom of the site instead.
+
+For the wording, could we update it to:
+
+Planning your wedding should feel exciting — not overwhelming.
+
+I’m Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I’ll guide you through it all in a way that feels simple, supportive, and manageable.
+
+I know how important it is to feel fully present on your wedding day — not worrying about timelines, suppliers, or what’s happening behind the scenes. That’s where I come in.
+
+From the lead-up to the final dance, I’m there making sure everything flows seamlessly, everything is handled, and nothing falls back on you — so you can relax and truly enjoy every moment.
+
+Think of me as the calm, organised presence in your corner… making sure your wedding feels as good as it looks.
+
+Background Details
+I’m not overly keen on the faint love hearts in the background — I think they make the overall look feel a little cheaper. Is there an alternative we could use that feels cleaner and more refined?
+
+Testimonials Section
+The testimonials are much better being my own reviews now, but I still feel the images are too large and bulky visually. I’d love this section to feel lighter and more elegant overall.
+
+As mentioned before, I’d prefer a more minimal layout where only part of the testimonial shows initially and then expands to reveal the full review is there any other option here for layout?
+
+Bottom Image
+The large image at the bottom still isn’t quite working for me. When scrolling, it cuts off our heads which feels awkward visually. I think this section either needs adjusting or simplifying slightly so the image sits more naturally.
+
+Contact Section
+Just to include from previous feedback — I’d like to add a dropdown option for selecting the package/service of interest within the enquiry form.
+
+Package Wording
+
+Planning Power Hour
+“A focused 1:1 consultation designed to bring clarity, guidance, and confidence to your wedding plans.
+
+Perfect for couples who feel stuck, overwhelmed, or simply want expert advice and reassurance before moving forward.
+
+Usually 1.5 hours.”
+
+Signature Day Coordination
+“Perfect for couples who have planned everything themselves but want to fully relax and enjoy the day.
+
+Following a detailed planning call around 6 weeks before the wedding, I’ll be there to manage the timelines, suppliers, logistics, and key moments behind the scenes — ensuring everything flows seamlessly from morning through to your first dance.”
+
+Partial Planning Support
+“Ongoing support for couples who would love guidance throughout the planning process while still leading the planning themselves.
+
+From supplier recommendations and timelines to advice, structure, and coordination, I’ll help bring calm and clarity every step of the way — while also being there on the wedding day itself to ensure everything runs seamlessly.
+
+Typically begins around 4 months before the wedding.”
+
+Full Planning + Coordination
+“Complete support from the early stages of planning right through to your wedding day.
+
+From venue sourcing and supplier management to timelines, logistics, styling, and full coordination — I’ll guide every detail with a calm, organised, and thoughtful approach.
+
+Designed to make the entire experience feel seamless and stress-free.”
+
+
+
+Thanks again — I really appreciate all the work going into this and I definitely feel like it’s moving much more towards the softer, more refined feel I’m aiming for ✨
+
+Warmest, 
+
+Erica Egan 
+Weddings with Erica 
+0872186100
+Instagram
+
+Erica Egan <wedwitherica@gmail.com>
+Sat, May 23, 3:11 PM (8 days ago)
+to me
+
+Hi 
+
+I’ve been looking at a few reference sites and I really love the overall feel and layout of this contact page: Contact | Plan Your Perfect Event Now — Georgina Rose Events
+
+I love how clean, airy, and personal it feels without being overly busy. The balance between imagery, spacing, and the enquiry form feels really soft and premium, which is much closer to the direction I’m aiming for overall.
+
+For my own contact section/page, I’d love something along these lines:
+
+Soft, clean layout with lots of breathing space
+
+A more personal feel rather than a standard enquiry form
+
+Image  in the background exactly as you have it currently 
+
+For the form itself:
+
+Heading:
+“Let’s Start Planning”
+
+Intro text:
+“Tell me a little about your plans and how I can support you — I’d love to hear more about your wedding.”
+
+Fields:
+
+Name
+
+Email Address
+
+Contact Number
+
+Wedding Date (if known) - Calender 
+
+Venue / Location
+
+“How can I support you?” (dropdown menu)
+• Planning Power Hour
+• Signature Day Coordination
+• Partial Planning Support
+• Full Planning + Coordination
+
+“Tell me a little more about your plans…” (larger message box)
+
+I think keeping this section really clean, warm, and personal will work beautifully with the overall softer direction of the site ✨
+
+Warmest, 
+
+Erica Egan 
+Weddings with Erica 
+0872186100
+Instagram rica Egan <wedwitherica@gmail.com>
+Wed, May 27, 4:56 PM (4 days ago)
+to me
+
+Can you also add this one please - you have this image already me with the couple I’m in a blue top
+
+Thank you 
+
+Planning a wedding overseas from the United States for our October 2025 wedding in Athlone, Ireland felt incredibly overwhelming at first, but Erica Kelly made the entire experience seamless, organized, and genuinely enjoyable from start to finish.
+
+Erica was absolutely phenomenal every single step of the way. She kept us on track throughout the planning process, answered every question with patience and kindness, and made us feel completely supported despite the distance and time differences. Her professionalism, warmth, and attention to detail were unmatched.
+
+What makes Erica even more extraordinary is that she did all of this while also caring for her growing family and welcoming a new little one. We were constantly amazed by her dedication, positivity, and ability to make us feel like we were her top priority.
+
+By the end of this journey, we truly felt like we had gained a lifelong friend — not just an incredible wedding coordinator and event extraordinaire. Our wedding day was everything we dreamed of and more, and we could not have done it without her.
+
+If you are considering Erica for your wedding, book her immediately. She is simply the best.
+
+
+Warmest,  
+Erica Egan <wedwitherica@gmail.com>
+Wed, May 20, 6:24 PM (11 days ago)
+to me
+
+Review
+
+We were so happy to have Erica as our wedding coordinator! From our very first meeting, we instantly clicked, and she helped me make decisions I’d been stuck on within minutes.
+
+Erica brought such a friendly, bubbly, and calm presence to our day while seamlessly running the show behind the scenes. She constantly reminded me to take it all in and enjoy every moment whenever the nerves started to creep in.
+
+She helped us tailor the day perfectly to both us and our guests, and we honestly couldn’t have been happier with how everything turned out. Our guests are still raving about the food, venue, and music!
+
+We would highly recommend Erica to anyone planning their wedding-she is such a kind, genuine person who truly goes above and beyond for her couples 💞
+Best of luck in the future from
+Emma and John [2:25 pm, 23/05/2026] Yaseeeeeeen: Hi Erica 😊
+
+I’ve made a few more refinements and updates now and I really feel the site is coming together beautifully.
+
+There are still a couple of small limitations before the paid plan is connected. For example, the current form version only allows up to 5 fields, so a few extra customisations will be easier once the upgraded plan is active ✨
+
+Have another look whenever you get a chance and let me know what you think
+[5:34 pm, 23/05/2026] Yaseeeeeeen: Video
+Heyyy.. THnaks I will chack that Spacing
+[5:35 pm, 23/05/2026] Yaseeeeeeen: 0:13
+No no that the website plan yearly or 3 months then you have to purchase so we go live and have no limitations
+[5:36 pm, 23/05/2026] +353 87 218 6100: So how much extra will that be?
+[5:39 pm, 23/05/2026] Yaseeeeeeen: it's hosting and platfrom fee
+[5:39 pm, 23/05/2026] Yaseeeeeeen: where we host
+[5:39 pm, 23/05/2026] Yaseeeeeeen: there is plans you can choose from ether you go 3 months or 1 year
+[5:40 pm, 23/05/2026] Yaseeeeeeen: preferd is 1 year Nicola also go with that
+[5:41 pm, 23/05/2026] Yaseeeeeeen: I need your main email where you manege all accounts I have this but i need you main email wedwitherica@gmail.com
+[5:47 pm, 23/05/2026] +353 87 218 6100: Ok how much is this? 
+My other email is ericaamykelly@gmail.com - I would prefer everything go through the wedwitherica@gmail.com to keep them separate if possible
+[5:52 pm, 23/05/2026] Yaseeeeeeen: €52 1year 
+€34 3 months
+[5:52 pm, 23/05/2026] Yaseeeeeeen: Ok how much is this? 
+My other email is ericaamykelly@gmail.com - I would prefer everything go through the wedwitherica@gmail.com to keep them separate if possible
+Yes everything will go though that one.
+[6:25 pm, 23/05/2026] +353 87 218 6100: Ok when do you need this and do I send it to John?
+[7:19 pm, 23/05/2026] Yaseeeeeeen: Ok when do you need this and do I send it to John?
+No it’s you will do from admin panel
+[7:20 pm, 23/05/2026] Yaseeeeeeen: And i will need to guide you to understand the platform and it’s so easy
+[7:29 pm, 23/05/2026] +353 87 218 6100: Ok when should we do this?
+[7:49 pm, 23/05/2026] Yaseeeeeeen: ericaamykelly@gmail.com I just sent you to ownership
+[7:53 pm, 23/05/2026] +353 87 218 6100: Ok I’ve signed in
+[7:55 pm, 23/05/2026] Yaseeeeeeen: are you on pc
+[7:56 pm, 23/05/2026] Yaseeeeeeen: make sure you are inside project then click get Premium Now
+[7:57 pm, 23/05/2026] Yaseeeeeeen: Gold
+All Features Included
+[7:59 pm, 23/05/2026] +353 87 218 6100: This is what comes up when I click get premium now
+[8:02 pm, 23/05/2026] Yaseeeeeeen: Wait oops
+[8:04 pm, 23/05/2026] Yaseeeeeeen: Transfer complete! You have successfully transferred the website to: ericaamykelly@gmail.com.
+[8:09 pm, 23/05/2026] +353 87 218 6100: The gold is €253 for the year not €52??
+[8:21 pm, 23/05/2026] Yaseeeeeeen: I mixed up the pricing earlier, I’m really sorry about that 🙏
+[8:22 pm, 23/05/2026] Yaseeeeeeen: I accidentally checked the wrong plan before
+[8:23 pm, 23/05/2026] Yaseeeeeeen: I don’t normally handle the platform pricing side, which is why I confused the plans. you can get 3 months of gold
+[8:23 pm, 23/05/2026] Yaseeeeeeen: what is it showing? for 3 months
+[8:25 pm, 23/05/2026] Yaseeeeeeen: Professional
+Business & Store this will also work
+[8:25 pm, 23/05/2026] Yaseeeeeeen: Professional check that will also work
+[9:05 pm, 23/05/2026] +353 87 218 6100: I’ll have to check all of this tonight’s as I am gone for the evening!
+[5:02 pm, 25/05/2026] +353 87 218 6100: I’ve had a proper look through everything now and I think the Advanced or Professional package sounds like the best fit for where I’m at right now.
+
+I definitely do plan on offering digital downloads eventually, but realistically that probably won’t be for a few months yet, so I think it makes the most sense to get the website launched properly first and then build on things further down the line as the business grows.
+
+Between the website itself and also wanting to invest into SEO, it’s definitely a bigger undertaking cost-wise than I originally realised, so I’d ideally like to keep things as streamlined as possible initially while still making sure the site has everything it needs 😊✨
+[5:03 pm, 25/05/2026] +353 87 218 6100: Hey 😊
+
+The team from SITE123 actually gave me a call earlier just to chat through the package options and everything.
+
+Their advice was that the Advanced package for small businesses should be more than enough for where the website is currently at, and that I could always upgrade later and just pay the difference once I get to the stage of needing the extra functionality for digital downloads etc.
+
+I just wanted to check with you that you’d also be happy enough for us to go ahead with the Advanced package for now? ✨
+[5:46 pm, 25/05/2026] Yaseeeeeeen: Hey,,
+Thanks I totally understood yes advance for now is best option later you can change
+[5:54 pm, 25/05/2026] +353 87 218 6100: Ok I’ve just bought advance based on that make a great website for her

@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Gd26_sQsSm20XlP6eWx4J"
+uri = "file://artifacts/weddings-with-erica/public/images/hero.png"
+type = "image"
+title = "Hero wedding scene"
+
+[[generated]]
+id = "3XVYVgj7IGpLlkFksmxQL"
+uri = "file://artifacts/weddings-with-erica/public/images/erica-portrait.png"
+type = "image"
+title = "Erica portrait"
+
+[[generated]]
+id = "I0ASeMnFv_lS45hs9ixsi"
+uri = "file://artifacts/weddings-with-erica/public/images/erica-bride.png"
+type = "image"
+title = "Planner with bride"
+
+[[generated]]
+id = "96yfFspn6Zgqz9qSxB5Et"
+uri = "file://artifacts/weddings-with-erica/public/images/service-signature.png"
+type = "image"
+title = "Service signature day"
+
+[[generated]]
+id = "KlFOEFeh2T8e-sYNM648g"
+uri = "file://artifacts/weddings-with-erica/public/images/service-partial.png"
+type = "image"
+title = "Service partial planning"
+
+[[generated]]
+id = "Zg5CblhwXqZ8OThM9_kri"
+uri = "file://artifacts/weddings-with-erica/public/images/service-full.png"
+type = "image"
+title = "Service full planning"
+
+[[generated]]
+id = "_fdAfaQHF3qOgZ7zAMDDX"
+uri = "file://artifacts/weddings-with-erica/public/images/service-power-hour.png"
+type = "image"
+title = "Service power hour"
+
+[[generated]]
+id = "NyVSdY5V_zLURMgLnRpZD"
+uri = "file://artifacts/weddings-with-erica/public/images/testimonial-1.png"
+type = "image"
+title = "Testimonial couple 1"
+
+[[generated]]
+id = "AUQd0kBXqPkpl8-t7TtIQ"
+uri = "file://artifacts/weddings-with-erica/public/images/testimonial-2.png"
+type = "image"
+title = "Testimonial couple 2"
+
+[[generated]]
+id = "Nfmn8BB9DQD-8Qaqe6g4B"
+uri = "file://artifacts/weddings-with-erica/public/images/gallery-scenic.png"
+type = "image"
+title = "Gallery scenic wedding"
