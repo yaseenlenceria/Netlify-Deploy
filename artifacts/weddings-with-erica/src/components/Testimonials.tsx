@@ -5,7 +5,7 @@ import emmajohnImg from "@assets/Emma_&_John_1780246115013.jpg";
 import jennyconorImg from "@assets/Jenny_&_Conor_1780246212053.jpg";
 import karinaAdrianImg from "@assets/Karina_&_Adrian_1780246238977.jpg";
 import katiestevenImg from "@assets/Katie_&_Steven_1780246282924.jpg";
-import andreluisImg from "@assets/Andre_&_Luis_1780246311362.jpg";
+import andreluisImg from "@assets/Andre_&_Luis_1780247337187.jpg";
 import amandamarcusImg from "@assets/Amanda_&_Marcus_1780246332890.png";
 
 const testimonials = [
@@ -15,6 +15,7 @@ const testimonials = [
     author: "Emma & John",
     occasion: "Ireland",
     image: emmajohnImg,
+    imgPosition: "object-top",
   },
   {
     quote:
@@ -22,6 +23,7 @@ const testimonials = [
     author: "Jenny & Conor",
     occasion: "Ireland",
     image: jennyconorImg,
+    imgPosition: "object-top",
   },
   {
     quote:
@@ -29,6 +31,7 @@ const testimonials = [
     author: "Karina & Adrian",
     occasion: "Ireland",
     image: karinaAdrianImg,
+    imgPosition: "object-center",
   },
   {
     quote:
@@ -36,6 +39,7 @@ const testimonials = [
     author: "Katie & Steven",
     occasion: "Ireland",
     image: katiestevenImg,
+    imgPosition: "object-top",
   },
   {
     quote:
@@ -43,6 +47,7 @@ const testimonials = [
     author: "Andre & Luis",
     occasion: "Ireland",
     image: andreluisImg,
+    imgPosition: "object-top",
   },
   {
     quote:
@@ -50,6 +55,7 @@ const testimonials = [
     author: "Amanda & Marcus",
     occasion: "Athlone, Ireland — 2025",
     image: amandamarcusImg,
+    imgPosition: "object-center",
   },
 ];
 
@@ -135,12 +141,12 @@ export function Testimonials() {
             transition={{ duration: 0.45, ease: "easeInOut" }}
             className="grid md:grid-cols-[320px_1fr] lg:grid-cols-[380px_1fr] gap-10 md:gap-16 items-start"
           >
-            {/* Photo — square crop, object-center so faces stay visible */}
+            {/* Photo — square crop, per-photo position so faces stay visible */}
             <div className="w-full max-w-[320px] mx-auto md:mx-0 overflow-hidden shadow-md aspect-square">
               <img
                 src={t.image}
                 alt={t.author}
-                className="w-full h-full object-cover object-center"
+                className={`w-full h-full object-cover ${t.imgPosition}`}
                 loading="lazy"
               />
             </div>
