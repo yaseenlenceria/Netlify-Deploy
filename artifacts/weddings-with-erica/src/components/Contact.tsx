@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -78,6 +78,33 @@ export function Contact() {
             <p className="mt-5 text-foreground/60 font-light text-[1rem] leading-[1.85] max-w-sm">
               Fill in the form and I'll come back to you within 48 hours. I can't wait to hear all about your wedding plans.
             </p>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href="https://www.instagram.com/weddingswitherica/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/55 hover:text-primary transition-colors text-[0.95rem] font-light"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+                <span>@weddingswitherica</span>
+              </a>
+              <span className="text-foreground/25">·</span>
+              <a
+                href="https://www.tiktok.com/@weddingswitherica"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/55 hover:text-primary transition-colors text-[0.95rem] font-light"
+                aria-label="TikTok"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/>
+                </svg>
+                <span>TikTok</span>
+              </a>
+            </div>
           </div>
 
           {/* Two stacked images */}

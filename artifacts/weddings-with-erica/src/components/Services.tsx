@@ -112,7 +112,7 @@ export function Services() {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
 
           {/* ── LEFT: featured service card ── */}
-          <div className="w-full lg:w-[44%] xl:w-[42%] shrink-0">
+          <div className="w-full lg:w-[36%] xl:w-[34%] shrink-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -123,7 +123,7 @@ export function Services() {
                 className="overflow-hidden bg-white shadow-md"
               >
                 {/* Image */}
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -133,7 +133,7 @@ export function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="p-7 md:p-8">
+                <div className="p-5 md:p-6">
                   {s.tag && (
                     <span className="text-[13px] uppercase tracking-widest text-primary/80 font-sans mb-2 inline-block">
                       — {s.tag}
