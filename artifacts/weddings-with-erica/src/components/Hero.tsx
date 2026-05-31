@@ -21,7 +21,7 @@ export function Hero() {
         <img
           src={heroBg}
           alt="Beautiful wedding couple walking together through a castle gate"
-          className="w-full h-full object-cover object-[48%_55%]"
+          className="w-full h-full object-cover object-[56%_55%]"
           fetchPriority="high"
         />
         {/* Dark sage-green gradient overlay */}
