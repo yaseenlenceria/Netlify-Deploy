@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Heart, Calendar, Users, Star } from "lucide-react";
-import heroImg from "@assets/hero_image_1780239389448.png";
-import aboveContactImg from "@assets/above_contact_1780239389448.png";
+import heroImg from "@assets/hero_image_1780239389448.jpg";
+import aboveContactImg from "@assets/above_contact_1780239389448.jpg";
 
 const steps = [
   {

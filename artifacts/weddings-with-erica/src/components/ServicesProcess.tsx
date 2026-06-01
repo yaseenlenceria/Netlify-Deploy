@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import heroImg from "@assets/hero_image_1780239389448.png";
+import heroImg from "@assets/hero_image_1780239389448.jpg";
 
 const steps = [
   {

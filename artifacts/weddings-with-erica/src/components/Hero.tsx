@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
-import heroBg from "@assets/hero_image_1780239389448.png";
+import heroBg from "@assets/hero_image_1780239389448.jpg";
 import { HeroSparkles } from "@/components/HeroSparkles";
 
 const promises = [

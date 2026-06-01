@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import ericaPortrait from "@assets/meet_erica_1780239389447.png";
+import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
 
 const pillars = [
   {

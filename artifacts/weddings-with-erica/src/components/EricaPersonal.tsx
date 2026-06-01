@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
-import coupleImg from "@assets/meet_erica_3_1780239389447.png";
-import aboveContactImg from "@assets/above_contact_1780239389448.png";
+import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
+import aboveContactImg from "@assets/above_contact_1780239389448.jpg";
 
 const facts = [
   {

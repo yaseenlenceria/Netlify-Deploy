@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import heroImg from "@assets/hero_image_1780239389448.png";
-import emmajohnImg from "@assets/Emma_&_John_1780292849312.png";
+import heroImg from "@assets/hero_image_1780239389448.jpg";
+import emmajohnImg from "@assets/Emma_&_John_1780292849312.jpg";
 import jennyconorImg from "@assets/Jenny_&_Conor_1780246212053.jpg";
-import katiestevenImg from "@assets/Katie_&_Steven_1780292849313.png";
+import katiestevenImg from "@assets/Katie_&_Steven_1780292849313.jpg";
 import andreluisImg from "@assets/Andre_&_Luis_1780246311362.jpg";
 import karinaAdrianImg from "@assets/Karina_&_Adrian_1780246238977.jpg";
 import amandamarcusImg from "@assets/Amanda_&_Marcus_1780246332890.png";

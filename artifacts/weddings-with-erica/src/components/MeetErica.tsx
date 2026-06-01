@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import ericaPortrait from "@assets/meet_erica_1780239389447.png";
-import coupleImg from "@assets/meet_erica_3_1780239389447.png";
+import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
+import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
 
 export function MeetErica() {
   const [, navigate] = useLocation();
