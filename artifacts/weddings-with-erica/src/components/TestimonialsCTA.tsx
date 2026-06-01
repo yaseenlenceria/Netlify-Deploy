@@ -54,7 +54,7 @@ export function TestimonialsCTA() {
     <>
       {/* ── All couple highlights grid ── */}
       <section className="py-20 md:py-28 bg-[hsl(40,18%,94%)]">
-        <div className="mx-auto px-6 md:px-14 max-w-7xl">
+        <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

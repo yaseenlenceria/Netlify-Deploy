@@ -28,7 +28,7 @@ export function ContactExtras() {
     <>
       {/* ── Why Erica ── */}
       <section className="py-20 md:py-28 bg-[hsl(40,18%,94%)]">
-        <div className="mx-auto px-6 md:px-14 max-w-7xl">
+        <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* Left: image */}

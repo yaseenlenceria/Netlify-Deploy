@@ -174,7 +174,7 @@ export function Testimonials() {
               {/* Left: Photo + controls (mobile-first so controls are always near the top) */}
               <div className="flex flex-col gap-4">
                 {/* Photo */}
-                <div className="w-full max-w-[320px] mx-auto md:mx-0 overflow-hidden shadow-md aspect-square">
+                <div className="w-full overflow-hidden shadow-md aspect-square">
                   <img
                     src={t.image}
                     alt={t.author}
@@ -184,7 +184,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Author + navigation — right below the photo on mobile */}
-                <div className="flex items-center justify-between max-w-[320px] mx-auto md:mx-0 w-full">
+                <div className="flex items-center justify-between w-full">
                   {/* Author */}
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-px bg-primary/40" />
@@ -216,7 +216,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Dot indicators */}
-                <div className="flex gap-2 items-center max-w-[320px] mx-auto md:mx-0">
+                <div className="flex gap-2 items-center">
                   {testimonials.map((_, i) => (
                     <button
                       key={i}

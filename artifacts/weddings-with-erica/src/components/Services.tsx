@@ -83,7 +83,7 @@ export function Services() {
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="mb-7 md:mb-9 flex flex-col md:flex-row md:items-end md:justify-between gap-2"
+          className="mb-7 md:mb-9"
         >
           <div>
             <motion.span
@@ -104,10 +104,10 @@ export function Services() {
             >
               My <em className="not-italic text-primary">Services</em>
             </motion.h1>
+            <p className="text-foreground/60 font-light text-[0.95rem] max-w-lg leading-relaxed mt-3">
+              Every package is tailored around you, your vision, and what you need most.
+            </p>
           </div>
-          <p className="text-foreground/60 font-light text-[0.95rem] max-w-sm leading-relaxed">
-            Every package is tailored around you, your vision, and what you need most.
-          </p>
         </motion.div>
 
         {/* ═══ MOBILE layout: tabs on top, card below ═══ */}

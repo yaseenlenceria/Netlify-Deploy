@@ -56,7 +56,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 md:px-10 xl:px-16 py-20 md:py-28 grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
 
         {/* ── LEFT: heading + two stacked images ── */}
         <motion.div

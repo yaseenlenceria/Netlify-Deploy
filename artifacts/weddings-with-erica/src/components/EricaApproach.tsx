@@ -45,7 +45,7 @@ export function EricaApproach() {
     <>
       {/* ── My Philosophy — sage background with quote ── */}
       <section className="bg-[hsl(90,18%,94%)] py-20 md:py-28 overflow-hidden">
-        <div className="mx-auto px-6 md:px-14 max-w-7xl">
+        <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
@@ -98,7 +98,7 @@ export function EricaApproach() {
 
       {/* ── What I Bring — 4 value cards ── */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="mx-auto px-6 md:px-14 max-w-7xl">
+        <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export function EricaApproach() {
 
       {/* ── How It Works — process steps ── */}
       <section className="py-20 md:py-28 bg-[hsl(40,18%,94%)] overflow-hidden">
-        <div className="mx-auto px-6 md:px-14 max-w-7xl">
+        <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
