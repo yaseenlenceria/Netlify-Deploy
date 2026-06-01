@@ -139,7 +139,7 @@ export function ServicesProcess() {
         >
           <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Not Sure Where to Start?</span>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.1] mb-6">
-            Let's figure it out <em className="not-italic text-primary/80">together</em>
+            Let's figure it out <em className="not-italic text-white">together</em>
           </h2>
           <p className="text-primary-foreground/70 font-light text-[1.05rem] leading-relaxed mb-10 max-w-lg mx-auto">
             A quick conversation is all it takes. I'll help you understand exactly what support would suit you best — no pressure, no commitment.

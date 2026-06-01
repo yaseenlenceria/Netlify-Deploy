@@ -186,7 +186,7 @@ export function EricaApproach() {
           <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Ready to Begin?</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-[1.08] mb-6">
             Let's plan your<br />
-            <em className="not-italic text-primary/80">perfect day</em>
+            <em className="not-italic text-white">perfect day</em>
           </h2>
           <p className="text-primary-foreground/70 font-light text-[1.05rem] leading-relaxed mb-10 max-w-lg mx-auto">
             Whether you're just starting out or deep in the planning process, I'd love to hear from you and find out how I can help.
