@@ -1,43 +1,82 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, X } from "lucide-react";
+
+const DISMISSED_KEY = "wwe_toast_dismissed";
 
 const notifications = [
   {
-    name: "Sarah & James",
-    location: "Cork",
-    action: "just enquired about Day Coordination",
-    initials: "SJ",
+    name: "Aoife & Ciarán",
+    location: "Galway",
+    action: "just enquired about Full Planning",
+    initials: "AC",
   },
   {
-    name: "Emma & John",
+    name: "Siobhán & Seán",
+    location: "Cork",
+    action: "left a 5★ review",
+    initials: "SS",
+  },
+  {
+    name: "Niamh & Pádraig",
+    location: "Killarney",
+    action: "just booked Day Coordination",
+    initials: "NP",
+  },
+  {
+    name: "Caoimhe & Oisín",
+    location: "Westmeath",
+    action: "enquired about Partial Planning",
+    initials: "CO",
+  },
+  {
+    name: "Róisín & Darragh",
+    location: "Limerick",
+    action: "just got in touch",
+    initials: "RD",
+  },
+  {
+    name: "Fionnuala & Tadhg",
+    location: "Sligo",
+    action: "booked a Planning Power Hour",
+    initials: "FT",
+  },
+  {
+    name: "Éabha & Cormac",
     location: "Dublin",
     action: "left a 5★ review",
-    initials: "EJ",
-  },
-  {
-    name: "Siobhán & Ciarán",
-    location: "Galway",
-    action: "booked Full Planning",
-    initials: "SC",
-  },
-  {
-    name: "Rachel & Conor",
-    location: "Killarney",
-    action: "just enquired about Partial Planning",
-    initials: "RC",
+    initials: "ÉC",
   },
 ];
 
-const FIRST_DELAY_MS = 10000;  // first appears after 10 seconds
-const SHOW_MS = 6000;           // visible for 6 seconds
-const PAUSE_MS = 14000;         // hidden for 14 seconds between each
+const FIRST_DELAY_MS = 8000;
+const SHOW_MS = 6000;
+const PAUSE_MS = 16000;
 
 export function SocialProofToast() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(() => {
+    try {
+      return localStorage.getItem(DISMISSED_KEY) === "true";
+    } catch {
+      return false;
+    }
+  });
+
+  const handleClose = useCallback(() => {
+    setVisible(false);
+    setDismissed(true);
+    try {
+      localStorage.setItem(DISMISSED_KEY, "true");
+    } catch {
+      // ignore
+    }
+  }, []);
 
   useEffect(() => {
+    if (dismissed) return;
+
     let hideTimer: ReturnType<typeof setTimeout>;
     let nextTimer: ReturnType<typeof setTimeout>;
 
@@ -62,12 +101,14 @@ export function SocialProofToast() {
       clearTimeout(hideTimer);
       clearTimeout(nextTimer);
     };
-  }, []);
+  }, [dismissed]);
+
+  if (dismissed) return null;
 
   const n = notifications[index];
 
   return (
-    <div className="fixed bottom-6 left-5 z-[60] pointer-events-none">
+    <div className="fixed bottom-6 right-5 z-[60] pointer-events-none">
       <AnimatePresence mode="wait">
         {visible && (
           <motion.div
@@ -76,8 +117,17 @@ export function SocialProofToast() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.97 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-[hsl(40,33%,97%)] border border-[hsl(40,20%,88%)] shadow-lg px-4 py-3.5 flex items-center gap-3.5 max-w-[260px] pointer-events-auto"
+            className="bg-[hsl(40,33%,97%)] border border-[hsl(40,20%,88%)] shadow-lg px-4 py-3.5 flex items-center gap-3.5 max-w-[270px] pointer-events-auto relative"
           >
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              aria-label="Dismiss notification"
+              className="absolute top-2 right-2 text-foreground/30 hover:text-foreground/60 transition-colors"
+            >
+              <X className="w-3 h-3" />
+            </button>
+
             {/* Avatar */}
             <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
               <span className="text-[11px] font-sans font-medium text-primary tracking-wide">
@@ -86,7 +136,7 @@ export function SocialProofToast() {
             </div>
 
             {/* Text */}
-            <div className="min-w-0">
+            <div className="min-w-0 pr-3">
               <p className="text-[12px] font-sans text-foreground/80 leading-tight">
                 <span className="font-medium">{n.name}</span>
                 {" "}
