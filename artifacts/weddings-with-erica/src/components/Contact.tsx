@@ -13,6 +13,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 import contactBg from "@assets/contact-tablescape_1780246484111.jpg";
 import coupleImg from "@assets/cropped_Wedding_couple_love_green_hugs_via_getty_1780246527255.jpg";
 
@@ -38,6 +39,8 @@ const labelClass =
 
 export function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,12 +49,45 @@ export function Contact() {
     },
   });
 
-  function onSubmit(_values: FormValues) {
-    toast({
-      title: "Enquiry Sent",
-      description: "Thank you for reaching out — I'll be in touch very soon!",
-    });
-    form.reset();
+  async function onSubmit(values: FormValues) {
+    setIsSubmitting(true);
+    try {
+      const payload = {
+        name: values.name,
+        partnerName: values.partnerName,
+        email: values.email,
+        phone: values.phone,
+        weddingDate: values.date ? format(values.date, "d MMM yyyy") : null,
+        venue: values.venue,
+        service: values.service,
+        howHeard: values.howHeard || null,
+        details: values.details,
+      };
+
+      const res = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      toast({
+        title: "Enquiry Sent ✓",
+        description: "Thank you for reaching out — I'll be in touch very soon!",
+      });
+      form.reset();
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or reach out via Instagram.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -302,10 +338,11 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99] disabled:opacity-60"
                   data-testid="button-submit"
                 >
-                  Send Enquiry
+                  {isSubmitting ? "Sending…" : "Send Enquiry"}
                 </Button>
                 <p className="text-center text-[13px] text-foreground/35 font-light mt-4">
                   I typically respond within 48 hours — I look forward to hearing from you.

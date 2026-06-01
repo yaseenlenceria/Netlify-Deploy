@@ -60,3 +60,9 @@ id = "Nfmn8BB9DQD-8Qaqe6g4B"
 uri = "file://artifacts/weddings-with-erica/public/images/gallery-scenic.png"
 type = "image"
 title = "Gallery scenic wedding"
+
+[[generated]]
+id = "YHcQ3EjjPBJNK_jypOveX"
+uri = "file://artifacts/erica-admin/assets/images/icon.png"
+type = "image"
+title = "erica-admin-app-icon"
