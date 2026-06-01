@@ -10,6 +10,7 @@ import ContactPage from "@/pages/ContactPage";
 import PrivacyPage from "@/pages/PrivacyPage";
 import NotFound from "@/pages/not-found";
 import { SocialProofToast } from "@/components/SocialProofToast";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
           <SocialProofToast />
+          <WhatsAppButton />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

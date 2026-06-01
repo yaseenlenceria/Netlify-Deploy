@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/hero_image_1780239389448.png";
+import { HeroSparkles } from "@/components/HeroSparkles";
 
 const promises = [
   "Calm, stress-free planning",
@@ -15,6 +16,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[100dvh] flex flex-col md:flex-row overflow-hidden pt-[76px]">
+
+      {/* Sparkle particles — mobile overlay + desktop image half */}
+      <HeroSparkles />
 
       {/* ── MOBILE: full-bleed image with overlay ── */}
       <div className="absolute inset-0 md:hidden">
@@ -87,7 +91,7 @@ export function Hero() {
           <Button
             onClick={() => navigate("/contact")}
             size="lg"
-            className="bg-white md:bg-primary text-primary md:text-primary-foreground hover:bg-white/90 md:hover:bg-primary/90 rounded-none px-9 py-5 text-[12px] uppercase tracking-[0.22em] shadow-sm transition-all hover:shadow-md duration-300"
+            className="btn-shine bg-white md:bg-primary text-primary md:text-primary-foreground hover:bg-white/90 md:hover:bg-primary/90 rounded-none px-9 py-5 text-[12px] uppercase tracking-[0.22em] shadow-sm transition-all hover:shadow-md duration-300"
             data-testid="hero-cta"
           >
             Let's Start Planning

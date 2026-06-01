@@ -22,7 +22,8 @@ export function MeetErica() {
             src={ericaPortrait}
             alt="Erica Egan — Wedding Planner"
             className="w-full h-full object-cover object-top"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
         <div className="flex-1 overflow-hidden">
@@ -30,7 +31,8 @@ export function MeetErica() {
             src={coupleImg}
             alt="Happy couple at their wedding"
             className="w-full h-full object-cover object-top"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
         <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none hidden lg:block" />
