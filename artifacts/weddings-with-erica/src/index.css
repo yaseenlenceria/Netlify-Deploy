@@ -87,7 +87,7 @@
   --secondary-foreground: 90 25% 40%;
 
   --muted: 40 20% 94%;
-  --muted-foreground: 90 10% 45%;
+  --muted-foreground: 90 12% 35%;
 
   --accent: 10 30% 90%;
   --accent-foreground: 90 20% 25%;
@@ -165,7 +165,7 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground font-medium;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
