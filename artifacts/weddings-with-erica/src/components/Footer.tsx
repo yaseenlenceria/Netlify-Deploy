@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { Instagram, Phone, Mail, Heart } from "lucide-react";
 import logoImg from "@assets/MAin_logo_1780239389448.png";
 
@@ -111,9 +111,17 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="mx-auto px-8 md:px-12 max-w-7xl py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-primary-foreground/55 font-light font-sans">
-            © {new Date().getFullYear()} Weddings with Erica. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-[13px] text-primary-foreground/55 font-light font-sans">
+              © {new Date().getFullYear()} Weddings with Erica. All rights reserved.
+            </p>
+            <Link
+              href="/privacy-policy"
+              className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/80 font-light font-sans transition-colors"
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors" aria-label="Instagram">
               <Instagram className="w-4 h-4" />

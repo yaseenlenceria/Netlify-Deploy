@@ -7,6 +7,7 @@ import MeetEricaPage from "@/pages/MeetEricaPage";
 import ServicesPage from "@/pages/ServicesPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import ContactPage from "@/pages/ContactPage";
+import PrivacyPage from "@/pages/PrivacyPage";
 import NotFound from "@/pages/not-found";
 import { SocialProofToast } from "@/components/SocialProofToast";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/services" component={ServicesPage} />
       <Route path="/testimonials" component={TestimonialsPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/privacy-policy" component={PrivacyPage} />
       <Route component={NotFound} />
     </Switch>
     </>
