@@ -119,7 +119,7 @@ export function TestimonialsCTA() {
           <span className="text-[13px] uppercase tracking-[0.3em] text-primary-foreground/55 font-sans mb-5 block">Your Turn</span>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.1] mb-6">
             Ready to write your<br />
-            <em className="not-italic text-primary/80">own story?</em>
+            <em className="not-italic text-white">own story?</em>
           </h2>
           <p className="text-primary-foreground/70 font-light text-[1.05rem] leading-relaxed mb-10 max-w-lg mx-auto">
             Every couple on this page was once exactly where you are now — wondering if they needed a wedding planner. They're all glad they did.
