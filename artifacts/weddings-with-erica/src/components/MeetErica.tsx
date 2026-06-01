@@ -101,13 +101,13 @@ export function MeetErica() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => navigate("/contact")}
-            className="bg-primary text-primary-foreground px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:bg-primary/90 transition-colors font-sans w-fit"
+            className="btn-shine bg-primary text-primary-foreground px-10 py-4 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans w-fit"
           >
             Get in Touch
           </button>
           <button
             onClick={() => navigate("/services")}
-            className="text-primary border border-primary/30 px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:border-primary/60 transition-colors font-sans w-fit"
+            className="border border-primary/30 text-primary px-10 py-4 text-[12px] uppercase tracking-[0.22em] hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 font-sans w-fit"
           >
             View Services
           </button>

@@ -72,7 +72,7 @@ export function ServicesWhy() {
             </p>
             <button
               onClick={() => navigate("/contact")}
-              className="shrink-0 border border-white/25 text-primary-foreground px-9 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:border-white/50 transition-colors font-sans"
+              className="btn-shine shrink-0 bg-primary text-primary-foreground px-10 py-4 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans"
             >
               Enquire Now
             </button>

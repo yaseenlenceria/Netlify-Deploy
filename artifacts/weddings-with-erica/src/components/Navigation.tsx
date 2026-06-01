@@ -53,7 +53,7 @@ export function Navigation() {
             ))}
             <button
               onClick={() => go("/contact")}
-              className="bg-primary text-primary-foreground px-6 py-2.5 text-[12px] uppercase tracking-[0.18em] hover:bg-primary/90 transition-colors duration-200 font-sans"
+              className="btn-shine bg-primary text-primary-foreground px-6 py-2.5 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans"
               data-testid="nav-cta"
             >
               Enquire

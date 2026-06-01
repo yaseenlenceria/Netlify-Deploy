@@ -100,7 +100,7 @@ export function ContactExtras() {
 
             <button
               onClick={() => navigate("/meet-erica")}
-              className="mt-10 text-primary border border-primary/30 px-8 py-3.5 text-[12px] uppercase tracking-[0.2em] hover:border-primary/60 transition-colors font-sans w-fit"
+              className="mt-10 border border-primary/30 text-primary px-10 py-4 text-[12px] uppercase tracking-[0.22em] hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 font-sans w-fit"
             >
               More About Erica
             </button>

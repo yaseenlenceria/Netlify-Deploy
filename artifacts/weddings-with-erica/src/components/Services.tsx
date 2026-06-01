@@ -175,7 +175,7 @@ export function Services() {
                 </ul>
                 <button
                   onClick={() => navigate("/contact")}
-                  className="w-full bg-primary text-primary-foreground py-3 text-[11px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+                  className="btn-shine w-full bg-primary text-primary-foreground py-4 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans"
                   data-testid={`service-enquire-${active}`}
                 >
                   Enquire About This Package
@@ -228,7 +228,7 @@ export function Services() {
                   </ul>
                   <button
                     onClick={() => navigate("/contact")}
-                    className="w-full bg-white/15 backdrop-blur-sm border border-white/35 text-white py-2.5 text-[11px] uppercase tracking-[0.22em] hover:bg-white/25 transition-colors font-sans"
+                    className="btn-shine w-full bg-primary text-primary-foreground py-4 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans"
                     data-testid={`service-enquire-${active}`}
                   >
                     Enquire About This Package

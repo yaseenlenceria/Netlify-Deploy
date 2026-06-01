@@ -317,7 +317,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.2em] text-[12px] font-sans transition-all active:scale-[0.99]"
+                  className="btn-shine w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.22em] text-[12px] font-sans shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.99]"
                   data-testid="button-submit"
                 >
                   Send Enquiry

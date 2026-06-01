@@ -146,7 +146,7 @@ export function ServicesProcess() {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-primary text-primary-foreground px-12 py-4 text-[14px] uppercase tracking-[0.22em] hover:bg-primary/90 transition-colors font-sans"
+            className="btn-shine bg-primary text-primary-foreground px-10 py-4 text-[12px] uppercase tracking-[0.22em] shadow-sm hover:shadow-md hover:bg-primary/90 transition-all duration-300 font-sans"
           >
             Enquire Now
           </button>
