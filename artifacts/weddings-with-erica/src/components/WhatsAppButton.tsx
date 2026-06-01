@@ -19,18 +19,21 @@ export function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-6 left-5 z-[60] flex items-center gap-3">
+    <div className="fixed bottom-6 left-5 z-[60]">
+      {/* Tooltip floats above the button — absolutely positioned so it never shifts layout */}
       <AnimatePresence>
         {hovered && (
           <motion.div
-            initial={{ opacity: 0, x: -8, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: -8, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="bg-[hsl(40,33%,97%)] border border-[hsl(40,20%,88%)] shadow-lg px-4 py-2.5 whitespace-nowrap"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="absolute bottom-[calc(100%+10px)] left-0 bg-[hsl(40,33%,97%)] border border-[hsl(40,20%,88%)] shadow-lg px-4 py-2.5 whitespace-nowrap pointer-events-none"
           >
             <p className="text-[12px] font-sans text-foreground/80 font-medium">Chat with Erica on WhatsApp</p>
             <p className="text-[10px] font-sans text-foreground/45 mt-0.5">Usually replies within a few hours</p>
+            {/* small arrow pointing down */}
+            <div className="absolute -bottom-[5px] left-5 w-2.5 h-2.5 bg-[hsl(40,33%,97%)] border-r border-b border-[hsl(40,20%,88%)] rotate-45" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -45,10 +48,13 @@ export function WhatsAppButton() {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, delay: 1.5, ease: "easeOut" }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="wa-pulse w-13 h-13 rounded-full flex items-center justify-center text-white shadow-xl"
-        style={{ backgroundColor: "#25D366", width: "52px", height: "52px" }}
+        className="wa-pulse flex items-center justify-center text-white shadow-xl transition-shadow duration-300 hover:shadow-2xl"
+        style={{
+          backgroundColor: "#25D366",
+          width: "52px",
+          height: "52px",
+          borderRadius: "50%",
+        }}
       >
         <WhatsAppIcon />
       </motion.a>
