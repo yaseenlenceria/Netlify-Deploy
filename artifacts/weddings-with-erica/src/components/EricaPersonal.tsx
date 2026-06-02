@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { motion } from "framer-motion";
 import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
 import aboveContactImg from "@assets/above_contact_1780239389448.jpg";
+import { FadeImage } from "@/components/FadeImage";
 
 const facts = [
   {
@@ -89,19 +90,21 @@ export function EricaPersonal() {
               className="grid grid-cols-2 gap-3 h-[500px] md:h-[580px]"
             >
               <div className="overflow-hidden">
-                <img
+                <FadeImage
                   src={aboveContactImg}
                   alt="Erica with a couple on their wedding day"
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="overflow-hidden mt-12">
-                <img
+                <FadeImage
                   src={coupleImg}
                   alt="Happy couple celebrating"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </motion.div>

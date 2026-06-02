@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/hero_image_1780239389448.jpg";
 import { HeroSparkles } from "@/components/HeroSparkles";
+import { FadeImage } from "@/components/FadeImage";
 
 const promises = [
   "Calm, stress-free planning",
@@ -22,10 +23,11 @@ export function Hero() {
 
       {/* ── MOBILE: full-bleed image with overlay ── */}
       <div className="absolute inset-0 md:hidden">
-        <img
+        <FadeImage
           src={heroBg}
           alt="Beautiful wedding couple walking together through a castle gate"
           className="w-full h-full object-cover object-[56%_55%]"
+          loading="eager"
           fetchPriority="high"
         />
         {/* Dark sage-green gradient overlay */}
@@ -126,10 +128,11 @@ export function Hero() {
 
       {/* ── DESKTOP: right image panel ── */}
       <div className="relative hidden md:block md:w-[54%] md:min-h-[calc(100dvh-76px)] overflow-hidden">
-        <img
+        <FadeImage
           src={heroBg}
           alt="Beautiful wedding couple walking together through a castle gate"
           className="w-full h-full object-cover object-center"
+          loading="eager"
           fetchPriority="high"
         />
         <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[hsl(40,33%,97%)] to-transparent pointer-events-none" />

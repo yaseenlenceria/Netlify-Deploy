@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 import signatureImg from "@assets/Signature_Day_Coordination_1780239389447.jpg";
-import partialImg from "@assets/PARTIAL_PLANNING_SUPPORT_1780239389446.png";
-import fullImg from "@assets/FULL_PLANNING_1780239389446.png";
-import powerHourImg from "@assets/PLANNING_POWER_HOUR_1780239389447.png";
+import partialImg from "@assets/PARTIAL_PLANNING_SUPPORT_1780239389446.jpg";
+import fullImg from "@assets/FULL_PLANNING_1780239389446.jpg";
+import powerHourImg from "@assets/PLANNING_POWER_HOUR_1780239389447.jpg";
 
 const services = [
   {

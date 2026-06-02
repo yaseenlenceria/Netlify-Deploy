@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
 import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
+import { FadeImage } from "@/components/FadeImage";
 
 export function MeetErica() {
   const [, navigate] = useLocation();
@@ -18,7 +19,7 @@ export function MeetErica() {
         className="relative lg:w-[48%] xl:w-[52%] h-[80vw] lg:h-auto flex gap-2 md:gap-3 order-last lg:order-first"
       >
         <div className="flex-1 overflow-hidden">
-          <img
+          <FadeImage
             src={ericaPortrait}
             alt="Erica Egan — Wedding Planner"
             className="w-full h-full object-cover object-top"
@@ -27,7 +28,7 @@ export function MeetErica() {
           />
         </div>
         <div className="flex-1 overflow-hidden">
-          <img
+          <FadeImage
             src={coupleImg}
             alt="Happy couple at their wedding"
             className="w-full h-full object-cover object-top"

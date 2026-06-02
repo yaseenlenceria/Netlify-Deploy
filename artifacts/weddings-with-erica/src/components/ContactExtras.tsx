@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
+import { FadeImage } from "@/components/FadeImage";
 
 const pillars = [
   {
@@ -37,11 +38,12 @@ export function ContactExtras() {
             transition={{ duration: 1.1, ease: "easeOut" }}
             className="relative h-[60vw] lg:h-auto overflow-hidden order-last lg:order-first"
           >
-            <img
+            <FadeImage
               src={ericaPortrait}
               alt="Erica Egan — Wedding Planner"
               className="w-full h-full object-cover object-top"
               loading="lazy"
+              decoding="async"
             />
             {/* subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[hsl(40,18%,94%)]/40 hidden lg:block" />
