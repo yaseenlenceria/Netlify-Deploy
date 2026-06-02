@@ -39,7 +39,7 @@ export function Footer() {
           <img
             src={logoImg}
             alt="Weddings with Erica"
-            className="h-24 w-auto object-contain self-start brightness-0 invert opacity-85"
+            className="h-24 w-auto object-contain self-start brightness-0 invert opacity-85 bg-transparent"
           />
           <p className="text-primary-foreground/75 text-[1rem] font-light leading-[1.8] max-w-xs">
             Ireland's boutique wedding planner. Keeping everything calm, organised, and seamlessly beautiful — so you can be fully present on your day.

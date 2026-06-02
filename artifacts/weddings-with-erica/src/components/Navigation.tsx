@@ -35,7 +35,7 @@ export function Navigation() {
             <img
               src={logoImg}
               alt="Weddings with Erica"
-              className="h-16 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+              className="h-16 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80 bg-transparent"
             />
           </button>
 
