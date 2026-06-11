@@ -9,7 +9,7 @@ import powerHourImg from "@assets/PLANNING_POWER_HOUR_1780239389447.jpg";
 const services = [
   {
     title: "Signature Day Coordination",
-    tag: "Most Popular",
+    tag: "",
     tagline: "Support for your wedding day, handled properly.",
     description:
       "Perfect for couples who have planned everything themselves but want to fully relax and enjoy the day. Around 6 weeks before the wedding I'll step in, take the reins, and make sure everything runs seamlessly.",
@@ -24,10 +24,10 @@ const services = [
   },
   {
     title: "Partial Planning Support",
-    tag: "",
+    tag: "Most Popular",
     tagline: "Guidance and calm throughout your planning journey.",
     description:
-      "Ongoing support for couples who would love expert guidance while still leading the planning themselves. I'll bring structure, recommendations, and reassurance at every stage.",
+      "Ongoing support for couples who would love expert guidance while still leading the planning themselves. I'll bring structure, recommendations, and reassurance at every stage. Typically begins around 4 months before the wedding.",
     includes: [
       "Ongoing planning guidance & advice",
       "Supplier recommendations & introductions",
@@ -102,7 +102,7 @@ export function Services() {
               transition={{ duration: 0.75, delay: 0.22, ease: "easeOut" }}
               className="text-4xl md:text-5xl font-serif text-foreground leading-[1.08]"
             >
-              My <em className="not-italic text-primary">Services</em>
+              My <em className="not-italic text-primary">Support</em>
             </motion.h1>
             <p className="text-foreground/60 font-light text-[0.95rem] max-w-lg leading-relaxed mt-3">
               Every package is tailored around you, your vision, and what you need most.
@@ -146,7 +146,7 @@ export function Services() {
             </motion.button>
           ))}
 
-          {/* Selected service card — image + text, no overlay clipping */}
+          {/* Selected service card */}
           <AnimatePresence mode="wait">
             <motion.div
               key={active}

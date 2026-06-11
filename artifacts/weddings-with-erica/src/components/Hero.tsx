@@ -7,9 +7,9 @@ import { HeroSparkles } from "@/components/HeroSparkles";
 import { FadeImage } from "@/components/FadeImage";
 
 const promises = [
-  "Calm, stress-free planning",
-  "Full supplier management",
-  "Seamless on-the-day coordination",
+  "A calm, organised presence throughout the process",
+  "Trusted supplier recommendations and guidance",
+  "Support behind the scenes so you can be fully present",
 ];
 
 export function Hero() {
@@ -47,7 +47,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-[13px] uppercase tracking-[0.28em] text-white/70 md:text-primary/60 mb-5 font-sans"
         >
-          Ireland's Boutique Wedding Planner
+          The Support Behind Your Wedding Day
         </motion.span>
 
         <motion.h1
@@ -109,20 +109,18 @@ export function Hero() {
           </Button>
         </motion.div>
 
-        {/* Awards strip */}
+        {/* Stats strip */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="mt-10 pt-7 border-t border-white/20 md:border-border/40 flex items-center gap-4 md:gap-6 text-[12px] md:text-[13px] uppercase tracking-widest text-white/55 md:text-foreground/55 font-sans flex-wrap"
         >
-          <span>Ireland</span>
+          <span>10+ Years Experience</span>
           <span className="w-px h-3 bg-white/30 md:bg-border/60" />
-          <span>100+ Weddings</span>
+          <span>One Dedicated Planner</span>
           <span className="w-px h-3 bg-white/30 md:bg-border/60" />
-          <span>5★ Reviews</span>
-          <span className="w-px h-3 bg-white/30 md:bg-border/60" />
-          <span>Est. 2014</span>
+          <span>Supporting Couples Across Ireland</span>
         </motion.div>
       </motion.div>
 

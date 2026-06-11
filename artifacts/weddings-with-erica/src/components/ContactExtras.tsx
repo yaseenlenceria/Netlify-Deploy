@@ -6,18 +6,18 @@ import { FadeImage } from "@/components/FadeImage";
 const pillars = [
   {
     number: "01",
-    title: "100+ Weddings",
-    body: "With over a decade of experience coordinating weddings across Ireland and internationally, you're in the most capable, experienced hands.",
+    title: "Experience you can lean on",
+    body: "With over 10 years in the wedding industry and more than 100 weddings coordinated, I've seen just about everything. The benefit for you? Calm guidance, practical advice and someone who can help navigate the unexpected.",
   },
   {
     number: "02",
-    title: "Responds within 48 hours",
-    body: "Waiting for a reply is stressful — I know. I always come back to every enquiry promptly, personally, and with warmth.",
+    title: "Support that feels personal",
+    body: "No agency feel, no passing you between team members. When you work with me, you'll always deal directly with me — from your first enquiry right through to your wedding day.",
   },
   {
     number: "03",
-    title: "A conversation, not a sales pitch",
-    body: "My discovery call is genuinely about getting to know you. I'll listen far more than I talk, and there's no pressure — ever.",
+    title: "A genuine connection",
+    body: "My discovery calls aren't sales calls. They're simply a chance for us to get to know each other, chat about your plans and see if we're the right fit. No pressure, ever.",
   },
 ];
 
@@ -45,7 +45,6 @@ export function ContactExtras() {
               loading="lazy"
               decoding="async"
             />
-            {/* subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[hsl(40,18%,94%)]/40 hidden lg:block" />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 via-transparent to-transparent" />
 
@@ -73,12 +72,12 @@ export function ContactExtras() {
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-5 font-sans block">Why Erica</span>
 
             <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] text-foreground leading-[1.08] mb-6">
-              You're not just a<br />
-              <em className="not-italic text-primary">booking to me.</em>
+              You're not just another<br />
+              <em className="not-italic text-primary">wedding on my calendar.</em>
             </h2>
 
             <p className="text-foreground/68 font-light text-[1.05rem] leading-[1.9] mb-12 max-w-md">
-              Every couple I work with is treated as if they're my only couple. I invest time, energy, and genuine care into every single wedding — not because it's my job, but because I know how much this day means to you.
+              Every couple I work with is treated as if they're my only couple. I invest time, energy and genuine care into every wedding because I know just how much this day means to you.
             </p>
 
             <div className="space-y-0 divide-y divide-border/30">
@@ -123,10 +122,10 @@ export function ContactExtras() {
           >
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">What Happens Next</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
-              After you press <em className="not-italic text-primary">send</em>
+              After you press <em className="not-italic text-primary">send...</em>
             </h2>
             <p className="text-foreground/65 font-light text-[1.05rem] mt-4 max-w-xl leading-relaxed">
-              No automated responses, no long waits. Here's exactly what you can expect once your enquiry lands in my inbox.
+              Planning a wedding can come with enough uncertainty, so I like to keep this part simple.
             </p>
           </motion.div>
 
@@ -135,17 +134,17 @@ export function ContactExtras() {
               {
                 step: "Within 48 Hours",
                 title: "A personal reply",
-                desc: "I'll read your enquiry carefully and reply personally — not with an automated template. I want to understand your day before anything else.",
+                desc: "I'll read through your enquiry properly and come back to you personally. No automated responses — just a thoughtful reply and the next steps.",
               },
               {
                 step: "Next Step",
-                title: "A discovery call",
-                desc: "We'll arrange a relaxed call to get to know each other. No pressure, no pitch — just a genuine conversation about your wedding and what you need.",
+                title: "A relaxed chat",
+                desc: "We'll arrange a call to talk through your plans, where you're at in the process and how I might be able to help.",
               },
               {
-                step: "If It's a Fit",
-                title: "A tailored proposal",
-                desc: "If we click and my services feel right for you, I'll send a personalised proposal and we can get the planning underway.",
+                step: "If We're a Good Fit",
+                title: "The fun begins",
+                desc: "If it feels like the right fit for both of us, I'll send over a proposal and we can start bringing your plans to life together.",
               },
             ].map((item, i) => (
               <motion.div

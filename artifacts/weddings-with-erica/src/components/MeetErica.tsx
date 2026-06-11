@@ -54,7 +54,7 @@ export function MeetErica() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block"
         >
-          Ireland's Boutique Wedding Planner
+          Your Wedding Planning Partner
         </motion.span>
 
         <motion.h1
@@ -67,13 +67,12 @@ export function MeetErica() {
           Meet <em className="not-italic text-primary">Erica</em>
         </motion.h1>
 
-        <p className="text-foreground/65 font-light text-[1.05rem] mb-5 max-w-md italic leading-relaxed">
-          Ireland-based wedding planner with over 10 years experience — working with couples across the country and internationally.
-        </p>
-
         <div className="space-y-3 text-foreground/75 font-light leading-[1.85] text-[1rem] max-w-lg">
           <p>
-            I'm Erica, a wedding planner here to keep things calm, organised, and running exactly as they should. From the big decisions to the smallest details, I'll guide you through it all in a way that feels simple, supportive, and manageable.
+            Based in Ireland, I've spent the last 10+ years helping couples create weddings that feel calm, personal, and genuinely enjoyable to plan.
+          </p>
+          <p>
+            I'm here to keep things organised, running smoothly, and feeling manageable. From the big decisions to the smallest details, I'll guide you through it all in a way that feels supportive rather than overwhelming.
           </p>
           <p>
             I know how important it is to feel fully present on your wedding day — not worrying about timelines, suppliers, or what's happening behind the scenes. That's where I come in.
@@ -84,18 +83,13 @@ export function MeetErica() {
           Think of me as the calm, organised presence in your corner — making sure your wedding feels as good as it looks.
         </p>
 
-        {/* Stats */}
-        <div className="mt-8 pt-7 border-t border-border/35 grid grid-cols-3 gap-6 max-w-sm">
-          {[
-            { stat: "100+", label: "Weddings" },
-            { stat: "5★", label: "Rating" },
-            { stat: "10+", label: "Years" },
-          ].map((item) => (
-            <div key={item.label}>
-              <p className="font-serif text-3xl text-primary mb-1">{item.stat}</p>
-              <p className="text-[13px] uppercase tracking-widest text-foreground/40 font-sans">{item.label}</p>
-            </div>
-          ))}
+        {/* Stats strip */}
+        <div className="mt-8 pt-7 border-t border-border/35 flex items-center gap-4 md:gap-6 text-[12px] md:text-[13px] uppercase tracking-widest text-foreground/50 font-sans flex-wrap">
+          <span>10+ Years Experience</span>
+          <span className="w-px h-3 bg-border/60" />
+          <span>One Dedicated Planner</span>
+          <span className="w-px h-3 bg-border/60" />
+          <span>Supporting Couples Across Ireland</span>
         </div>
 
         {/* CTA */}
@@ -110,7 +104,7 @@ export function MeetErica() {
             onClick={() => navigate("/services")}
             className="border border-primary/30 text-primary px-10 py-4 text-[12px] uppercase tracking-[0.22em] hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 font-sans w-fit"
           >
-            View Services
+            View Support
           </button>
         </div>
       </motion.div>

@@ -1,50 +1,14 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import heroImg from "@assets/hero_image_1780239389448.jpg";
-import emmajohnImg from "@assets/Emma_&_John_1780292849312.jpg";
-import jennyconorImg from "@assets/Jenny_&_Conor_1780246212053.jpg";
-import katiestevenImg from "@assets/Katie_&_Steven_1780292849313.jpg";
-import andreluisImg from "@assets/Andre_&_Luis_1780246311362.jpg";
-import karinaAdrianImg from "@assets/Karina_&_Adrian_1780246238977.jpg";
-import amandamarcusImg from "@assets/Amanda_&_Marcus_1780246332890.png";
 
-const highlights = [
-  {
-    image: emmajohnImg,
-    quote: "She is such a kind, genuine person who truly goes above and beyond for her couples.",
-    author: "Emma & John",
-    occasion: "Ireland",
-  },
-  {
-    image: jennyconorImg,
-    quote: "An absolute joy to work with — professional, kind, calm and completely organised from start to finish.",
-    author: "Jenny & Conor",
-    occasion: "Ireland",
-  },
-  {
-    image: katiestevenImg,
-    quote: "It was like having your best friend by your side. Erica is worth her weight in gold.",
-    author: "Katie & Steven",
-    occasion: "Ireland",
-  },
-  {
-    image: andreluisImg,
-    quote: "The food, the music, the atmosphere was all simply perfect. I would highly recommend Erica without hesitation.",
-    author: "Andre & Luis",
-    occasion: "Ireland",
-  },
-  {
-    image: karinaAdrianImg,
-    quote: "She's a wealth of knowledge — I would recommend her to anyone looking for help planning their wedding.",
-    author: "Karina & Adrian",
-    occasion: "Ireland",
-  },
-  {
-    image: amandamarcusImg,
-    quote: "If you are considering Erica for your wedding, book her immediately. She is simply the best.",
-    author: "Amanda & Marcus",
-    occasion: "Athlone, Ireland — 2025",
-  },
+const expectations = [
+  "Honest advice, even when it's not what you expected to hear",
+  "Recommendations tailored to your style, priorities and budget",
+  "Quick replies when you're overthinking something at 10pm",
+  "Calm problem-solving when things don't quite go to plan",
+  "Someone who genuinely cares about your wedding as much as you do",
+  "Plenty of WhatsApp messages along the way",
 ];
 
 export function TestimonialsCTA() {
@@ -52,7 +16,7 @@ export function TestimonialsCTA() {
 
   return (
     <>
-      {/* ── All couple highlights grid ── */}
+      {/* ── A Few Things You Can Always Expect From Me ── */}
       <section className="py-20 md:py-28 bg-[hsl(40,18%,94%)]">
         <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
@@ -62,43 +26,24 @@ export function TestimonialsCTA() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Their Words</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">My Promise</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
-              Moments that <em className="not-italic text-primary">stay with you</em>
+              A Few Things You Can Always <em className="not-italic text-primary">Expect From Me</em>
             </h2>
-            <p className="text-foreground/65 font-light text-[1.05rem] mt-4 max-w-lg leading-relaxed">
-              Every couple has their own story. Here's what they said about their experience working with Erica.
-            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {highlights.map((h, i) => (
+            {expectations.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.7, delay: (i % 3) * 0.1 }}
-                className="group overflow-hidden bg-white"
+                transition={{ duration: 0.65, delay: (i % 3) * 0.1 }}
+                className="bg-white p-8 border border-border/20"
               >
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={h.image}
-                    alt={h.author}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="font-serif text-[1.05rem] text-foreground/85 italic leading-relaxed mb-4">"{h.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-px bg-primary/40" />
-                    <div>
-                      <p className="text-[13px] uppercase tracking-[0.2em] text-primary font-sans">{h.author}</p>
-                      <p className="text-[13px] text-foreground/45 font-light font-sans mt-0.5">{h.occasion}</p>
-                    </div>
-                  </div>
-                </div>
+                <span className="font-serif text-3xl text-primary/25 leading-none block mb-4">🤍</span>
+                <p className="font-serif text-[1.1rem] text-foreground/80 leading-relaxed">{item}</p>
               </motion.div>
             ))}
           </div>

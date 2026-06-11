@@ -8,27 +8,27 @@ const facts = [
   {
     label: "Based In",
     value: "Ireland",
-    detail: "Working with couples across the island and internationally",
+    detail: "Based in the Midlands of Ireland and working with couples across the country.",
   },
   {
     label: "Experience",
     value: "10+ Years",
-    detail: "Over a decade planning weddings of every size and style",
+    detail: "Over a decade helping couples navigate wedding planning with confidence and calm.",
   },
   {
     label: "Weddings",
     value: "100+",
-    detail: "Every single one treated with the same care and dedication",
+    detail: "Every single one treated with the same care and dedication.",
   },
   {
     label: "Approach",
     value: "Calm & Personal",
-    detail: "No agency feel — just one dedicated planner, fully in your corner",
+    detail: "No agency feel — just one dedicated planner, firmly in your corner.",
   },
   {
     label: "Philosophy",
-    value: "Present moments",
-    detail: "I handle everything so you can be fully present on your day",
+    value: "Present Moments",
+    detail: "Helping you feel calm, present and able to enjoy every moment.",
   },
 ];
 
@@ -124,13 +124,19 @@ export function EricaPersonal() {
               </h2>
               <div className="space-y-5 text-foreground/70 font-light leading-[1.9] text-[1.05rem]">
                 <p>
-                  I didn't fall into wedding planning — I sought it out. From the moment I coordinated my first wedding, I knew this was what I was meant to do. There's something incredibly special about being trusted with one of the most meaningful days of someone's life.
+                  I didn't fall into wedding planning — I sought it out. From the moment I coordinated my first wedding, I knew this was what I was meant to do.
                 </p>
                 <p>
-                  Over the years I've built deep relationships with Ireland's finest suppliers — photographers, florists, caterers, musicians — which means my couples don't just get me, they get access to a handpicked network built on trust and quality.
+                  I've also been on the other side of the process myself. When planning my own wedding in France, I worked with a wedding planner and experienced first-hand just how valuable it is to have someone guiding you through the decisions, logistics and little moments that can otherwise feel overwhelming.
                 </p>
                 <p>
-                  Outside of weddings? I'm a proud mum, a lover of beautiful things, and someone who genuinely believes that the details matter — in weddings and in life.
+                  There's something incredibly special about being trusted with one of the most meaningful days of someone's life.
+                </p>
+                <p>
+                  Over the years, I've built wonderful relationships with some of Ireland's most talented wedding suppliers. It means that when my couples need recommendations, they're coming from real experience, trust and seeing those suppliers in action time and time again.
+                </p>
+                <p>
+                  Outside of weddings, I'm a proud mum of three, a wife to a fellow wedding industry professional, and usually found juggling family life, wedding plans and a never-ending WhatsApp conversation or two.
                 </p>
               </div>
 

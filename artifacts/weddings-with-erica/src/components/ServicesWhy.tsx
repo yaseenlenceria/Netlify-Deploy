@@ -1,22 +1,21 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import heroImg from "@assets/hero_image_1780239389448.jpg";
 
 const differences = [
   {
     number: "01",
-    heading: "One planner. Full attention.",
-    body: "You'll never be handed off to a junior coordinator or feel like one of many. From your first enquiry to your last dance, it's just me — fully present, fully invested, and fully across every detail of your day.",
+    heading: "One planner. One point of contact.",
+    body: "From your first enquiry to your last dance, you'll work directly with me. No handovers, no junior coordinators, and no feeling like just another wedding on a spreadsheet.\n\nI'll be the person answering your questions, guiding decisions, coordinating suppliers, and making sure everything comes together exactly as it should.",
   },
   {
     number: "02",
-    heading: "A supplier network built over a decade.",
-    body: "I've spent 10+ years forging genuine relationships with Ireland's finest photographers, florists, musicians, and caterers. When I recommend someone, it's because I've seen them work — not because they're on a paid list.",
+    heading: "Recommendations you can trust.",
+    body: "Over the years, I've spent countless hours getting to know the people behind the weddings — from photographers and florists to musicians, makeup artists and venues.\n\nIt means when you're looking for recommendations, you're not starting from scratch. I'll help point you towards suppliers who genuinely fit your style, priorities and budget.",
   },
   {
     number: "03",
-    heading: "Calm that's actually contagious.",
-    body: "Wedding days can throw surprises. A missing buttonhole, a late supplier, a nervous groom. I handle it all quietly and efficiently — so you never know, and you never worry. My calm becomes your calm.",
+    heading: "Calm when you need it most.",
+    body: "Wedding planning can feel overwhelming at times, and wedding days rarely go exactly to plan.\n\nA missing buttonhole, a delayed supplier, unexpected weather, a nervous groom — these things happen. My job is to handle them quietly and efficiently so you don't have to.\n\nThe less you notice me working, the better I'm doing my job.",
   },
 ];
 
@@ -25,7 +24,7 @@ export function ServicesWhy() {
 
   return (
     <>
-      {/* ── What makes Erica different ── */}
+      {/* ── More Than Just Planning ── */}
       <section className="py-20 md:py-28 bg-[hsl(90,22%,26%)] overflow-hidden">
         <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
@@ -37,8 +36,7 @@ export function ServicesWhy() {
           >
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary-foreground/45 mb-4 font-sans block">The Difference</span>
             <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground leading-[1.1] max-w-2xl">
-              Not all wedding planners<br />
-              are the <em className="not-italic text-[hsl(90,35%,72%)]">same.</em>
+              More Than Just <em className="not-italic text-[hsl(90,35%,72%)]">Planning.</em>
             </h2>
           </motion.div>
 
@@ -55,7 +53,7 @@ export function ServicesWhy() {
                 <span className="font-serif text-5xl text-white/10 leading-none">{d.number}</span>
                 <div className="w-8 h-px bg-[hsl(90,35%,55%)]/50" />
                 <h3 className="font-serif text-2xl text-primary-foreground leading-[1.2]">{d.heading}</h3>
-                <p className="text-primary-foreground/55 font-light text-[1.05rem] leading-[1.85]">{d.body}</p>
+                <p className="text-primary-foreground/55 font-light text-[1.05rem] leading-[1.85] whitespace-pre-line">{d.body}</p>
               </motion.div>
             ))}
           </div>
@@ -77,49 +75,6 @@ export function ServicesWhy() {
               Enquire Now
             </button>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ── Venue types strip ── */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="mx-auto px-6 md:px-10 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.7 }}
-            className="mb-14"
-          >
-            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Every Style, Every Couple</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
-              Whatever your <em className="not-italic text-primary">wedding looks like</em>
-            </h2>
-            <p className="text-foreground/65 font-light text-[1.05rem] mt-4 max-w-xl leading-relaxed">
-              From grand castle celebrations to intimate countryside gatherings — every wedding style gets the same level of care, calm, and expertise.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { style: "Castle & Estate", desc: "Grand venues, elaborate logistics — handled with precision and grace." },
-              { style: "Countryside & Garden", desc: "Outdoor details and relaxed elegance, kept perfectly on schedule." },
-              { style: "Hotel & Ballroom", desc: "Seamless coordination across multiple spaces and suppliers." },
-              { style: "Destination & Abroad", desc: "Planning across time zones and cultures — calm, clear, and thorough." },
-            ].map((item, i) => (
-              <motion.div
-                key={item.style}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.65, delay: i * 0.1 }}
-                className="p-8 bg-[hsl(40,18%,96%)] border border-border/20 hover:border-primary/20 transition-colors"
-              >
-                <div className="w-6 h-px bg-primary/40 mb-5" />
-                <h3 className="font-serif text-xl text-foreground mb-3">{item.style}</h3>
-                <p className="text-foreground/60 font-light text-[1rem] leading-[1.8]">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
     </>

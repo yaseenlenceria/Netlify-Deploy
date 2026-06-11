@@ -1,59 +1,105 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 import heroImg from "@assets/hero_image_1780239389448.jpg";
+import { ChevronDown } from "lucide-react";
 
-const steps = [
+const planningStages = [
   {
-    number: "01",
-    title: "Send an Enquiry",
-    description:
-      "Fill in the contact form with a little about your wedding date, venue, and what kind of support you're looking for. No commitment needed — just a starting point.",
+    stage: "Just Getting Started",
+    desc: "Guidance, recommendations and support when you're not quite sure where to begin.",
   },
   {
-    number: "02",
-    title: "Discovery Call",
-    description:
-      "We'll have a relaxed chat to get to know each other, talk through your plans, and figure out which package feels like the right fit for you both.",
+    stage: "Deep Into Planning",
+    desc: "Helping you navigate suppliers, timelines, budgets and all the moving parts.",
   },
   {
-    number: "03",
-    title: "Booking & Planning",
-    description:
-      "Once you're happy to proceed, I'll send over your contract and we'll get started. From here, I'm fully in your corner — guiding, advising, and organising every step.",
+    stage: "Nearly There",
+    desc: "Bringing everything together in the final months so nothing gets missed.",
   },
   {
-    number: "04",
-    title: "Your Wedding Day",
-    description:
-      "Everything handled. You get to be fully present — enjoying every moment, from getting ready in the morning right through to your first dance.",
+    stage: "Ready For The Big Day",
+    desc: "Calm, organised coordination so you can relax and enjoy every moment.",
   },
 ];
 
 const faqs = [
   {
-    q: "How far in advance should I book?",
-    a: "As soon as possible — popular dates fill up quickly. I'd recommend reaching out at least 6–12 months before your wedding date, though I'm always happy to discuss availability.",
+    q: "Do I need a wedding planner if I've already booked some of my suppliers?",
+    a: "Absolutely. Many of my couples come to me after they've secured their venue and a number of key suppliers. My role is to help bring everything together, provide guidance where needed, and ensure nothing falls through the cracks as the wedding approaches.",
   },
   {
-    q: "Do you travel outside of Ireland?",
-    a: "Yes! I work with couples internationally and have experience coordinating weddings for couples planning from abroad. Distance is never a barrier.",
+    q: "What's the difference between Signature Day Coordination and Partial Planning?",
+    a: "Both packages include on-the-day coordination, timeline management and the reassurance of having an experienced planner overseeing everything behind the scenes.\n\nSignature Day Coordination is designed for couples who are happy to manage the planning themselves but want professional support in the lead-up and on the wedding day. We begin working together around 6 weeks before the wedding, when I step in to finalise timelines, coordinate suppliers and ensure everything is ready to run smoothly.\n\nPartial Planning is for couples who would benefit from additional support throughout the planning journey. I come on board around 4 months before the wedding, providing supplier guidance, logistical management, ongoing advice and support, timeline creation and regular check-ins to help keep everything on track.\n\nIf you're finding yourself needing recommendations, second opinions, help making decisions or guidance navigating the final stages of planning, Partial Planning is usually the better fit.\n\nIf you've already planned everything and simply want to hand over the logistics and coordination closer to the day, Signature Day Coordination will likely give you everything you need.",
   },
   {
-    q: "What if I'm not sure which package I need?",
-    a: "That's completely fine. A discovery call is the perfect opportunity to talk through where you are in planning and figure out together what support would help most.",
+    q: "When should I book a wedding planner?",
+    a: "The earlier, the better! However, it's never too late. Whether you're newly engaged or just a few months away from your wedding, I can step in at different stages to provide the support you need.",
   },
   {
-    q: "Do you work with a specific style of wedding?",
-    a: "Not at all. Whether it's a grand castle celebration or an intimate countryside gathering, I bring the same care, calm, and attention to detail to every wedding I coordinate.",
+    q: "Do you only work with certain suppliers?",
+    a: "Not at all. I'm happy to work alongside any suppliers you've already chosen. If you're still looking for recommendations, I can also suggest trusted suppliers based on your style, priorities and budget.",
+  },
+  {
+    q: "Do you travel for weddings?",
+    a: "Yes! While I'm based in the Midlands of Ireland, I work with couples throughout Ireland and am happy to travel wherever your wedding takes place.",
+  },
+  {
+    q: "Will you be there on the wedding day?",
+    a: "Absolutely! In fact, it's my favourite part of the whole process.\n\nAfter months of planning together, there's nothing better than seeing everything come to life and watching you enjoy the day you've worked so hard to create.\n\nI'll be there behind the scenes coordinating suppliers, managing timelines, solving any little hiccups that arise and making sure everything runs smoothly — so you can focus on celebrating with your favourite people.\n\nAnd fair warning... I always bring extra tissues. Not for the couple — for me 🤍",
+  },
+  {
+    q: "How involved do I need to be?",
+    a: "That completely depends on you. Some couples love being heavily involved in the planning process, while others prefer more hands-on support. I'll tailor my involvement to suit your needs.",
+  },
+  {
+    q: "What if I just need some advice before committing to planning services?",
+    a: "My Planning Power Hour is perfect for couples who want professional guidance, reassurance or help working through specific questions without committing to a larger planning package.",
   },
 ];
+
+function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.6, delay: (index % 4) * 0.08 }}
+      className="border-b border-border/30 last:border-0"
+    >
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full text-left py-6 flex items-start justify-between gap-4 group"
+      >
+        <h3 className="font-serif text-[1.1rem] text-foreground leading-snug group-hover:text-primary transition-colors">{faq.q}</h3>
+        <ChevronDown
+          className={`w-5 h-5 text-primary/60 shrink-0 mt-0.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.85] pb-6 whitespace-pre-line">{faq.a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
 
 export function ServicesProcess() {
   const [, navigate] = useLocation();
 
   return (
     <>
-      {/* ── How It Works ── */}
+      {/* ── However You're Planning ── */}
       <section className="py-20 md:py-28 bg-background overflow-hidden">
         <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <motion.div
@@ -63,29 +109,25 @@ export function ServicesProcess() {
             transition={{ duration: 0.7 }}
             className="mb-14"
           >
-            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">The Process</span>
+            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Wherever You Are</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
-              How it <em className="not-italic text-primary">works</em>
+              However You're <em className="not-italic text-primary">Planning</em>
             </h2>
-            <p className="text-foreground/65 font-light text-[1rem] mt-4 max-w-xl leading-relaxed">
-              From first message to your wedding day — a simple, guided process that keeps things calm and clear every step of the way.
-            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {steps.map((step, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {planningStages.map((item, i) => (
               <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 28 }}
+                key={item.stage}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.7, delay: i * 0.12 }}
-                className="flex flex-col"
+                transition={{ duration: 0.65, delay: i * 0.1 }}
+                className="p-8 bg-[hsl(40,18%,96%)] border border-border/20 hover:border-primary/20 transition-colors"
               >
-                <span className="font-serif text-5xl text-primary/20 mb-4 leading-none">{step.number}</span>
-                <div className="w-8 h-px bg-primary/40 mb-5" />
-                <h3 className="font-serif text-xl text-foreground mb-3">{step.title}</h3>
-                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{step.description}</p>
+                <div className="w-6 h-px bg-primary/40 mb-5" />
+                <h3 className="font-serif text-xl text-foreground mb-3">{item.stage}</h3>
+                <p className="text-foreground/60 font-light text-[1rem] leading-[1.8]">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -94,7 +136,7 @@ export function ServicesProcess() {
 
       {/* ── FAQs ── */}
       <section className="py-20 md:py-28 bg-[hsl(40,18%,94%)]">
-        <div className="mx-auto px-6 md:px-10 max-w-5xl">
+        <div className="mx-auto px-6 md:px-10 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -104,23 +146,13 @@ export function ServicesProcess() {
           >
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">Questions</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1]">
-              Frequently <em className="not-italic text-primary">asked</em>
+              Frequently <em className="not-italic text-primary">Asked</em>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="divide-y divide-border/30">
             {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-white p-8 border border-border/20"
-              >
-                <h3 className="font-serif text-lg text-foreground mb-3">{faq.q}</h3>
-                <p className="text-foreground/65 font-light text-[1.05rem] leading-[1.8]">{faq.a}</p>
-              </motion.div>
+              <FaqItem key={i} faq={faq} index={i} />
             ))}
           </div>
         </div>

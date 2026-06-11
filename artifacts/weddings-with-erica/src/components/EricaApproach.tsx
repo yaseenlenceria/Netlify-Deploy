@@ -43,7 +43,7 @@ export function EricaApproach() {
 
   return (
     <>
-      {/* ── My Philosophy — sage background with quote ── */}
+      {/* ── My Approach — sage background with quote ── */}
       <section className="bg-[hsl(90,18%,94%)] py-20 md:py-28 overflow-hidden">
         <div className="mx-auto px-6 md:px-10 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -53,20 +53,23 @@ export function EricaApproach() {
               viewport={{ once: false, margin: "-80px" }}
               transition={{ duration: 0.9, ease: "easeOut" }}
             >
-              <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">My Philosophy</span>
+              <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">My Approach</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1] mb-8">
-                Weddings should feel<br />
-                <em className="not-italic text-primary">joyful, not stressful.</em>
+                Wedding planning should feel<br />
+                <em className="not-italic text-primary">exciting, not overwhelming.</em>
               </h2>
               <div className="space-y-5 text-foreground/75 font-light leading-[1.9] text-[1.05rem]">
                 <p>
-                  I got into wedding planning because I wanted couples to be able to fully experience their wedding day — to be present in the moments that matter, without the weight of logistics, timelines, or supplier management on their shoulders.
+                  I believe your wedding day should be about making memories, celebrating with the people you love, and being fully present in every moment — not worrying about timelines, logistics or what's happening behind the scenes.
                 </p>
                 <p>
-                  Whether you need someone to take over completely from the very start, or simply want a calm, expert hand on the day itself — I'll meet you exactly where you are and build the support around what you need most.
+                  That's why my approach is always centred around support. Whether you need someone to guide you through the entire planning process or simply bring everything together in the final weeks, I'll meet you where you are and provide the level of support that feels right for you.
                 </p>
                 <p>
-                  Every single wedding I coordinate is treated with the same level of dedication, care, and attention to detail. Big or small, traditional or modern, intimate or extravagant — your day deserves to be flawless.
+                  Every couple plans differently, and every wedding is unique. My role is never to take over your vision — it's to help bring it to life with calm, organisation and a reassuring presence throughout the journey.
+                </p>
+                <p>
+                  Because when the day arrives, I want you focused on what truly matters: celebrating, making memories and enjoying every moment.
                 </p>
               </div>
             </motion.div>
