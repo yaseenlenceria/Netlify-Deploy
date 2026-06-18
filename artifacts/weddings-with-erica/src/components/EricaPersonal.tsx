@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
 import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
-import aboveContactImg from "@assets/above_contact_1780239389448.jpg";
+import plannerImg from "@assets/service-power_1780246484111.jpg";
 import { FadeImage } from "@/components/FadeImage";
 
 const facts = [
@@ -91,8 +91,8 @@ export function EricaPersonal() {
             >
               <div className="overflow-hidden">
                 <FadeImage
-                  src={aboveContactImg}
-                  alt="Erica with a couple on their wedding day"
+                  src={plannerImg}
+                  alt="Wedding planner notebook and coffee"
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
