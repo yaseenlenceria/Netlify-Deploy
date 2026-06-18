@@ -13,6 +13,7 @@ const services = [
     tagline: "Support for your wedding day, handled properly.",
     description:
       "Perfect for couples who have planned everything themselves but want to fully relax and enjoy the day. Around 6 weeks before the wedding I'll step in, take the reins, and make sure everything runs seamlessly.",
+    note: "",
     includes: [
       "Detailed pre-wedding planning call",
       "Full supplier coordination & communication",
@@ -27,7 +28,8 @@ const services = [
     tag: "Most Popular",
     tagline: "Guidance and calm throughout your planning journey.",
     description:
-      "Ongoing support for couples who would love expert guidance while still leading the planning themselves. I'll bring structure, recommendations, and reassurance at every stage. Typically begins around 4 months before the wedding.",
+      "Ongoing support for couples who would love expert guidance while still leading the planning themselves. I'll bring structure, recommendations, and reassurance at every stage.",
+    note: "Usually begins around 4 months before the wedding.",
     includes: [
       "Ongoing planning guidance & advice",
       "Supplier recommendations & introductions",
@@ -43,6 +45,7 @@ const services = [
     tagline: "Complete support from first idea to last dance.",
     description:
       "Full end-to-end support from the earliest stages of planning right through to your wedding day. Every detail handled with care — venue, suppliers, styling, budgeting, and full coordination.",
+    note: "",
     includes: [
       "End-to-end wedding planning",
       "Venue sourcing and styling guidance",
@@ -58,6 +61,7 @@ const services = [
     tagline: "Clarity and confidence in a single focused session.",
     description:
       "A focused 1:1 consultation designed to bring clarity and expert advice to your plans. Perfect for couples who feel stuck or want professional reassurance. Approx. 1.5 hours.",
+    note: "",
     includes: [
       "1:1 expert consultation (approx. 1.5 hrs)",
       "Personalised planning advice",
@@ -163,7 +167,10 @@ export function Services() {
                 {s.tag && <span className="text-[11px] uppercase tracking-widest text-primary/80 font-sans mb-1.5 block">— {s.tag}</span>}
                 <h3 className="text-xl font-serif text-foreground mb-0.5">{s.title}</h3>
                 <p className="text-primary font-serif italic text-[0.9rem] mb-3">{s.tagline}</p>
-                <p className="text-foreground/65 font-light text-[0.9rem] leading-[1.75] mb-4">{s.description}</p>
+                <p className="text-foreground/65 font-light text-[0.9rem] leading-[1.75] mb-3">{s.description}</p>
+                {s.note && (
+                  <p className="text-[0.82rem] font-sans text-primary/80 italic mb-4 border-l-2 border-primary/30 pl-3">{s.note}</p>
+                )}
                 <p className="text-[11px] uppercase tracking-widest text-foreground/45 font-sans mb-2">Includes:</p>
                 <ul className="space-y-1.5 mb-5">
                   {s.includes.map((item) => (
@@ -216,7 +223,10 @@ export function Services() {
                 <div className="absolute bottom-0 left-0 right-0 p-7">
                   {s.tag && <span className="text-[11px] uppercase tracking-widest text-white/70 font-sans mb-1 block">{s.tag}</span>}
                   <h3 className="text-2xl font-serif text-white mb-1 leading-snug">{s.title}</h3>
-                  <p className="text-white/75 font-light italic font-serif text-[1rem] mb-4">{s.tagline}</p>
+                  <p className="text-white/75 font-light italic font-serif text-[1rem] mb-3">{s.tagline}</p>
+                  {s.note && (
+                    <p className="text-[0.8rem] font-sans text-white/70 italic mb-4 border-l-2 border-white/30 pl-3">{s.note}</p>
+                  )}
                   <p className="text-[11px] uppercase tracking-widest text-white/55 font-sans mb-2">Includes:</p>
                   <ul className="space-y-1 mb-5">
                     {s.includes.map((item) => (

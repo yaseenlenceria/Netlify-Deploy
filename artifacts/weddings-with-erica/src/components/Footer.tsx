@@ -7,7 +7,7 @@ const TIKTOK = "https://www.tiktok.com/@weddingswitherica";
 
 const navLinks = [
   { label: "Meet Erica", href: "/meet-erica" },
-  { label: "Services", href: "/services" },
+  { label: "Support", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Get in Touch", href: "/contact" },
 ];
@@ -42,7 +42,7 @@ export function Footer() {
             className="h-24 w-auto object-contain self-start brightness-0 invert opacity-85 bg-transparent"
           />
           <p className="text-primary-foreground/75 text-[1rem] font-light leading-[1.8] max-w-xs">
-            Ireland's boutique wedding planner. Keeping everything calm, organised, and seamlessly beautiful — so you can be fully present on your day.
+            Keeping everything calm, organised, and seamlessly beautiful — so you can be fully present on your day.
           </p>
           <div className="flex items-center gap-3 mt-1">
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer"

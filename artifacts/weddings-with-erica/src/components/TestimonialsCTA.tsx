@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import heroImg from "@assets/hero_image_1780239389448.jpg";
+import ctaImg from "@assets/review2_1780239389449.jpg";
 
 const expectations = [
   "Honest advice, even when it's not what you expected to hear",
@@ -52,7 +52,7 @@ export function TestimonialsCTA() {
 
       {/* ── CTA ── */}
       <section className="relative py-28 overflow-hidden">
-        <img src={heroImg} alt="Beautiful wedding" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <img src={ctaImg} alt="Happy couple on their wedding day" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-foreground/65" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}

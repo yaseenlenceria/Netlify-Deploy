@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Heart, Calendar, Users, Star } from "lucide-react";
-import heroImg from "@assets/hero_image_1780239389448.jpg";
+import ctaImg from "@assets/service-signature_1780246484112.jpg";
 import aboveContactImg from "@assets/above_contact_1780239389448.jpg";
 
 const steps = [
@@ -174,8 +174,8 @@ export function EricaApproach() {
       {/* ── Full-bleed CTA ── */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <img
-          src={heroImg}
-          alt="Beautiful wedding"
+          src={ctaImg}
+          alt="Wedding ceremony aisle with florals"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-foreground/65" />

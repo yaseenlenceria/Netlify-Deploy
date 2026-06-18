@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
-import heroImg from "@assets/hero_image_1780239389448.jpg";
+import ctaImg from "@assets/contact-tablescape_1780246484111.jpg";
 import { ChevronDown } from "lucide-react";
 
 const planningStages = [
@@ -160,7 +160,7 @@ export function ServicesProcess() {
 
       {/* ── CTA ── */}
       <section className="relative py-28 overflow-hidden">
-        <img src={heroImg} alt="Wedding" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <img src={ctaImg} alt="Wedding reception tablescape" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-foreground/65" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
