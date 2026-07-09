@@ -1,9 +1,10 @@
 [build]
-  command = "pnpm --filter @workspace/weddings-with-erica build"
+  command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter @workspace/weddings-with-erica build"
   publish = "artifacts/weddings-with-erica/dist/public"
 
 [build.environment]
   BASE_PATH = "/"
+  NPM_FLAGS = "--prefix=/"
   NODE_VERSION = "22"
   PNPM_VERSION = "11.7.0"
   PORT = "8080"
