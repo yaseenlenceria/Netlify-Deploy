@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm --filter @workspace/weddings-with-erica build"
+  publish = "artifacts/weddings-with-erica/dist/public"
+
+[build.environment]
+  BASE_PATH = "/"
+  NODE_VERSION = "22"
+  PNPM_VERSION = "11.7.0"
+  PORT = "8080"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
