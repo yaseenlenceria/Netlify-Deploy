@@ -4,8 +4,9 @@ import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
 import coupleImg from "@assets/meet_erica_3_1780239389447.jpg";
 import { FadeImage } from "@/components/FadeImage";
 
-export function MeetErica() {
+export function MeetErica({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const [, navigate] = useLocation();
+  const Heading = motion[headingLevel];
 
   return (
     <section id="meet" className="relative min-h-[calc(100dvh-76px)] flex flex-col lg:flex-row overflow-hidden bg-background">
@@ -57,7 +58,7 @@ export function MeetErica() {
           Your Wedding Planning Partner
         </motion.span>
 
-        <motion.h1
+        <Heading
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
@@ -65,7 +66,7 @@ export function MeetErica() {
           className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
         >
           Meet <em className="not-italic text-primary">Erica</em>
-        </motion.h1>
+        </Heading>
 
         <div className="space-y-3 text-foreground/75 font-light leading-[1.85] text-[1rem] max-w-lg">
           <p>

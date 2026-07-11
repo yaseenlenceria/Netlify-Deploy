@@ -36,7 +36,7 @@ const fieldClass =
 const labelClass =
   "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[13px]";
 
-export function Contact() {
+export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -71,10 +71,17 @@ export function Contact() {
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-4 font-sans block">
               Let's Connect
             </span>
-            <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl text-foreground leading-[1.02]">
-              Let's Start<br />
-              <em className="not-italic text-primary">Planning</em>
-            </h1>
+            {headingLevel === "h1" ? (
+              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl text-foreground leading-[1.02]">
+                Let's Start<br />
+                <em className="not-italic text-primary">Planning</em>
+              </h1>
+            ) : (
+              <h2 className="font-serif text-5xl md:text-6xl xl:text-7xl text-foreground leading-[1.02]">
+                Let's Start<br />
+                <em className="not-italic text-primary">Planning</em>
+              </h2>
+            )}
             <p className="mt-5 text-foreground/60 font-light text-[1rem] leading-[1.85] max-w-sm">
               Fill in the form and I'll come back to you within 48 hours. I can't wait to hear all about your wedding plans.
             </p>

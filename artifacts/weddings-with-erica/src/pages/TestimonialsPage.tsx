@@ -3,14 +3,20 @@ import { TestimonialsStats } from "@/components/TestimonialsStats";
 import { Testimonials } from "@/components/Testimonials";
 import { TestimonialsCTA } from "@/components/TestimonialsCTA";
 import { Footer } from "@/components/Footer";
+import { Seo } from "@/components/Seo";
 
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
+      <Seo
+        title="Wedding Planner Reviews | Weddings with Erica"
+        description="Read reviews from couples who trusted Erica with their wedding planning and on-the-day coordination in Ireland."
+        path="/testimonials"
+      />
       <Navigation />
       <main className="pt-[76px]">
         <TestimonialsStats />
-        <Testimonials />
+        <Testimonials headingLevel="h1" />
         <TestimonialsCTA />
       </main>
       <Footer />

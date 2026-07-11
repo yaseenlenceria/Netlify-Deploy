@@ -53,7 +53,7 @@ const testimonials = [
   },
 ];
 
-export function Testimonials() {
+export function Testimonials({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const touchStartX = useRef<number | null>(null);
@@ -97,6 +97,7 @@ export function Testimonials() {
   };
 
   const t = testimonials[current];
+  const Heading = motion[headingLevel];
 
   const variants = {
     enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 40 : -40 }),
@@ -124,7 +125,7 @@ export function Testimonials() {
           >
             Kind Words
           </motion.span>
-          <motion.h1
+          <Heading
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
@@ -132,7 +133,7 @@ export function Testimonials() {
             className="text-5xl md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-6 leading-[1.08]"
           >
             Kind Words From <em className="not-italic text-primary">My Couples</em>
-          </motion.h1>
+          </Heading>
           <div className="space-y-3 text-foreground/70 font-light text-[1.05rem] max-w-xl leading-relaxed">
             <p>
               The greatest compliment I can receive is being trusted with such an important part of someone's story.

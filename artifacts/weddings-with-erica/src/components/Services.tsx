@@ -73,10 +73,11 @@ const services = [
   },
 ];
 
-export function Services() {
+export function Services({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const [active, setActive] = useState(0);
   const [, navigate] = useLocation();
   const s = services[active];
+  const Heading = motion[headingLevel];
 
   return (
     <section id="services" className="py-10 md:py-14 bg-[hsl(40,18%,94%)] overflow-hidden">
@@ -99,7 +100,7 @@ export function Services() {
             >
               How I Can Help
             </motion.span>
-            <motion.h1
+            <Heading
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -107,7 +108,7 @@ export function Services() {
               className="text-4xl md:text-5xl font-serif text-foreground leading-[1.08]"
             >
               My <em className="not-italic text-primary">Support</em>
-            </motion.h1>
+            </Heading>
             <p className="text-foreground/60 font-light text-[0.95rem] max-w-lg leading-relaxed mt-3">
               Every package is tailored around you, your vision, and what you need most.
             </p>
