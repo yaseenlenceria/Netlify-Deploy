@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Seo } from "@/components/Seo";
 
 const sections = [
   {
@@ -52,6 +53,11 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
+      <Seo
+        title="Privacy Policy | Weddings with Erica"
+        description="Privacy policy for Weddings with Erica wedding planning and coordination services in Ireland."
+        path="/privacy-policy"
+      />
       <Navigation />
       <main className="pt-[76px]">
         {/* Header */}
