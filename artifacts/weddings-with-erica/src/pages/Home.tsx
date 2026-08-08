@@ -6,7 +6,8 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { InstagramFeed } from "@/components/InstagramFeed";
-import { Seo, businessSchema, websiteSchema, makeBreadcrumbSchema } from "@/components/Seo";
+import { TikTokCarousel } from "@/components/TikTokCarousel";
+import { Seo, businessSchema, websiteSchema, tiktokVideoSchema, makeBreadcrumbSchema } from "@/components/Seo";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <Seo
         title="Wedding Planner Ireland | Day-of Coordination | Weddings with Erica"
         description="Irish wedding planner Erica Egan offers full planning, partial planning, planning power hours and calm day-of coordination for couples across Ireland."
-        schema={[businessSchema, websiteSchema, makeBreadcrumbSchema([{ name: "Home", path: "/" }])]}
+        schema={[businessSchema, websiteSchema, tiktokVideoSchema, makeBreadcrumbSchema([{ name: "Home", path: "/" }])]}
       />
       <Navigation />
       <main>
@@ -22,6 +23,7 @@ export default function Home() {
         <MeetErica />
         <Services />
         <Testimonials />
+        <TikTokCarousel />
         <InstagramFeed />
         <Contact />
       </main>
