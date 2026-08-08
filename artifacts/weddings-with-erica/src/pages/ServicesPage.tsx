@@ -3,15 +3,23 @@ import { Services } from "@/components/Services";
 import { ServicesWhy } from "@/components/ServicesWhy";
 import { ServicesProcess } from "@/components/ServicesProcess";
 import { Footer } from "@/components/Footer";
-import { Seo } from "@/components/Seo";
+import { Seo, businessSchema, servicesPageSchema, makeBreadcrumbSchema } from "@/components/Seo";
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Wedding Planning & Coordination Services Ireland"
-        description="Explore full wedding planning, partial planning, planning consultations and on-the-day wedding coordination for couples across Ireland."
+        title="Wedding Planning Services Ireland | Day-of Coordination"
+        description="Wedding planning services in Ireland: full planning, partial planning support, planning power hour consultations and calm day-of wedding coordination."
         path="/services"
+        schema={[
+          businessSchema,
+          servicesPageSchema,
+          makeBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Wedding Planning Services", path: "/services" },
+          ]),
+        ]}
       />
       <Navigation />
       <main className="pt-[76px]">
