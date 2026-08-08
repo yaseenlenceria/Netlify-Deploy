@@ -1,13 +1,14 @@
 import { useLocation, Link } from "wouter";
-import { Instagram, Phone, Mail, Heart } from "lucide-react";
+import { Instagram, Phone, Mail, Heart, MapPin } from "lucide-react";
 import logoImg from "@assets/MAin_logo_1780239389448.png";
 
 const INSTAGRAM = "https://www.instagram.com/weddingswitherica/";
 const TIKTOK = "https://www.tiktok.com/@weddingswitherica";
+const GOOGLE_MAPS = "https://maps.app.goo.gl/nym8XsmkajibUHyW9";
 
 const navLinks = [
   { label: "Meet Erica", href: "/meet-erica" },
-  { label: "Support", href: "/services" },
+  { label: "Services", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Get in Touch", href: "/contact" },
 ];
@@ -55,6 +56,11 @@ export function Footer() {
               aria-label="TikTok">
               <TikTokIcon className="w-4 h-4" />
             </a>
+            <a href={GOOGLE_MAPS} target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center border border-primary-foreground/25 text-primary-foreground/60 hover:border-primary-foreground/70 hover:text-primary-foreground transition-all duration-200"
+              aria-label="Weddings with Erica on Google Maps">
+              <MapPin className="w-4 h-4" />
+            </a>
             <a href="tel:0872186100"
               className="w-9 h-9 flex items-center justify-center border border-primary-foreground/25 text-primary-foreground/60 hover:border-primary-foreground/70 hover:text-primary-foreground transition-all duration-200"
               aria-label="Phone">
@@ -101,6 +107,9 @@ export function Footer() {
             <a href="mailto:wedwitherica@gmail.com" className="text-primary-foreground/80 hover:text-primary-foreground text-[1rem] font-light transition-colors">
               wedwitherica@gmail.com
             </a>
+            <a href={GOOGLE_MAPS} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-[1rem] font-light transition-colors">
+              Weddings with Erica on Google Maps
+            </a>
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-[1rem] font-light transition-colors">
               @weddingswitherica
             </a>
@@ -128,6 +137,9 @@ export function Footer() {
             </a>
             <a href={TIKTOK} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors" aria-label="TikTok">
               <TikTokIcon className="w-4 h-4" />
+            </a>
+            <a href={GOOGLE_MAPS} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors" aria-label="Google Maps">
+              <MapPin className="w-4 h-4" />
             </a>
             <p className="text-[13px] text-primary-foreground/50 font-light font-sans flex items-center gap-1.5">
               Made with <Heart className="w-3 h-3 fill-primary-foreground/55 text-primary-foreground/55" /> for Erica's couples
