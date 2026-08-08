@@ -2,6 +2,9 @@ import { useEffect } from "react";
 
 export const SITE_URL = "https://weddingswitherica.com";
 export const DEFAULT_IMAGE = `${SITE_URL}/opengraph.jpg`;
+export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/nym8XsmkajibUHyW9";
+export const INSTAGRAM_URL = "https://www.instagram.com/weddingswitherica/";
+export const TIKTOK_URL = "https://www.tiktok.com/@weddingswitherica";
 
 interface SeoProps {
   title: string;
@@ -95,6 +98,7 @@ export const businessSchema = {
   description: "Personal wedding planning, partial planning support and wedding day coordination for couples across Ireland.",
   slogan: "Calm, organised wedding planning and coordination across Ireland.",
   url: SITE_URL,
+  hasMap: GOOGLE_MAPS_URL,
   image: DEFAULT_IMAGE,
   logo: `${SITE_URL}/favicon.png`,
   email: "wedwitherica@gmail.com",
@@ -129,8 +133,9 @@ export const businessSchema = {
     availableLanguage: "English",
   },
   sameAs: [
-    "https://www.instagram.com/weddingswitherica/",
-    "https://www.tiktok.com/@weddingswitherica",
+    INSTAGRAM_URL,
+    TIKTOK_URL,
+    GOOGLE_MAPS_URL,
   ],
   knowsAbout: [
     "Wedding planning Ireland",
@@ -178,8 +183,8 @@ export const personSchema = {
   url: `${SITE_URL}/meet-erica`,
   image: DEFAULT_IMAGE,
   sameAs: [
-    "https://www.instagram.com/weddingswitherica/",
-    "https://www.tiktok.com/@weddingswitherica",
+    INSTAGRAM_URL,
+    TIKTOK_URL,
   ],
 };
 
