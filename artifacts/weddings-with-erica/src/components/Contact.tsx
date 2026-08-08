@@ -85,7 +85,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
         description: "Thank you for reaching out — I'll be in touch very soon!",
       });
       form.reset();
-    } catch (error) {
+    } catch {
       toast({
         title: "Something went wrong",
         description: "Please try again, or email wedwitherica@gmail.com directly.",
@@ -219,7 +219,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
           </p>
 
           <Form {...form}>
-            <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <form name="contact" method="POST" action="/" data-netlify="true" onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               <input type="hidden" name="form-name" value="contact" />
               <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
 
