@@ -3,15 +3,23 @@ import { MeetErica } from "@/components/MeetErica";
 import { EricaApproach } from "@/components/EricaApproach";
 import { EricaPersonal } from "@/components/EricaPersonal";
 import { Footer } from "@/components/Footer";
-import { Seo } from "@/components/Seo";
+import { Seo, businessSchema, personSchema, makeBreadcrumbSchema } from "@/components/Seo";
 
 export default function MeetEricaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Meet Erica Egan | Wedding Planner Ireland"
-        description="Meet Erica Egan, an experienced Irish wedding planner bringing calm, practical support and personal coordination to weddings across Ireland."
+        title="Meet Erica Egan | Irish Wedding Planner"
+        description="Meet Erica Egan, the wedding planner behind Weddings with Erica, offering calm, practical planning support and coordination for weddings across Ireland."
         path="/meet-erica"
+        schema={[
+          businessSchema,
+          personSchema,
+          makeBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Meet Erica", path: "/meet-erica" },
+          ]),
+        ]}
       />
       <Navigation />
       <main className="pt-[76px]">
