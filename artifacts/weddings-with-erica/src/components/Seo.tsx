@@ -190,7 +190,6 @@ export const tiktokVideoSchema = {
   name: "Wedding planning moments with Erica",
   description: "Behind-the-scenes TikTok from Weddings with Erica with wedding planning and coordination inspiration for couples in Ireland.",
   thumbnailUrl: [DEFAULT_IMAGE],
-  uploadDate: "2026-08-08",
   embedUrl: "https://www.tiktok.com/player/v1/7666121794448919831",
   contentUrl: "https://www.tiktok.com/@weddingswitherica/video/7666121794448919831",
   publisher: { "@id": `${SITE_URL}/#business` },
