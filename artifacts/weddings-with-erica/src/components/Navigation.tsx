@@ -6,7 +6,7 @@ import logoImg from "@assets/MAin_logo_1780239389448.png";
 
 const links = [
   { label: "Meet Erica", href: "/meet-erica" },
-  { label: "Support", href: "/services" },
+  { label: "Services", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Contact", href: "/contact" },
 ];
