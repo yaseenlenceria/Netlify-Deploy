@@ -183,6 +183,21 @@ export const personSchema = {
   ],
 };
 
+export const tiktokVideoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "https://www.tiktok.com/@weddingswitherica/video/7666121794448919831#video",
+  name: "Wedding planning moments with Erica",
+  description: "Behind-the-scenes TikTok from Weddings with Erica with wedding planning and coordination inspiration for couples in Ireland.",
+  thumbnailUrl: [DEFAULT_IMAGE],
+  uploadDate: "2026-08-08",
+  embedUrl: "https://www.tiktok.com/player/v1/7666121794448919831",
+  contentUrl: "https://www.tiktok.com/@weddingswitherica/video/7666121794448919831",
+  publisher: { "@id": `${SITE_URL}/#business` },
+  creator: { "@id": `${SITE_URL}/meet-erica#erica-egan` },
+  inLanguage: "en-IE",
+};
+
 export const servicesPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
