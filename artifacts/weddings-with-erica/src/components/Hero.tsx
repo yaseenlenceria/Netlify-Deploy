@@ -38,7 +38,7 @@ export function Hero() {
       >
         {/* Eyebrow — desktop only */}
         <span className="hidden md:block text-[13px] uppercase tracking-[0.28em] text-primary/60 mb-5 font-sans">
-          The Support Behind Your Wedding Day
+          Calm Wedding Planning and Coordination Across Ireland
         </span>
 
         <motion.h1
@@ -47,7 +47,7 @@ export function Hero() {
           transition={{ duration: 0.85, delay: 0.15, ease: "easeOut" }}
           className="text-[1.7rem] md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-3 md:mb-6 leading-[1.12]"
         >
-          Enjoy Your Wedding,<br />
+          Wedding Planner Ireland<br />
           <em className="not-italic text-primary">I'll Handle the Rest</em>
         </motion.h1>
 
