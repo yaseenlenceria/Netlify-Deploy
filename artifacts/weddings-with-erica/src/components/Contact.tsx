@@ -17,6 +17,8 @@ import { useToast } from "@/hooks/use-toast";
 import contactBg from "@assets/contact-tablescape_1780246484111.jpg";
 import coupleImg from "@assets/cropped_Wedding_couple_love_green_hugs_via_getty_1780246527255.jpg";
 
+const FORMSPARK_ACTION = "https://submit-form.com/5k4miLIzg";
+
 const formSchema = z.object({
   name: z.string().min(2, "Your name is required"),
   partnerName: z.string().min(2, "Partner's name is required"),
@@ -37,23 +39,17 @@ const fieldClass =
 const labelClass =
   "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[13px]";
 
-const encodeFormData = (values: FormValues) => {
-  const formData = new URLSearchParams();
-
-  formData.append("form-name", "contact");
-  formData.append("bot-field", "");
-  formData.append("name", values.name);
-  formData.append("partnerName", values.partnerName);
-  formData.append("email", values.email);
-  formData.append("phone", values.phone);
-  formData.append("date", values.date ? format(values.date, "yyyy-MM-dd") : "");
-  formData.append("venue", values.venue);
-  formData.append("service", values.service);
-  formData.append("howHeard", values.howHeard ?? "");
-  formData.append("details", values.details);
-
-  return formData.toString();
-};
+const buildSubmissionPayload = (values: FormValues) => ({
+  name: values.name,
+  partnerName: values.partnerName,
+  email: values.email,
+  phone: values.phone,
+  date: values.date ? format(values.date, "yyyy-MM-dd") : "",
+  venue: values.venue,
+  service: values.service,
+  howHeard: values.howHeard ?? "",
+  details: values.details,
+});
 
 export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const { toast } = useToast();
@@ -70,14 +66,17 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(FORMSPARK_ACTION, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormData(values),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(buildSubmissionPayload(values)),
       });
 
       if (!response.ok) {
-        throw new Error("Netlify rejected the form submission");
+        throw new Error("Formspark rejected the form submission");
       }
 
       toast({
@@ -219,9 +218,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
           </p>
 
           <Form {...form}>
-            <form name="contact" method="POST" action="/" data-netlify="true" onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
+            <form name="contact" method="POST" action={FORMSPARK_ACTION} onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
 
               {/* Name + Partner name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
