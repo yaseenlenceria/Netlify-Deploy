@@ -27,17 +27,20 @@ export function InstagramFeed() {
               Real Weddings Across Ireland
             </span>
             <h2 id="instagram-heading" className="text-4xl md:text-5xl font-serif text-foreground leading-[1.08]">
-              Follow the latest <em className="not-italic text-primary">wedding moments</em>
+              Wedding moments from <em className="not-italic text-primary">Erica's couples</em>
             </h2>
+            <p className="text-foreground/60 font-light text-[0.98rem] leading-relaxed mt-3 max-w-2xl">
+              A curated glimpse of wedding days, planning details and celebrations. For Erica's newest posts and stories, open the Instagram profile directly.
+            </p>
           </div>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-primary hover:text-primary/70 transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 text-[12px] uppercase tracking-[0.18em] hover:bg-primary/90 transition-colors shadow-sm"
           >
             <Instagram className="w-4 h-4" aria-hidden="true" />
-            @weddingswitherica
+            See Latest on Instagram
           </a>
         </div>
 
@@ -49,7 +52,7 @@ export function InstagramFeed() {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden bg-muted"
-              aria-label={`${moment.alt} — view Weddings with Erica on Instagram`}
+              aria-label={`${moment.alt} — view the latest Weddings with Erica posts on Instagram`}
             >
               <img
                 src={moment.image}
@@ -59,8 +62,11 @@ export function InstagramFeed() {
                 height="500"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center">
-                <Instagram className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/25 transition-colors duration-300 flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.18em] font-sans">
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
+                  Latest Posts
+                </span>
               </span>
             </a>
           ))}
