@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,8 +37,27 @@ const fieldClass =
 const labelClass =
   "text-foreground/60 font-sans font-medium uppercase tracking-widest text-[13px]";
 
+const encodeFormData = (values: FormValues) => {
+  const formData = new URLSearchParams();
+
+  formData.append("form-name", "contact");
+  formData.append("bot-field", "");
+  formData.append("name", values.name);
+  formData.append("partnerName", values.partnerName);
+  formData.append("email", values.email);
+  formData.append("phone", values.phone);
+  formData.append("date", values.date ? format(values.date, "yyyy-MM-dd") : "");
+  formData.append("venue", values.venue);
+  formData.append("service", values.service);
+  formData.append("howHeard", values.howHeard ?? "");
+  formData.append("details", values.details);
+
+  return formData.toString();
+};
+
 export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,12 +66,34 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
     },
   });
 
-  function onSubmit(_values: FormValues) {
-    toast({
-      title: "Enquiry Sent",
-      description: "Thank you for reaching out — I'll be in touch very soon!",
-    });
-    form.reset();
+  async function onSubmit(values: FormValues) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeFormData(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify rejected the form submission");
+      }
+
+      toast({
+        title: "Enquiry Sent",
+        description: "Thank you for reaching out — I'll be in touch very soon!",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email wedwitherica@gmail.com directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -177,7 +219,9 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
 
               {/* Name + Partner name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -264,7 +308,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger className="bg-[hsl(40,33%,97%)] border border-border/30 rounded-sm px-4 py-3 text-[1rem] h-auto focus:ring-1 focus:ring-primary shadow-none transition-all" data-testid="input-service">
-                          <SelectValue placeholder="Select the package you wo..." />
+                          <SelectValue placeholder="Select the package you want" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="bg-white border-border shadow-lg">
@@ -324,10 +368,11 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
                 <Button
                   type="submit"
                   size="lg"
-                  className="btn-shine w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.22em] text-[12px] font-sans shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.99]"
+                  disabled={isSubmitting}
+                  className="btn-shine w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-none py-5 uppercase tracking-[0.22em] text-[12px] font-sans shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.99] disabled:opacity-70"
                   data-testid="button-submit"
                 >
-                  Send Enquiry
+                  {isSubmitting ? "Sending..." : "Send Enquiry"}
                 </Button>
                 <p className="text-center text-[13px] text-foreground/35 font-light mt-4">
                   I typically respond within 48 hours — I look forward to hearing from you.
