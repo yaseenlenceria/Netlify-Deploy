@@ -57,6 +57,7 @@ export default function PrivacyPage() {
         title="Privacy Policy | Weddings with Erica"
         description="Privacy policy for Weddings with Erica wedding planning and coordination services in Ireland."
         path="/privacy-policy"
+        noIndex
       />
       <Navigation />
       <main className="pt-[76px]">
