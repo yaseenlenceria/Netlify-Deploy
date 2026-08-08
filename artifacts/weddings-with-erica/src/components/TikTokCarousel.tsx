@@ -25,7 +25,7 @@ export function TikTokCarousel() {
   };
 
   return (
-    <aside className="bg-[hsl(40,33%,97%)] px-6 md:px-10 py-14 md:py-18" aria-label="Latest Weddings with Erica TikTok videos">
+    <aside className="bg-[hsl(40,33%,97%)] px-6 md:px-10 py-14 md:py-20" aria-label="Latest Weddings with Erica TikTok videos">
       <div className="mx-auto max-w-6xl rounded-[2rem] border border-primary/15 bg-white/85 shadow-sm overflow-hidden">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-0 items-stretch">
           <motion.div
