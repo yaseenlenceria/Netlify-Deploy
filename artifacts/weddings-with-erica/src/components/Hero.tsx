@@ -47,8 +47,8 @@ export function Hero() {
           transition={{ duration: 0.85, delay: 0.15, ease: "easeOut" }}
           className="text-[1.7rem] md:text-[3.4rem] lg:text-[4rem] font-serif text-foreground mb-3 md:mb-6 leading-[1.12]"
         >
-          Wedding Planner Ireland<br />
-          <em className="not-italic text-primary">I'll Handle the Rest</em>
+          Wedding Planner in Ireland<br />
+          <em className="not-italic text-primary">You Enjoy the Moment. I’ll Handle the Rest.</em>
         </motion.h1>
 
         <motion.p
