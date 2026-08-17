@@ -20,6 +20,17 @@ const services = [
   "Planning Power Hour",
 ];
 
+const popularPages = [
+  { label: "Wedding Planner Price", href: "/wedding-planner-in-ireland-price" },
+  { label: "Wedding Planner Cost", href: "/wedding-planner-in-ireland-cost" },
+  { label: "Best Wedding Planner Ireland", href: "/best-wedding-planner-in-ireland" },
+  { label: "Book a Wedding Planner", href: "/wedding-planner-book" },
+  { label: "Destination Wedding Planner", href: "/destination-wedding-planner" },
+  { label: "International Wedding Planner", href: "/international-wedding-planner" },
+  { label: "On the Day Coordinator", href: "/on-the-day-wedding-coordinator" },
+  { label: "Wedding Planner Olivia", href: "/wedding-planner-olivia" },
+];
+
 function TikTokIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +44,7 @@ export function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-[hsl(90,22%,30%)] via-[hsl(90,18%,24%)] to-[hsl(40,15%,16%)] text-primary-foreground">
-      <div className="mx-auto px-8 md:px-12 max-w-7xl py-16 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+      <div className="mx-auto px-8 md:px-12 max-w-7xl py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
 
         {/* Brand */}
         <div className="flex flex-col gap-5">
@@ -82,6 +93,20 @@ export function Footer() {
               key={link.href}
               onClick={() => navigate(link.href)}
               className="text-left text-primary-foreground/80 hover:text-primary-foreground text-[1rem] font-light transition-colors duration-200 w-fit"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Popular Pages */}
+        <div className="flex flex-col gap-4">
+          <p className="text-[14px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Popular Pages</p>
+          {popularPages.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => navigate(link.href)}
+              className="text-left text-primary-foreground/80 hover:text-primary-foreground text-[0.95rem] font-light transition-colors duration-200 w-fit leading-snug"
             >
               {link.label}
             </button>
