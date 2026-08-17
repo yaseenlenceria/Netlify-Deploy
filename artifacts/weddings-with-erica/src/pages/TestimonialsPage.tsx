@@ -9,7 +9,7 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Wedding Planner Reviews Ireland | Weddings with Erica"
+        title="Wedding Planner Reviews in Ireland | Weddings with Erica"
         description="Read reviews from couples who trusted Erica Egan for wedding planning, partial planning support and on-the-day wedding coordination in Ireland."
         path="/testimonials"
         schema={[

@@ -9,8 +9,8 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Wedding Planning Services Ireland | Day-of Coordination"
-        description="Wedding planning services in Ireland: full planning, partial planning support, planning power hour consultations and calm day-of wedding coordination."
+        title="Wedding Planning Services in Ireland | Weddings with Erica"
+        description="Wedding planning services in Ireland: full planning, partial planning support, planning power hour consultations and calm on-the-day wedding coordination."
         path="/services"
         schema={[
           businessSchema,

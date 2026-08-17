@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import type { FaqItem } from "@/lib/seoContent";
 
 export const SITE_URL = "https://weddingswitherica.com";
 export const DEFAULT_IMAGE = `${SITE_URL}/opengraph.jpg`;
@@ -12,6 +13,7 @@ interface SeoProps {
   path?: string;
   noIndex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  imageAlt?: string;
 }
 
 function setMeta(selector: string, attribute: "name" | "property", value: string, content: string) {
@@ -26,12 +28,34 @@ function setMeta(selector: string, attribute: "name" | "property", value: string
   element.content = content;
 }
 
-export function Seo({ title, description, path = "/", noIndex = false, schema }: SeoProps) {
+function setLink(selector: string, rel: string, href: string, hreflang?: string) {
+  let element = document.head.querySelector<HTMLLinkElement>(selector);
+
+  if (!element) {
+    element = document.createElement("link");
+    element.rel = rel;
+    if (hreflang) element.hreflang = hreflang;
+    document.head.appendChild(element);
+  }
+
+  element.href = href;
+}
+
+export function Seo({
+  title,
+  description,
+  path = "/",
+  noIndex = false,
+  schema,
+  imageAlt = "Weddings with Erica wedding planning and coordination in Ireland",
+}: SeoProps) {
   useEffect(() => {
     const canonicalUrl = `${SITE_URL}${path === "/" ? "/" : path}`;
     document.title = title;
 
     setMeta('meta[name="description"]', "name", "description", description);
+    setMeta('meta[name="author"]', "name", "author", "Erica Egan - Weddings with Erica");
+    setMeta('meta[name="application-name"]', "name", "application-name", "Weddings with Erica");
     setMeta('meta[name="robots"]', "name", "robots", noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");
     setMeta('meta[property="og:type"]', "property", "og:type", "website");
     setMeta('meta[property="og:site_name"]', "property", "og:site_name", "Weddings with Erica");
@@ -40,18 +64,17 @@ export function Seo({ title, description, path = "/", noIndex = false, schema }:
     setMeta('meta[property="og:description"]', "property", "og:description", description);
     setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
     setMeta('meta[property="og:image"]', "property", "og:image", DEFAULT_IMAGE);
+    setMeta('meta[property="og:image:alt"]', "property", "og:image:alt", imageAlt);
     setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
+    setMeta('meta[name="twitter:site"]', "name", "twitter:site", "@weddingswitherica");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
     setMeta('meta[name="twitter:image"]', "name", "twitter:image", DEFAULT_IMAGE);
+    setMeta('meta[name="twitter:image:alt"]', "name", "twitter:image:alt", imageAlt);
 
-    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = canonicalUrl;
+    setLink('link[rel="canonical"]', "canonical", canonicalUrl);
+    setLink('link[rel="alternate"][hreflang="en-ie"]', "alternate", canonicalUrl, "en-ie");
+    setLink('link[rel="alternate"][hreflang="x-default"]', "alternate", canonicalUrl, "x-default");
 
     const existingSchema = document.getElementById("page-schema");
     existingSchema?.remove();
@@ -65,7 +88,7 @@ export function Seo({ title, description, path = "/", noIndex = false, schema }:
     }
 
     return () => document.getElementById("page-schema")?.remove();
-  }, [description, noIndex, path, schema, title]);
+  }, [description, imageAlt, noIndex, path, schema, title]);
 
   return null;
 }
@@ -108,6 +131,10 @@ export const businessSchema = {
     "@type": "PostalAddress",
     addressCountry: "IE",
   },
+  serviceArea: {
+    "@type": "Country",
+    name: "Ireland",
+  },
   areaServed: [
     { "@type": "Country", name: "Ireland" },
     { "@type": "AdministrativeArea", name: "County Cork" },
@@ -144,6 +171,9 @@ export const businessSchema = {
     "Wedding timelines",
     "Supplier coordination",
     "Wedding planning consultations",
+    "Destination wedding planner Ireland",
+    "International wedding planner Ireland",
+    "On the day wedding coordinator Ireland",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -207,7 +237,7 @@ export const servicesPageSchema = {
   "@type": "CollectionPage",
   "@id": `${SITE_URL}/services#services`,
   url: `${SITE_URL}/services`,
-  name: "Wedding Planning and Coordination Services Ireland",
+  name: "Wedding Planning and Coordination Services in Ireland",
   description: "Full wedding planning, partial planning support, wedding planning consultations and day-of wedding coordination across Ireland.",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: services.map((service) => ({
@@ -238,5 +268,19 @@ export const makeBreadcrumbSchema = (items: Array<{ name: string; path: string }
     position: index + 1,
     name: item.name,
     item: `${SITE_URL}${item.path === "/" ? "/" : item.path}`,
+  })),
+});
+
+export const makeFaqSchema = (items: FaqItem[], id: string) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}${id}`,
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
   })),
 });

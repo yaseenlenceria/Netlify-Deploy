@@ -21,13 +21,13 @@ const services = [
 ];
 
 const popularPages = [
-  { label: "Wedding Planner Price", href: "/wedding-planner-in-ireland-price" },
-  { label: "Wedding Planner Cost", href: "/wedding-planner-in-ireland-cost" },
-  { label: "Best Wedding Planner Ireland", href: "/best-wedding-planner-in-ireland" },
-  { label: "Book a Wedding Planner", href: "/wedding-planner-book" },
-  { label: "Destination Wedding Planner", href: "/destination-wedding-planner" },
-  { label: "International Wedding Planner", href: "/international-wedding-planner" },
-  { label: "On the Day Coordinator", href: "/on-the-day-wedding-coordinator" },
+  { label: "Wedding Planner in Ireland Price", href: "/wedding-planner-in-ireland-price" },
+  { label: "Wedding Planner in Ireland Cost", href: "/wedding-planner-in-ireland-cost" },
+  { label: "Best Wedding Planner in Ireland", href: "/best-wedding-planner-in-ireland" },
+  { label: "Book a Wedding Planner in Ireland", href: "/wedding-planner-book" },
+  { label: "Destination Wedding Planner Ireland", href: "/destination-wedding-planner" },
+  { label: "International Wedding Planner Ireland", href: "/international-wedding-planner" },
+  { label: "On the Day Wedding Coordinator", href: "/on-the-day-wedding-coordinator" },
   { label: "Wedding Planner Olivia", href: "/wedding-planner-olivia" },
 ];
 

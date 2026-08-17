@@ -9,8 +9,8 @@ export default function MeetEricaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Meet Erica Egan | Irish Wedding Planner"
-        description="Meet Erica Egan, the wedding planner behind Weddings with Erica, offering calm, practical planning support and coordination for weddings across Ireland."
+        title="Meet Erica Egan | Wedding Planner in Ireland"
+        description="Meet Erica Egan, the wedding planner in Ireland behind Weddings with Erica, offering calm, practical planning support and coordination for weddings across Ireland."
         path="/meet-erica"
         schema={[
           businessSchema,

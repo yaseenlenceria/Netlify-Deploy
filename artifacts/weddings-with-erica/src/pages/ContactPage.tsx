@@ -8,8 +8,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Seo
-        title="Contact Wedding Planner Ireland | Weddings with Erica"
-        description="Enquire with Erica Egan about full wedding planning, partial planning support, planning consultations or day-of coordination for weddings across Ireland."
+        title="Contact Wedding Planner in Ireland | Weddings with Erica"
+        description="Enquire with Erica Egan about full wedding planning, partial planning support, planning consultations or on-the-day coordination for weddings across Ireland."
         path="/contact"
         schema={[
           businessSchema,
