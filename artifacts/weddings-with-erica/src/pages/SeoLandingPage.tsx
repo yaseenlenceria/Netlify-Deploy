@@ -8,9 +8,7 @@ import {
   businessSchema,
   websiteSchema,
   makeBreadcrumbSchema,
-  makeFaqSchema,
 } from "@/components/Seo";
-import { irelandSearchPages, type FaqItem } from "@/lib/seoContent";
 
 type LandingPageContent = {
   title: string;
@@ -222,29 +220,8 @@ function pageSchema(page: LandingPageContent) {
   };
 }
 
-function makeLandingFaqs(page: LandingPageContent): FaqItem[] {
-  return [
-    {
-      question: `What should we know about ${page.title.toLowerCase()}?`,
-      answer: page.intro,
-    },
-    {
-      question: "Which wedding planning services are available?",
-      answer:
-        "Weddings with Erica offers Signature Day Coordination, Partial Planning Support, Full Planning + Coordination and Planning Power Hour consultations for couples planning weddings across Ireland.",
-    },
-    {
-      question: "How do we enquire with Weddings with Erica?",
-      answer:
-        "Start with the enquiry form and share your wedding date, location, where you are in the planning process and the kind of support you need most.",
-    },
-  ];
-}
-
 function SeoLandingPage({ page }: { page: LandingPageContent }) {
   const [, navigate] = useLocation();
-  const faqs = makeLandingFaqs(page);
-  const relatedPages = irelandSearchPages.filter((link) => link.href !== page.path);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -256,7 +233,6 @@ function SeoLandingPage({ page }: { page: LandingPageContent }) {
           businessSchema,
           websiteSchema,
           pageSchema(page),
-          makeFaqSchema(faqs, `${page.path}#faq`),
           makeBreadcrumbSchema([
             { name: "Home", path: "/" },
             { name: page.title, path: page.path },
@@ -348,55 +324,6 @@ function SeoLandingPage({ page }: { page: LandingPageContent }) {
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-
-        <section className="bg-[hsl(40,18%,94%)] px-6 md:px-10 py-12 md:py-16">
-          <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-8 lg:gap-12">
-            <div>
-              <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-3 font-sans block">
-                Ireland wedding planning FAQ
-              </span>
-              <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-[1.1]">
-                Helpful answers before you enquire
-              </h2>
-            </div>
-            <div className="space-y-5">
-              {faqs.map((item) => (
-                <article key={item.question}>
-                  <h3 className="font-serif text-2xl text-foreground leading-tight">
-                    {item.question}
-                  </h3>
-                  <p className="text-foreground/65 font-light text-[0.96rem] leading-[1.75] mt-2">
-                    {item.answer}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-background px-6 md:px-10 py-12 md:py-16">
-          <div className="mx-auto max-w-5xl">
-            <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-3 font-sans block">
-              More Ireland wedding planning guides
-            </span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {relatedPages.slice(0, 6).map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => navigate(link.href)}
-                  className="border border-border/35 bg-white p-5 text-left hover:border-primary/35 transition-all duration-300"
-                >
-                  <span className="font-serif text-2xl text-foreground leading-tight">
-                    {link.label}
-                  </span>
-                  <span className="block text-foreground/62 font-light text-[0.92rem] leading-[1.65] mt-2">
-                    {link.copy}
-                  </span>
-                </button>
-              ))}
-            </div>
           </div>
         </section>
 

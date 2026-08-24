@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import type { FaqItem } from "@/lib/seoContent";
 
 export const SITE_URL = "https://weddingswitherica.com";
 export const DEFAULT_IMAGE = `${SITE_URL}/opengraph.jpg`;
@@ -268,19 +267,5 @@ export const makeBreadcrumbSchema = (items: Array<{ name: string; path: string }
     position: index + 1,
     name: item.name,
     item: `${SITE_URL}${item.path === "/" ? "/" : item.path}`,
-  })),
-});
-
-export const makeFaqSchema = (items: FaqItem[], id: string) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": `${SITE_URL}${id}`,
-  mainEntity: items.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
   })),
 });
