@@ -184,26 +184,6 @@ const pages: Record<string, LandingPageContent> = {
     closing:
       "Around six weeks before the wedding, Erica can step in, take the reins, and make sure everything runs seamlessly.",
   },
-  olivia: {
-    title: "Wedding Planner Olivia Search",
-    metaTitle: "Wedding Planner Olivia Search | Weddings with Erica",
-    description:
-      "Comparing wedding planners in Ireland? Meet Weddings with Erica for calm full planning, partial planning, planning consultations and day coordination.",
-    path: "/wedding-planner-olivia",
-    eyebrow: "Comparing wedding planners",
-    intro:
-      "If your search for a wedding planner brought you here while comparing options, this page shares the planning and coordination support available from Erica Egan at Weddings with Erica.",
-    focusTitle: "What Weddings with Erica offers",
-    focus: [
-      "Personal wedding planning and coordination for couples across Ireland.",
-      "Full planning, partial planning support, planning consultations, and day coordination.",
-      "Supplier recommendations, timelines, budgeting support, and calm practical guidance.",
-      "A dedicated planner focused on keeping your wedding day organised and enjoyable.",
-    ],
-    closingTitle: "Meet Erica Egan",
-    closing:
-      "Erica brings a calm, organised presence to the planning process so couples can enjoy the moment while the details are handled.",
-  },
 };
 
 function pageSchema(page: LandingPageContent) {
@@ -381,8 +361,4 @@ export function InternationalWeddingPlannerPage() {
 
 export function OnTheDayWeddingCoordinatorPage() {
   return <SeoLandingPage page={pages.coordinator} />;
-}
-
-export function WeddingPlannerOliviaPage() {
-  return <SeoLandingPage page={pages.olivia} />;
 }
