@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://weddingswitherica.com/sitemap.xml
+Host: weddingswitherica.com
