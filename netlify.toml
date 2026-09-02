@@ -16,6 +16,12 @@
   force = true
 
 [[redirects]]
+  from = "/wedding-planner-olivia"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
