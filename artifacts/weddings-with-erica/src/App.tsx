@@ -16,7 +16,6 @@ import {
   OnTheDayWeddingCoordinatorPage,
   WeddingPlannerBookPage,
   WeddingPlannerCostPage,
-  WeddingPlannerOliviaPage,
   WeddingPlannerPricePage,
 } from "@/pages/SeoLandingPage";
 import { SocialProofToast } from "@/components/SocialProofToast";
@@ -42,7 +41,6 @@ function Router() {
       <Route path="/destination-wedding-planner" component={DestinationWeddingPlannerPage} />
       <Route path="/international-wedding-planner" component={InternationalWeddingPlannerPage} />
       <Route path="/on-the-day-wedding-coordinator" component={OnTheDayWeddingCoordinatorPage} />
-      <Route path="/wedding-planner-olivia" component={WeddingPlannerOliviaPage} />
       <Route path="/privacy-policy" component={PrivacyPage} />
       <Route component={NotFound} />
     </Switch>
