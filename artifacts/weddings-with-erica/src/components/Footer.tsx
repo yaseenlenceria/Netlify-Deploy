@@ -28,7 +28,6 @@ const popularPages = [
   { label: "Destination Wedding Planner", href: "/destination-wedding-planner" },
   { label: "International Wedding Planner", href: "/international-wedding-planner" },
   { label: "On the Day Coordinator", href: "/on-the-day-wedding-coordinator" },
-  { label: "Wedding Planner Olivia", href: "/wedding-planner-olivia" },
 ];
 
 function TikTokIcon({ className }: { className?: string }) {
