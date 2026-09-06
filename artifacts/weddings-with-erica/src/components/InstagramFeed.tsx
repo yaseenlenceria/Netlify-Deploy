@@ -1,15 +1,4 @@
-import { useEffect } from "react";
 import { Instagram, PlayCircle } from "lucide-react";
-
-declare global {
-  interface Window {
-    instgrm?: {
-      Embeds?: {
-        process: () => void;
-      };
-    };
-  }
-}
 
 const INSTAGRAM_URL = "https://www.instagram.com/weddingswitherica/";
 
@@ -105,23 +94,6 @@ const instagramSchema = {
 };
 
 export function InstagramFeed() {
-  useEffect(() => {
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="//www.instagram.com/embed.js"], script[src="https://www.instagram.com/embed.js"]',
-    );
-
-    if (existingScript) {
-      window.instgrm?.Embeds?.process();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.instagram.com/embed.js";
-    script.onload = () => window.instgrm?.Embeds?.process();
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <section className="py-16 md:py-24 bg-[hsl(40,33%,97%)]" aria-labelledby="instagram-heading">
       <script
@@ -174,26 +146,28 @@ export function InstagramFeed() {
                   <Instagram className="w-5 h-5 text-primary/70 shrink-0 mt-1" aria-hidden="true" />
                 )}
               </div>
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink={post.url}
-                data-instgrm-version="14"
-                style={{
-                  background: "#fff",
-                  border: 0,
-                  margin: "0 auto",
-                  maxWidth: "540px",
-                  minWidth: "0",
-                  width: "100%",
-                }}
-              >
-                <a href={post.url} target="_blank" rel="noopener noreferrer">
-                  View this Weddings with Erica {post.type.toLowerCase()} on Instagram
-                </a>
-              </blockquote>
+              <div className="bg-[hsl(40,33%,97%)] border-b border-border/20">
+                <iframe
+                  src={`${post.url}embed`}
+                  title={`@weddingswitherica ${post.type.toLowerCase()}: ${post.title}`}
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="block w-full h-[620px] md:h-[680px] border-0 bg-white"
+                />
+              </div>
               <p className="px-5 pb-5 text-foreground/62 font-light leading-[1.7] text-[0.95rem]">
                 {post.description}
               </p>
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-5 mb-5 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-primary hover:text-primary/75 transition-colors"
+              >
+                <Instagram className="w-4 h-4" aria-hidden="true" />
+                Open on Erica's Instagram
+              </a>
             </article>
           ))}
         </div>
