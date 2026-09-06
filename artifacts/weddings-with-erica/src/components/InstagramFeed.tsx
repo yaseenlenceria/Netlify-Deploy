@@ -1,36 +1,136 @@
-import { Instagram } from "lucide-react";
-import emmaJohn from "@assets/Emma_&_John_1780292849312.jpg";
-import jennyConor from "@assets/Jenny_&_Conor_1780246212053.jpg";
-import karinaAdrian from "@assets/Karina_&_Adrian_1780246238977.jpg";
-import katieSteven from "@assets/Katie_&_Steven_1780292849313.jpg";
-import andreLuis from "@assets/Andre_&_Luis_1780247337187.jpg";
-import amandaMarcus from "@assets/Amanda_&_Marcus_1780246332890.png";
+import { useEffect } from "react";
+import { Instagram, PlayCircle } from "lucide-react";
+
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds?: {
+        process: () => void;
+      };
+    };
+  }
+}
 
 const INSTAGRAM_URL = "https://www.instagram.com/weddingswitherica/";
 
-const moments = [
-  { image: emmaJohn, alt: "Emma and John celebrating their wedding in Ireland" },
-  { image: jennyConor, alt: "Jenny and Conor on their wedding day in Ireland" },
-  { image: karinaAdrian, alt: "Karina and Adrian celebrating their Irish wedding" },
-  { image: katieSteven, alt: "Katie and Steven enjoying their wedding day" },
-  { image: andreLuis, alt: "Andre and Luis celebrating together on their wedding day" },
-  { image: amandaMarcus, alt: "Amanda and Marcus at their wedding celebration" },
+const instagramPosts = [
+  {
+    url: "https://www.instagram.com/reel/DchHoSZKc1M/",
+    type: "Reel",
+    title: "STOP THE WEDDING IF...",
+    date: "2026-08-26",
+    description:
+      "A recent Weddings with Erica reel with wedding planning and ceremony advice for couples in Ireland.",
+  },
+  {
+    url: "https://www.instagram.com/reel/DcX6v-huhmd/",
+    type: "Reel",
+    title: "A super cute touch yesterday by the Bride and Groom",
+    date: "2026-08-23",
+    description:
+      "A recent Weddings with Erica reel showing real wedding detail inspiration from an Irish wedding day.",
+  },
+  {
+    url: "https://www.instagram.com/weddingswitherica/p/DcOq4khNbxU/",
+    type: "Post",
+    title: "Something borrowed: Erin and Tim",
+    date: "2026-08-19",
+    description:
+      "A Weddings with Erica post about Erin and Tim travelling from the U.S. to get married in Ireland.",
+  },
+  {
+    url: "https://www.instagram.com/reel/DcPAx4cR2Qp/",
+    type: "Reel",
+    title: "Wedding content creator equipment and planning support",
+    date: "2026-08-19",
+    description:
+      "A recent Weddings with Erica reel with behind-the-scenes wedding planning and content support context.",
+  },
 ];
 
+const instagramSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://weddingswitherica.com/#instagram-posts",
+  name: "Recent Weddings with Erica Instagram videos and posts",
+  description:
+    "Recent playable Instagram reels and posts from Erica Egan, wedding planner in Ireland.",
+  itemListElement: instagramPosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item:
+      post.type === "Reel"
+        ? {
+            "@type": "VideoObject",
+            name: post.title,
+            description: post.description,
+            uploadDate: post.date,
+            contentUrl: post.url,
+            embedUrl: post.url,
+            creator: {
+              "@type": "Person",
+              name: "Erica Egan",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Weddings with Erica",
+              sameAs: INSTAGRAM_URL,
+            },
+          }
+        : {
+            "@type": "SocialMediaPosting",
+            headline: post.title,
+            datePublished: post.date,
+            url: post.url,
+            sharedContent: {
+              "@type": "CreativeWork",
+              name: post.title,
+              description: post.description,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Weddings with Erica",
+              sameAs: INSTAGRAM_URL,
+            },
+          },
+  })),
+};
+
 export function InstagramFeed() {
+  useEffect(() => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="//www.instagram.com/embed.js"], script[src="https://www.instagram.com/embed.js"]',
+    );
+
+    if (existingScript) {
+      window.instgrm?.Embeds?.process();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.instagram.com/embed.js";
+    script.onload = () => window.instgrm?.Embeds?.process();
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section className="py-16 md:py-24 bg-[hsl(40,33%,97%)]" aria-labelledby="instagram-heading">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(instagramSchema) }}
+      />
       <div className="mx-auto px-6 md:px-10 max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
           <div>
             <span className="text-[13px] uppercase tracking-[0.28em] text-primary/70 mb-2 font-sans block">
-              Real Weddings Across Ireland
+              Latest Videos From Erica
             </span>
             <h2 id="instagram-heading" className="text-4xl md:text-5xl font-serif text-foreground leading-[1.08]">
               Wedding moments from <em className="not-italic text-primary">Erica's couples</em>
             </h2>
             <p className="text-foreground/60 font-light text-[0.98rem] leading-relaxed mt-3 max-w-2xl">
-              A curated glimpse of wedding days, planning details and celebrations. For Erica's newest posts and stories, open the Instagram profile directly.
+              Real, playable Instagram reels and posts from Weddings with Erica, showing recent wedding planning tips, behind-the-scenes moments and real Irish wedding inspiration.
             </p>
           </div>
           <a
@@ -44,31 +144,50 @@ export function InstagramFeed() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
-          {moments.map((moment) => (
-            <a
-              key={moment.alt}
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden bg-muted"
-              aria-label={`${moment.alt} — view the latest Weddings with Erica posts on Instagram`}
-            >
-              <img
-                src={moment.image}
-                alt={moment.alt}
-                loading="lazy"
-                width="500"
-                height="500"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/25 transition-colors duration-300 flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.18em] font-sans">
-                  <Instagram className="w-5 h-5" aria-hidden="true" />
-                  Latest Posts
-                </span>
-              </span>
-            </a>
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-start">
+          {instagramPosts.map((post) => (
+            <article key={post.url} className="bg-white border border-border/25 shadow-sm overflow-hidden">
+              <div className="px-5 py-4 border-b border-border/20 flex items-start justify-between gap-4">
+                <div>
+                  <span className="text-[12px] uppercase tracking-[0.2em] text-primary/70 font-sans">
+                    {post.type} . {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-IE", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <h3 className="font-serif text-2xl text-foreground leading-tight mt-2">
+                    {post.title}
+                  </h3>
+                </div>
+                {post.type === "Reel" ? (
+                  <PlayCircle className="w-5 h-5 text-primary/70 shrink-0 mt-1" aria-hidden="true" />
+                ) : (
+                  <Instagram className="w-5 h-5 text-primary/70 shrink-0 mt-1" aria-hidden="true" />
+                )}
+              </div>
+              <blockquote
+                className="instagram-media"
+                data-instgrm-captioned
+                data-instgrm-permalink={post.url}
+                data-instgrm-version="14"
+                style={{
+                  background: "#fff",
+                  border: 0,
+                  margin: "0 auto",
+                  maxWidth: "540px",
+                  minWidth: "0",
+                  width: "100%",
+                }}
+              >
+                <a href={post.url} target="_blank" rel="noopener noreferrer">
+                  View this Weddings with Erica {post.type.toLowerCase()} on Instagram
+                </a>
+              </blockquote>
+              <p className="px-5 pb-5 text-foreground/62 font-light leading-[1.7] text-[0.95rem]">
+                {post.description}
+              </p>
+            </article>
           ))}
         </div>
       </div>
