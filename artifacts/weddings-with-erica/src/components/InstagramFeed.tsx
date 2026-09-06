@@ -15,7 +15,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/weddingswitherica/";
 
 const instagramPosts = [
   {
-    url: "https://www.instagram.com/reel/DchHoSZKc1M/",
+    url: "https://www.instagram.com/weddingswitherica/reel/DchHoSZKc1M/",
     type: "Reel",
     title: "STOP THE WEDDING IF...",
     date: "2026-08-26",
@@ -23,7 +23,7 @@ const instagramPosts = [
       "A recent Weddings with Erica reel with wedding planning and ceremony advice for couples in Ireland.",
   },
   {
-    url: "https://www.instagram.com/reel/DcX6v-huhmd/",
+    url: "https://www.instagram.com/weddingswitherica/reel/DcX6v-huhmd/",
     type: "Reel",
     title: "A super cute touch yesterday by the Bride and Groom",
     date: "2026-08-23",
@@ -39,12 +39,20 @@ const instagramPosts = [
       "A Weddings with Erica post about Erin and Tim travelling from the U.S. to get married in Ireland.",
   },
   {
-    url: "https://www.instagram.com/reel/DcPAx4cR2Qp/",
+    url: "https://www.instagram.com/weddingswitherica/reel/DcPAx4cR2Qp/",
     type: "Reel",
     title: "Wedding content creator equipment and planning support",
     date: "2026-08-19",
     description:
       "A recent Weddings with Erica reel with behind-the-scenes wedding planning and content support context.",
+  },
+  {
+    url: "https://www.instagram.com/weddingswitherica/p/DaA4KCvN0MF/",
+    type: "Post",
+    title: "Wedding review for Weddings with Erica",
+    date: "2026-06-25",
+    description:
+      "A Weddings with Erica review post showing real couple feedback for Erica's planning and coordination support.",
   },
 ];
 
@@ -144,13 +152,13 @@ export function InstagramFeed() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 items-start">
           {instagramPosts.map((post) => (
             <article key={post.url} className="bg-white border border-border/25 shadow-sm overflow-hidden">
               <div className="px-5 py-4 border-b border-border/20 flex items-start justify-between gap-4">
                 <div>
                   <span className="text-[12px] uppercase tracking-[0.2em] text-primary/70 font-sans">
-                    {post.type} . {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-IE", {
+                    @weddingswitherica / {post.type} / {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-IE", {
                       day: "numeric",
                       month: "short",
                       year: "numeric",
@@ -168,7 +176,6 @@ export function InstagramFeed() {
               </div>
               <blockquote
                 className="instagram-media"
-                data-instgrm-captioned
                 data-instgrm-permalink={post.url}
                 data-instgrm-version="14"
                 style={{
