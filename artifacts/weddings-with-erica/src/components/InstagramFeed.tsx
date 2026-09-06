@@ -1,10 +1,16 @@
 import { Instagram, PlayCircle } from "lucide-react";
+import ericaPortrait from "@assets/meet_erica_1780239389447.jpg";
+import couplePlanning from "@assets/meet_erica_3_1780239389447.jpg";
+import emmaJohn from "@assets/Emma_&_John_1780292849312.jpg";
+import katieSteven from "@assets/Katie_&_Steven_1780292849313.jpg";
+import jennyConor from "@assets/Jenny_&_Conor_1780246212053.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/weddingswitherica/";
 
 const instagramPosts = [
   {
     url: "https://www.instagram.com/weddingswitherica/reel/DchHoSZKc1M/",
+    thumbnail: ericaPortrait,
     type: "Reel",
     title: "STOP THE WEDDING IF...",
     date: "2026-08-26",
@@ -13,6 +19,7 @@ const instagramPosts = [
   },
   {
     url: "https://www.instagram.com/weddingswitherica/reel/DcX6v-huhmd/",
+    thumbnail: couplePlanning,
     type: "Reel",
     title: "A super cute touch yesterday by the Bride and Groom",
     date: "2026-08-23",
@@ -21,6 +28,7 @@ const instagramPosts = [
   },
   {
     url: "https://www.instagram.com/weddingswitherica/p/DcOq4khNbxU/",
+    thumbnail: emmaJohn,
     type: "Post",
     title: "Something borrowed: Erin and Tim",
     date: "2026-08-19",
@@ -29,6 +37,7 @@ const instagramPosts = [
   },
   {
     url: "https://www.instagram.com/weddingswitherica/reel/DcPAx4cR2Qp/",
+    thumbnail: katieSteven,
     type: "Reel",
     title: "Wedding content creator equipment and planning support",
     date: "2026-08-19",
@@ -37,6 +46,7 @@ const instagramPosts = [
   },
   {
     url: "https://www.instagram.com/weddingswitherica/p/DaA4KCvN0MF/",
+    thumbnail: jennyConor,
     type: "Post",
     title: "Wedding review for Weddings with Erica",
     date: "2026-06-25",
@@ -51,7 +61,7 @@ const instagramSchema = {
   "@id": "https://weddingswitherica.com/#instagram-posts",
   name: "Recent Weddings with Erica Instagram videos and posts",
   description:
-    "Recent playable Instagram reels and posts from Erica Egan, wedding planner in Ireland.",
+    "Recent Instagram reels and posts from Erica Egan, wedding planner in Ireland.",
   itemListElement: instagramPosts.map((post, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -63,7 +73,6 @@ const instagramSchema = {
             description: post.description,
             uploadDate: post.date,
             contentUrl: post.url,
-            embedUrl: post.url,
             creator: {
               "@type": "Person",
               name: "Erica Egan",
@@ -79,6 +88,7 @@ const instagramSchema = {
             headline: post.title,
             datePublished: post.date,
             url: post.url,
+            image: post.url,
             sharedContent: {
               "@type": "CreativeWork",
               name: post.title,
@@ -110,7 +120,7 @@ export function InstagramFeed() {
               Wedding moments from <em className="not-italic text-primary">Erica's couples</em>
             </h2>
             <p className="text-foreground/60 font-light text-[0.98rem] leading-relaxed mt-3 max-w-2xl">
-              Real, playable Instagram reels and posts from Weddings with Erica, showing recent wedding planning tips, behind-the-scenes moments and real Irish wedding inspiration.
+              Recent Instagram reels and posts from Weddings with Erica, presented as a clean profile-style video grid with direct links to Erica's real account.
             </p>
           </div>
           <a
@@ -124,38 +134,48 @@ export function InstagramFeed() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 items-start">
           {instagramPosts.map((post) => (
             <article key={post.url} className="bg-white border border-border/25 shadow-sm overflow-hidden">
-              <div className="px-5 py-4 border-b border-border/20 flex items-start justify-between gap-4">
-                <div>
-                  <span className="text-[12px] uppercase tracking-[0.2em] text-primary/70 font-sans">
-                    @weddingswitherica / {post.type} / {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-IE", {
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+                aria-label={`Open @weddingswitherica ${post.type.toLowerCase()}: ${post.title}`}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                  <img
+                    src={post.thumbnail}
+                    alt={`@weddingswitherica ${post.type.toLowerCase()} thumbnail for ${post.title}`}
+                    loading="lazy"
+                    width="520"
+                    height="650"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/15" />
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/92 px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-primary shadow-sm">
+                    {post.type === "Reel" ? (
+                      <PlayCircle className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Instagram className="h-4 w-4" aria-hidden="true" />
+                    )}
+                    {post.type}
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-4">
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-white/78 font-sans">
+                      @weddingswitherica / {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-IE", {
                       day: "numeric",
                       month: "short",
                       year: "numeric",
                     })}
-                  </span>
-                  <h3 className="font-serif text-2xl text-foreground leading-tight mt-2">
-                    {post.title}
-                  </h3>
+                    </span>
+                    <h3 className="font-serif text-2xl text-white leading-tight mt-2">
+                      {post.title}
+                    </h3>
+                  </div>
                 </div>
-                {post.type === "Reel" ? (
-                  <PlayCircle className="w-5 h-5 text-primary/70 shrink-0 mt-1" aria-hidden="true" />
-                ) : (
-                  <Instagram className="w-5 h-5 text-primary/70 shrink-0 mt-1" aria-hidden="true" />
-                )}
-              </div>
-              <div className="bg-[hsl(40,33%,97%)] border-b border-border/20">
-                <iframe
-                  src={`${post.url}embed`}
-                  title={`@weddingswitherica ${post.type.toLowerCase()}: ${post.title}`}
-                  loading="lazy"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="block w-full h-[620px] md:h-[680px] border-0 bg-white"
-                />
-              </div>
+              </a>
               <p className="px-5 pb-5 text-foreground/62 font-light leading-[1.7] text-[0.95rem]">
                 {post.description}
               </p>
@@ -165,8 +185,12 @@ export function InstagramFeed() {
                 rel="noopener noreferrer"
                 className="mx-5 mb-5 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-primary hover:text-primary/75 transition-colors"
               >
-                <Instagram className="w-4 h-4" aria-hidden="true" />
-                Open on Erica's Instagram
+                {post.type === "Reel" ? (
+                  <PlayCircle className="w-4 h-4" aria-hidden="true" />
+                ) : (
+                  <Instagram className="w-4 h-4" aria-hidden="true" />
+                )}
+                Watch on Erica's Instagram
               </a>
             </article>
           ))}
