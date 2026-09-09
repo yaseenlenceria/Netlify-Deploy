@@ -5,7 +5,6 @@ import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { InstagramFeed } from "@/components/InstagramFeed";
 import { TikTokCarousel } from "@/components/TikTokCarousel";
 import { Seo, businessSchema, websiteSchema, tiktokVideoSchema, makeBreadcrumbSchema } from "@/components/Seo";
 
@@ -24,7 +23,6 @@ export default function Home() {
         <Services />
         <Testimonials />
         <TikTokCarousel />
-        <InstagramFeed />
         <Contact />
       </main>
       <Footer />
