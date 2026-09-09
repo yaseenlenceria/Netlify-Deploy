@@ -2,7 +2,6 @@ import { useLocation } from "wouter";
 import { ArrowRight, CheckCircle2, Instagram, Star } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { InstagramFeed } from "@/components/InstagramFeed";
 import {
   Seo,
   SITE_URL,
@@ -588,7 +587,6 @@ function BestPlannerExtraContent() {
         </div>
       </section>
 
-      <InstagramFeed />
     </>
   );
 }
