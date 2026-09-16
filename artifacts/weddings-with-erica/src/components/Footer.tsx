@@ -43,7 +43,7 @@ export function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-[hsl(90,22%,30%)] via-[hsl(90,18%,24%)] to-[hsl(40,15%,16%)] text-primary-foreground">
-      <div className="mx-auto px-8 md:px-12 max-w-7xl py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+      <div className="mx-auto px-8 md:px-12 max-w-7xl py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
 
         {/* Brand */}
         <div className="flex flex-col gap-5">
@@ -99,7 +99,7 @@ export function Footer() {
         </div>
 
         {/* Popular Pages */}
-        <div className="flex flex-col gap-4">
+        <div className="hidden">
           <p className="text-[14px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans mb-1">Popular Pages</p>
           {popularPages.map((link) => (
             <button
